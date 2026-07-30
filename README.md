@@ -13,9 +13,6 @@ e01e37 - Bold crimson-red
 
 A `FSAE` vehicle has two main power levels, the `HV` power bus from the tractive battery and the `LV` power bus from a packaged lithium battery. For `r27`, it is intended to decrease the size of the `LV` battery by using a buck converter to step-down the `HV` bus to power the `LV` bus while the tractive battery is connected and as such the `LV` battery becomes a current buffer instead of being the main source during operation.
 
-> [!important]
-> [DCDC project](https://github.com/Rootthecause/DCDC) by Rootthecause / Liv, originally designed for 600V to 24V conversion.
-
 ### Repository Structure
 
 ```
@@ -47,6 +44,14 @@ A `FSAE` vehicle has two main power levels, the `HV` power bus from the tractive
 ## Documentation
 
 All internal documentation can be found within this repo's [issues](https://github.com/rmit-wgbowley/LV-Isolated-Buck/issues).
+
+### Tags
+```
+LX -> Documentation and project structure
+L0 -> Review and analysis of reference designs
+L1 -> System level design, topology and interfaces
+L2 -> Detailed design, prototyping & testing
+```
 
 ## License & Attribution
 
