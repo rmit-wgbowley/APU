@@ -51,6 +51,7 @@ LX -> Documentation and project structure
 L0 -> Review and analysis of reference designs
 L1 -> System level design, topology and interfaces
 L2 -> Detailed design, prototyping & testing
+DS -> Descoped Feature, Descoped Analysis 
 ```
 
 ## License & Attribution
