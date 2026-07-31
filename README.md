@@ -53,20 +53,3 @@ L1 -> System level design, topology and interfaces
 L2 -> Detailed design, prototyping & testing
 DS -> Descoped Feature, Descoped Analysis 
 ```
-
-## License & Attribution
-
-This project is a modified version of the [DCDC](https://github.com/Rootthecause/DCDC) project.
-
-**Original Work**
-- **Author**: Rootthecause / Liv
-- **Original Repository**: [https://github.com/Rootthecause/DCDC](https://github.com/Rootthecause/DCDC)
-- **Original License**: CERN Open Hardware license Version 2 - Weakly Reciprocal (CERN-OHL-W)
-
-**Planned Modifications by RMIT MotorSports**
-This project is currently in the design phase. We plan to:
-- Convert the output from 24V to 12V to suit the r27 LV system requirements
-- Conduct and document EMI testing to ensure compliance with relevant standards
-- Implementation specifics relating to the r27 LV system 
-
-The full text of the CERN-OHL-W license is included in this repository as `LICENSE`.
