@@ -1,0 +1,44 @@
+[version]
+format: 0.1.0
+unit_frame: metric.ut
+
+[note]
+description: "Analytical lumped-parameter model for a flyback converter"
+
+[numerics]
+time_step:          50  u(s)
+
+# Verbose output frequency
+msg_frequency:      25  (s^-1)
+
+
+[input.source]
+battery_voltage:    600 (V)         # Supply voltage
+
+[input.capacitor]
+resistance:         0.5 (Ω)         # ESR placeholder (needs verification)
+capacitance:        240 u(F)
+
+
+[switch]
+switch_resistance: 20 m(Ω)
+
+switching_frequency: 10 k(s^-1)
+duty_cycle:          0.4
+
+
+[transformer]
+primary_inductance: 10      u(H)
+secondary_inductance: 10    u(H)
+coupling_coefficient: 0.98   (∅)    # Magnetic coupling between current loops
+
+
+[load.diode]
+forward_voltage_drop: 0.8 (V)
+
+[load.resistor]
+resistance:         500 (Ω)
+
+[load.capacitor]
+resistance:         0.5 (Ω)         # ESR placeholder (needs verification)
+capacitance:        240 u(F)

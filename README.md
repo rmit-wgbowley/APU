@@ -19,21 +19,24 @@ A `FSAE` vehicle has two main power levels, the `HV` power bus from the tractive
 ├── README.md
 ├── LICENSE - CERN-OHL-W License
 ├───00_docs
-│   └───00_references
-├───01_electrical
+├───01_simulation
+│   ├───00_analytical
+│   ├───01_LTspice
+│   └───02_finite_element
+├───02_electrical
 │   ├───00_references
 │   ├───01_datasheets
 │   ├───02_detailed_design
 │   └───03_kicad
-├───02_mechanical
+├───03_mechanical
 │   ├───00_references
 │   ├───01_datasheets
 │   └───02_cad
-├───03_integration
-└───04_media
-    ├───01_electrical
-    ├───02_mechanical
-    └───03_integration
+├───04_integration
+└───05_media
+    ├───02_electrical
+    ├───03_integration
+    └───04_mechanical
 ```
 
 --- 
