@@ -15,7 +15,7 @@ e01e37 - Bold crimson-red
 -->
 
 > [!WARNING]
-> **Design Phase**: This repository contains a work-in-progress design. 
+> **L0-L1 Phase**: This repository contains a work-in-progress design. 
 
 A `FSAE` vehicle has two main power levels, the `HV` power bus from the tractive battery and the `LV` power bus from a packaged lithium battery. For `r27`, it is intended to decrease the size of the `LV` battery by using a buck converter to step-down the `HV` bus to power the `LV` bus while the tractive battery is connected and as such the `LV` battery becomes a current buffer instead of being the main source during operation.
 
