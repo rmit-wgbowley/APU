@@ -5,8 +5,10 @@ e01e37 - Bold crimson-red
 -->
 ## Overview
 ![CERN-OHL-W License](https://img.shields.io/badge/License-CERN--OHL--W-FFFFFF?style=flat-square&logoColor=black)
-![Electrics](https://img.shields.io/badge/Domain-Electrics-e01e37?style=flat-square&logoColor=black)
-![Buck Converter](https://img.shields.io/badge/System-Buck_Converter-FFFFFF?style=flat-square)
+![Power Electronics](https://img.shields.io/badge/Domain-Power_Electronics-e01e37?style=flat-square&logoColor=FFFFFF)
+![Isolated DC/DC](https://img.shields.io/badge/Topology-Isolated_DC%2FDC-FFFFFF?style=flat-square&logoColor=e01e37)
+![LLC Resonant Converter](https://img.shields.io/badge/Converter-LLC_Resonant-e01e37?style=flat-square&logoColor=e01e37)
+
 
 <!--
 > [!important]
@@ -17,7 +19,22 @@ e01e37 - Bold crimson-red
 > [!WARNING]
 > **L0-L1 Phase**: This repository contains a work-in-progress design. 
 
-A `FSAE` vehicle has two main power levels, the `HV` power bus from the tractive battery and the `LV` power bus from a packaged lithium battery. For `r27`, it is intended to decrease the size of the `LV` battery by using a buck converter to step-down the `HV` bus to power the `LV` bus while the tractive battery is connected and as such the `LV` battery becomes a current buffer instead of being the main source during operation.
+A `FSAE` vehicle has two main power levels, the `HV` power bus from the tractive battery and the `LV` power bus from a packaged lithium battery. For `r27`, it is intended to 
+decrease the capacity of the `LV` battery by using an isolated LLC resonant half-bridge DC/DC to step-down the `HV` bus to power the `LV` bus while the tractive battery is 
+connected and as such the `LV` battery becomes a energy buffer instead of being the main source during operation. This potentially allows for reductions in LV battery mass, 
+improved packaging and a power architecture similar to modern automotive EV systems.
+
+### High level system topology
+
+```
+Traction battery (600 V)
+         ↓
+Isolated LLC resonant half-bridge DC/DC (~300 W target)
+         ↓
+LV battery buffer (12 V) (Energy Buffer) (Undecided Capacity)
+         ↓
+LV vehicle systems (12 V) (~200 W estimate)
+```
 
 ## Documentation
 
