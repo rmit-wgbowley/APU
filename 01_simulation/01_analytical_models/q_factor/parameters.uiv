@@ -1,0 +1,24 @@
+[version]
+format: 0.1.0
+unit_frame: metric.ut
+
+[note]
+description: "Analytical lumped-parameter model for a resonant half bridge converter"
+
+[model]
+max_voltage: 600 (V)
+min_voltage: 400 (V)
+switching_frequency: 100 k(s^-1)
+
+[output]
+max_power: 240 (W)
+max_current: 20 (A)
+nominal_voltage: 12 (v)
+
+[transformer]
+turns_ratio: 1/5
+magnetising: 10 u(H)
+series_resonant: 10 u(H)
+
+[capacitor]
+series_resonant: 10 u(F)
