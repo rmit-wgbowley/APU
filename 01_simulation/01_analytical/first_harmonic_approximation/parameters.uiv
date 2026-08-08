@@ -1,0 +1,29 @@
+[version]
+format: 0.1.0
+unit_frame: metric.ut
+
+[note]
+description: "Analytical Model for A Resonant Half Bridge Converter"
+application: "Quality Factor & Voltage gain over normalized frequency"
+
+[numerics]
+frequency_sample: 10 M(s^-1)
+frequency_step: 1000 (s^-1)
+
+[model]
+max_voltage: 600 (V)
+min_voltage: 400 (V)
+
+
+[load]
+max_current: 20     (A)
+nominal_voltage: 12 (V)
+
+
+[transformer]
+turns: 21
+magnetising: 44.33      u(H)
+series_resonant: 14.56  u(H)
+
+[capacitor]
+series_resonant: 91.5 n(F)

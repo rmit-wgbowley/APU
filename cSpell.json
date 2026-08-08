@@ -17,6 +17,14 @@
     "picounits",
     "nullset",
     "Descoped",
-    "magnetising"
+    "magnetising",
+    "axvline",
+    "ylabel",
+    "xlabel",
+    "fontsize",
+    "figsize",
+    "linestyle",
+    "axhline",
+    "semilogx"
   ]
 }

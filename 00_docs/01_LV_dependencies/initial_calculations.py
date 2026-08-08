@@ -14,7 +14,7 @@ Description:
 from __future__ import annotations
 from dataclasses import dataclass
 
-from picounits import Q, VOLTAGE, CURRENT
+from picounits import Q, VOLTAGE, CURRENT, POWER, expects
 
 # Parameters
 NOMINAL_VOLTAGE = 12 * VOLTAGE
@@ -33,11 +33,13 @@ class Device:
         devices.append(self)
 
     @property
+    @expects(POWER)
     def peak_power(self) -> Q:
         """ Calculates the peak usage """
         return self.peak_current * NOMINAL_VOLTAGE
 
     @property
+    @expects(POWER)
     def continuous_power(self) -> Q:
         """ Calculates the continuous usage """
         return self.continuous_current * NOMINAL_VOLTAGE
@@ -54,6 +56,7 @@ class Device:
 # Devices within the low voltage system - Peak Current
 Device("Power Distribution Module", 0.15 * CURRENT, 2 * CURRENT)
 Device("Electronics Control Unit", 0.2 * CURRENT, 2 * CURRENT)
+Device("High Voltage Battery Boards", 0.15 * CURRENT, 2 * CURRENT)
 Device("Dash LEDS", 0.2 * CURRENT, 2 * CURRENT)
 Device("Wheel - (Unknown)", 0.3 * CURRENT, 2 * CURRENT)
 Device("Accumulator Management System", 0.3 * CURRENT, 2 * CURRENT)
