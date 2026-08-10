@@ -3,7 +3,7 @@ Filename: solver.py
 
 Description:
     A Resonant Half Bridge Converter analytical
-    solver for quality factor and voltage gain
+    solver for quality factor and transfer gain
     against normalized frequency
 """
 
@@ -16,7 +16,7 @@ from picounits import VOLTAGE, CAPACITANCE, FREQUENCY, INDUCTANCE, NULLSET, CURR
 class ModelSolver:
     """
     Analytical Solver for resonant half bridge converter problem.
-    Computes quality factor, voltage gain over normalized frequency.
+    Computes quality factor, transfer gain over normalized frequency.
     """
     def __init__(self, parameters: DynamicLoader) -> None:
         """ Initializes the solver class """
@@ -34,11 +34,8 @@ class ModelSolver:
         self.equivalent_load_resistance = term / denom
         self.quality_factor = self.char_imp / self.equivalent_load_resistance
 
-        # Returns the derived parameters
-        print(self._name)
-
     def gain_characteristic(self, normalized_frequency: Q) -> float:
-        """ Computes the voltage gain characteristic at a normalized frequency """
+        """ Computes the transfer gain characteristic at a normalized frequency """
         normalized_frequency = validate(normalized_frequency, NULLSET)
 
         # Returns to avoid division by zero
@@ -83,6 +80,10 @@ class ModelSolver:
             f"Quality Factor: {self.quality_factor * NULLSET}, "
             f"Inductance Ratio: {self.ind_ratio * NULLSET})>"
         )
+
+    def info(self) -> None:
+        """ Prints the system information to terminal """
+        print(self._name)
 
     def __repr__(self) -> str: return self._name
     def __str__(self) -> str: return self._name

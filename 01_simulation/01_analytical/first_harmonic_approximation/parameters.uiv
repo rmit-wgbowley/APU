@@ -3,8 +3,8 @@ format: 0.1.0
 unit_frame: metric.ut
 
 [note]
-description: "Analytical Model for A Resonant Half Bridge Converter"
-application: "Quality Factor & Voltage gain over normalized frequency"
+description: "Analytical Model for a Resonant Half Bridge Converter"
+application: "Quality Factor & Transfer gain over normalized frequency"
 
 [numerics]
 frequency_sample: 10 M(s^-1)

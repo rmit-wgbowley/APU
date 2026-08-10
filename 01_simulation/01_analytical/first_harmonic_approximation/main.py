@@ -4,10 +4,9 @@ Filename: main.py
 Description:
     A Resonant Half Bridge Converter analytical 
     first harmonic approximation for quality factor
-    voltage gain against normalized frequency
+    and transfer gain against normalized frequency
 """
 
-from time import time
 from pathlib import Path
 from picounits import Parser
 from picounits import FREQUENCY
@@ -24,20 +23,14 @@ parameters = Parser.open(parameters_path, ROOT_DIR / "../metric.ut")
 
 # Loads in the Solver and prints derived values
 solver = ModelSolver(parameters)
+solver.info()
 
 # Calculates the number of samples
 frequency_step = parameters.numerics.frequency_step
 frequency_sample_space = parameters.numerics.frequency_sample
 
 num_samples = int(frequency_sample_space/frequency_step)
-
-# Calculates the approximate samples per second
-start = time()
-_ = solver.gain_characteristic(1 * FREQUENCY / (solver.res_freq * FREQUENCY))
-end = time()
-duration = end-start
-
-print(f"Sample Space: {frequency_sample_space}, Samples: {num_samples}, S/s: {int(1/duration)}")
+print(f"Sample Space: {frequency_sample_space}, Samples: {num_samples}")
 
 # Calculates the gain characteristic vs normalized frequency
 normalized_results = []
@@ -51,13 +44,15 @@ for index in range(0, num_samples):
     normalized_results.append(normalized_frequency.stripped)
     gain_results.append(gain)
 
-
 # Plots the normalized frequency vs characteristic gain
 plt.figure(figsize=(10, 6))
 plt.semilogx(normalized_results, gain_results, linewidth=2, color='black')
 plt.xlabel('Normalized Frequency (f/f₀)', fontsize=12)
-plt.ylabel('Voltage Gain', fontsize=12)
-plt.title(f'Voltage Gain at L_r = {solver.ind_ratio:.3f} (Lr/Lm), Qe = {solver.quality_factor:.3f}', fontsize=14)
+plt.ylabel('Transfer Gain (M)', fontsize=12)
+plt.title(
+    f'Transfer Gain at L_r = {solver.ind_ratio:.3f} (Lr/Lm), Qe = {solver.quality_factor:.3f}', 
+    fontsize=14
+)
 plt.grid(True, alpha=0.3)
 
 # Add gain range as lines
