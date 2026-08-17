@@ -1,2 +1,8 @@
 *.pyc
 *.log
+*.gz
+*.out
+*.fls
+*.fdb_latexmk
+*.aux
+*.toc

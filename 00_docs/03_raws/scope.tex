@@ -1,0 +1,103 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+}
+
+% Customize section formatting
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
+
+\begin{document}
+
+% Title Page
+\begin{center}
+    {\huge \textbf{Isolated 600 V to 12 V DC/DC}} \\[0.3cm]
+    {\large AUTO1931 --- Scope Report} \\[0.2cm]
+    {\today}
+    \vfill
+\end{center}
+
+% Foreword
+\section*{Foreword}
+\addcontentsline{toc}{section}{Foreword}
+This document is to serve as a template for all AUTO1931 reports. Please make use of the useful features and formatting found in the document, including the Contents page.
+
+
+% Table of Contents
+\tableofcontents
+
+\newpage
+
+% ========== BACKGROUND ==========
+\section{Background}\label{sec:background}
+Provide a general report introduction. Describe your component and how it integrates into, and functions as part of, the vehicle.
+
+\subsection{Importance of engagement}\label{subsec:importance}
+Introduce your system and communicate the importance of its development. Ensure that you demonstrate the importance of your work now. 
+If you lose the reader at this point, you will struggle to keep them engaged throughout the document.
+
+% ========== SYSTEM SPECIFICATION ==========\section{System Specification}\label{sec:specification}
+Here, you are to specify what your system is, the targets of this system and identify the major system design constraints. 
+This section is to serve as the effective Problem Statement for your project. As such, it must be clear and obvious what the objectives of your system are.
+
+% ========== LITERATURE AND DESIGN REVIEW ==========
+\section{Literature and Design Review}\label{sec:litreview}
+With your problem developed, you may now present, analyse and interpret external literature related to your project. 
+It is anticipated that all presented literature will assist in informing the overall and specific details of your design work --- if the literature does not inform your work, do not include that literature.
+
+\subsection{Example of Literature}\label{subsec:example}
+Your literature and design review may include:
+\begin{itemize}
+    \item Design reports from former RMIT FSAE teams and other Formula SAE teams
+    \item Technical reports
+    \item Key information from relevant textbooks
+    \item High quality journal or technical papers from reputable sources
+    \begin{itemize}
+        \item Do not review reports from low quality sources (e.g.\@ pay-to-publish academic journals).
+    \end{itemize}
+    \item Reviews of existing eminent --- or otherwise --- designs relevant to your project
+    \begin{itemize}
+        \item This can include social media posts and team or personal photography
+    \end{itemize}
+    \item Review of relevant production techniques, including materials, manufacturing process and off-the-shelf components.
+\end{itemize}
+
+\subsection{Interpretation}\label{subsec:interpretation}
+Do not simply present the literature. You are to rigorously review the literature in the context of your problem. 
+It is incumbent on you --- as the design engineer --- to interpret the literature and communicate the influence of that literature on your project. 
+This may include, and is definitively not limited to, the critical analysis of designs from other Formula vehicles, evaluation of the Overall Vehicle 
+Specification on your system or concise summaries of engineering science and theory pertaining to your system.
+
+% ========== CONCEPTUAL DESIGN ==========
+\section{Conceptual Design}\label{sec:conceptual}
+At this stage of the report, it should be clear what the requirements of your system are 
+(from System Specification section) and what the engineering context of your design problem is 
+(from the Literature and Design Review).
+
+Now you are to present and discuss the overall concept of your system. You must indicate how 
+the features of the concept intend to meet the targets of the system, in a general manner. 
+You may make use of appendices to communicate information or present figures which do not fit into the page limitations of the report.
+
+% ========== PROJECT MANAGEMENT ==========
+\section{Project Management}\label{sec:project}
+
+Your Project Management plan should consist of a definition of project deliverables, an analysis of required resources (which may include materials,
+knowledge and data from RMIT's FSAE teams) and a timeline (preferably Gantt Chart) for the project. Please ensure that the timeline is effectively 
+in visually communicating when you intend for events to occur.
+
+The focus of this section should be regarding the operation and completion of the design cycle.
+
+% ========== CONCLUSION ==========
+\section{Conclusion}\label{sec:conclusion}
+Summarise the outcomes of the report. Nominate any areas where particular progress or novel outcomes have been achieved.
+
+\end{document}

@@ -50,7 +50,7 @@ plt.semilogx(normalized_results, gain_results, linewidth=2, color='black')
 plt.xlabel('Normalized Frequency (f/f₀)', fontsize=12)
 plt.ylabel('Transfer Gain (M)', fontsize=12)
 plt.title(
-    f'Transfer Gain at L_r = {solver.ind_ratio:.3f} (Lr/Lm), Qe = {solver.quality_factor:.3f}', 
+    f'Transfer Gain at L_r = {solver.ind_ratio:.3f} (Lr/Lm), Qe = {solver.quality_factor:.3f}',
     fontsize=14
 )
 plt.grid(True, alpha=0.3)

@@ -25,6 +25,9 @@
     "figsize",
     "linestyle",
     "axhline",
-    "semilogx"
+    "semilogx",
+    "analyse",
+    "gantt",
+    "summarise"
   ]
 }
