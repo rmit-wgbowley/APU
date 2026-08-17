@@ -16,13 +16,11 @@ e01e37 - Bold crimson-red
 
 -->
 
-> [!WARNING]
-> **L0-L1 Phase**: This repository contains a work-in-progress design. 
-
 A `FSAE` vehicle has two main power levels, the `HV` power bus from the tractive battery and the `LV` power bus from a packaged lithium battery. For `r27`, it is intended to 
 decrease the capacity of the `LV` battery by using an isolated LLC resonant half-bridge DC/DC to step-down the `HV` bus to power the `LV` bus while the tractive battery is 
 connected and as such the `LV` battery becomes a energy buffer instead of being the main source during operation. This potentially allows for reductions in LV battery mass, 
 improved packaging and a power architecture similar to modern automotive EV systems.
+
 
 ### High level system topology
 
@@ -37,6 +35,10 @@ LV vehicle systems (12 V) (~200 W estimate)
 ```
 
 ## Documentation
+
+> [!WARNING]
+>
+> **L0-L1 Phase**: This repository contains a work-in-progress design. 
 
 All internal documentation can be found within this repo's [issues](https://github.com/rmit-wgbowley/LV-Isolated-Buck/issues).
 
