@@ -31,6 +31,8 @@
     "summarise",
     "zlabel",
     "griddata",
-    "litz"
+    "litz",
+    "Mosfets",
+    "Optocoupler"
   ]
 }

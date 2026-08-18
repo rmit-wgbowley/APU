@@ -26,7 +26,7 @@ It also moves the power architecture towards a more modern topology commonly see
 ```
 Traction battery (600 V)
          ↓
-Isolated LLC resonant half-bridge DC/DC (~300 W target)
+Isolated LLC resonant half-bridge DC/DC (~300 W target) (LLV-HVS, LLV-LVS)
          ↓
 LV battery buffer (12 V) (Energy Buffer) (Undecided Capacity) ← Charger (External Supply) (12 V)
          ↓
@@ -35,6 +35,41 @@ LV vehicle systems (12 V) (~200 W estimate)
 
 > [!important] 
 > The charger is included in the high-level topology as the LV battery is intended to be packaged inside the APU.
+
+## Implementation
+
+The design will be implemented as two independent boards, which are then mechanically and electrically 
+connected via the `high-frequency transformer`. 
+This reflects the natural system boundaries between the high and low voltage sides while also 
+improving the ability to perform sub-circuit testing.
+
+> [!important]
+> This high-level APU topology must be checked against the rules before detailed design begins.
+
+### High-level APU Topology
+
+```
+Interface (Undecided Connector) 
+LLV-HVS - Tractive battery input (600V domain) (Unknown Noise)
+-----------------------------------------------------------------
+EMI factor (Common-mode chokes) (Shunt Capacitors)
+        ↓
+Half Bridge Mosfets ← Half Bridge Driver IC ← LLC Controller ← Optocoupler
+        ↓
+Resonant Tank Circuit
+        ↓
+High Frequency Transformer (Primary)
+-----------------------------------------------------------------
+=============================================
+Ferrite Core (Magnetic & Structural Coupling)
+=============================================
+-----------------------------------------------------------------
+High Frequency Transformer (Secondary)
+        ↓
+Synchronous Rectifier → Status MCU (STM32) ← Optocoupler
+-----------------------------------------------------------------
+LVInterface (Undecided Connector) (12V Domain) (Unknown Ripple)
+```
 
 ## Documentation
 All internal documentation can be found within this repo's [issues](https://github.com/rmit-wgbowley/LV-Isolated-Buck/issues).
