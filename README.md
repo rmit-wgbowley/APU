@@ -35,11 +35,6 @@ LV vehicle systems (12 V) (~200 W estimate)
 ```
 
 ## Documentation
-
-> [!WARNING]
->
-> **L0-L1 Phase**: This repository contains a work-in-progress design. 
-
 All internal documentation can be found within this repo's [issues](https://github.com/rmit-wgbowley/LV-Isolated-Buck/issues).
 
 ### Tags
