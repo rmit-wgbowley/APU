@@ -80,10 +80,13 @@ for item in devices:
     print(item)
     print("-" * 80)
 
+
 # Calculates the power usage
 continuous_power = sum_continuous_current * NOMINAL_VOLTAGE
 peak_power = sum_peak_currents * NOMINAL_VOLTAGE
 
+
+FACTOR = 1.5
 print(f"Continuous Current: {sum_continuous_current:.3f}, Power: {continuous_power:.3f}")
 print(f"Peak Current: {sum_peak_currents:.3f}, Power: {peak_power:.3f}")
-print(f"1.5x Continuous Current: {continuous_power*1.5:.3f}")
+print(f"{FACTOR}x Continuous Power: {continuous_power*FACTOR:.3f}")

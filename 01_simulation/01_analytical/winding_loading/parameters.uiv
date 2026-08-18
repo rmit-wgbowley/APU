@@ -1,0 +1,23 @@
+[version]
+format: 0.1.0
+unit_frame: metric.ut
+
+[note]
+description: "Generates a 2D design tradeoff for Wire Diameter vs Current Density at target"
+application: "Quickly size transformer windings across a wire diameter and current densities"
+
+[numerics]
+current_density: 20 k(A/m^2)
+
+[design.target]
+power: 300 (W)
+
+[transformer]
+turns: 21
+
+[transformer.range]
+min_current_density: 2 M(A/m^2)
+max_current_density: 3 M(A/m^2)
+
+[load]
+nominal_voltage: 12 (V)

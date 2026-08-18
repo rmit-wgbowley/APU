@@ -16,7 +16,7 @@ min_voltage: 400 (V)
 
 
 [load]
-max_current: 20     (A)
+max_current: 25     (A)
 nominal_voltage: 12 (V)
 
 

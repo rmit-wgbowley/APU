@@ -28,6 +28,9 @@
     "semilogx",
     "analyse",
     "gantt",
-    "summarise"
+    "summarise",
+    "zlabel",
+    "griddata",
+    "litz"
   ]
 }
