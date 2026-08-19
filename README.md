@@ -63,12 +63,12 @@ High Frequency Transformer (Primary)
 =============================================
 Ferrite Core (Magnetic & Structural Coupling)
 =============================================
------------------------------------------------------------------
-High Frequency Transformer (Secondary)
         ↓
+LLV-LVS - High Frequency transformer (Secondary) (12V AC) (Unknown Noise)
+-----------------------------------------------------------------
 Synchronous Rectifier → Status MCU (STM32) ← Optocoupler
 -----------------------------------------------------------------
-LVInterface (Undecided Connector) (12V Domain) (Unknown Ripple)
+LV-Interface (Undecided Connector) (12V Domain) (Unknown Ripple)
 ```
 
 ## Documentation
@@ -81,5 +81,6 @@ L0 -> Review and analysis of reference designs
 L1 -> System level design, topology and interfaces
 L2 -> Detailed design & prototyping
 L3 -> Testing & Validation of prototype
-DS -> Descoped Feature, Descoped Analysis 
+DS -> De-scoped Feature, De-scoped Analysis
+AC -> Architectural Change
 ```
