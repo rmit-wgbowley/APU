@@ -79,6 +79,7 @@ All internal documentation can be found within this repo's [issues](https://gith
 LX -> Documentation and project structure
 L0 -> Review and analysis of reference designs
 L1 -> System level design, topology and interfaces
-L2 -> Detailed design, prototyping & testing
+L2 -> Detailed design & prototyping
+L3 -> Testing & Validation of prototype
 DS -> Descoped Feature, Descoped Analysis 
 ```
