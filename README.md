@@ -43,9 +43,6 @@ connected via the `high-frequency transformer`.
 This reflects the natural system boundaries between the high and low voltage sides while also 
 improving the ability to perform sub-circuit testing.
 
-> [!important]
-> This high-level APU topology must be checked against the rules before detailed design begins.
-
 ### High-level APU Topology
 
 ```
