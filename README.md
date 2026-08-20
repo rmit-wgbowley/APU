@@ -47,7 +47,7 @@ improving the ability to perform sub-circuit testing.
 
 ```
 Interface (Undecided Connector) 
-LLV-HVS - Tractive battery input (400-600V domain) (Unknown Noise)
+LLV-HVS - Tractive battery input (600V domain) (Unknown Noise)
 -----------------------------------------------------------------
 EMI factor (Common-mode chokes) (Shunt Capacitors)
         ↓
@@ -55,7 +55,7 @@ Half Bridge Mosfets ← Half Bridge Driver IC ← LLC Controller ← Optocoupler
         ↓
 Resonant Tank Circuit
 -----------------------------------------------------------------
-High Frequency Transformer (Primary)  (400-600 AC) (Unknown Noise)
+High Frequency Transformer (Primary)  (600 AC) (Unknown Noise)
 
 =============================================
 Ferrite Core (Magnetic & Structural Coupling)
@@ -64,6 +64,8 @@ Ferrite Core (Magnetic & Structural Coupling)
 LLV-LVS - High Frequency transformer (Secondary) (12V AC) (Unknown Noise)
 -----------------------------------------------------------------
 Synchronous Rectifier → Status MCU (STM32) ← Optocoupler
+        ↓
+Integrated battery buffer (12 V) (Energy Buffer) (Undecided Capacity) ← Galvanic isolation ← Charger (External Supply)
 -----------------------------------------------------------------
 LV-Interface (Undecided Connector) (12V Domain) (Unknown Ripple)
 ```
