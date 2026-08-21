@@ -65,7 +65,7 @@ LLV-LVS - High Frequency transformer (Secondary) (12V AC) (Unknown Noise)
 -----------------------------------------------------------------
 Synchronous Rectifier → Status MCU (STM32) ← Optocoupler
         ↓
-Integrated battery buffer (12 V) (Energy Buffer) (Undecided Capacity) ← Galvanic isolation ← Charger (External Supply)
+Integrated battery (12 V) (Undecided Capacity) ← Galvanic isolation ← Charger (External Supply)
 -----------------------------------------------------------------
 LV-Interface (Undecided Connector) (12V Domain) (Unknown Ripple)
 ```
