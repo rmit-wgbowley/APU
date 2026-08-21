@@ -6,6 +6,7 @@
 \usepackage{titlesec}
 \usepackage{tocloft}
 \usepackage{hyperref}
+\usepackage{fancyhdr}  % For headers and footers
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
@@ -16,36 +17,62 @@
 \titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
 \titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
 
+% Header and footer setup
+\pagestyle{fancy}
+\fancyhf{}  % Clear all headers and footers
+
+% Left header
+\fancyhead[L]{\textbf{Scope Review}}
+
+% Right header
+\fancyhead[R]{\textbf{LV Isolated DC/DC Converter}}
+
+% Page number in footer
+\fancyfoot[C]{\thepage}
+
+% Ensure the header appears on all pages, including the first
+\thispagestyle{fancy}
+
 \begin{document}
 
 % Title Page
 \begin{center}
-    {\huge \textbf{Auxiliary Power Unit (DC/DC)}} \\[0.3cm]
+    {\huge \textbf{LV Isolated DC/DC Converter}} \\[0.3cm]
     {\large AUTO1931 --- Scope Report} \\[0.2cm]
-    {\today}
+    {\today}\\[0.5cm]
+
+    {\large William Bowley}
     \vfill
 \end{center}
 
 % Foreword
 \section*{Foreword}
 \addcontentsline{toc}{section}{Foreword}
-This document is to serve as a template for all AUTO1931 reports. Please make use of the useful features and formatting found in the document, including the Contents page.
-
+This scope report establishes the architectural design of the Isolated DC/DC converter and defines the implementation boundaries of the system. It is presented as a series of 
+conceptual steps: from system decomposition and requirement discovery, through the understanding and modeling of a selected topology, to the conceptual design that emerged from
+that process. The document concludes with project management considerations and general conclusions prior to implementation.
 
 % Table of Contents
 \tableofcontents
-
 \newpage
 
 % ========== BACKGROUND ==========
 \section{Background}\label{sec:background}
-Provide a general report introduction. Describe your component and how it integrates into, and functions as part of, the vehicle.
+An isolated DC/DC converter is a component within the tractive and low-voltage grounded (LVG) system. Its purpose is to convert the tractive battery voltage (approximately 500–600 V) 
+to a regulated 12 V with minimal ripple, while maintaining galvanic isolation. This component also charges the LVG battery, which serves as an energy buffer and provides standby power when
+ the tractive battery is removed from the vehicle.
 
-\subsection{Importance of engagement}\label{subsec:importance}
-Introduce your system and communicate the importance of its development. Ensure that you demonstrate the importance of your work now. 
-If you lose the reader at this point, you will struggle to keep them engaged throughout the document.
+\vspace{0.5cm}
 
-% ========== SYSTEM SPECIFICATION ==========\section{System Specification}\label{sec:specification}
+The DC/DC converter removes the constraint of LVG battery capacity, improving endurance while potentially reducing packaging. Furthermore, according to Archer et al. (2024b), 
+it eliminates challenges associated with separate charging arrangements. This system also potentially enables future expansion of the LVG system to support actuators for driverless use cases.
+
+% ========== SYSTEM SPECIFICATION ==========
+\section{System Specification}\label{sec:specification}
+
+
+
+
 Here, you are to specify what your system is, the targets of this system and identify the major system design constraints. 
 This section is to serve as the effective Problem Statement for your project. As such, it must be clear and obvious what the objectives of your system are.
 
