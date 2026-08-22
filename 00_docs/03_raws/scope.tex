@@ -21,10 +21,10 @@
 
 % Header and footer setup
 \pagestyle{fancy}
-\fancyhf{}  % Clear all headers and footers
+\fancyhf{}
 
 % Left header
-\fancyhead[L]{\textbf{Scope Review}}
+\fancyhead[L]{\textbf{Project Scope}}
 
 % Right header
 \fancyhead[R]{\textbf{LVG-APU}}
@@ -32,25 +32,20 @@
 % Page number in footer
 \fancyfoot[C]{\thepage}
 
-% Ensure the header appears on all pages, including the first
-\thispagestyle{fancy}
-
 \begin{document}
 
 % Title Page
 \begin{center}
-    {\huge \textbf{Low Voltage Grounded Auxiliary Power Unit}} \\[0.3cm]
-    {\large AUTO1931 --- Scope Report} \\[0.2cm]
+    {\Large \textbf{Low Voltage Grounded Auxiliary Power Unit}} \\[0.3cm]
+    {\large AUTO1931 | Project Scope report} \\[0.2cm]
     {\today}\\[0.5cm]
-
-    {\large William Bowley}
-    \vfill
 \end{center}
 
+\vfill
 
-% ========== Overview ==========
-\section{Overview}
-\addcontentsline{toc}{section}{}
+% ========== Not so, Short overview ==========
+\section*{Overview}
+
 Formula SAE Electric (FSAE-E) vehicles have two main potential levels: one is the tractive system, which is up to 600 VDC, and the
 other is the low-voltage grounded (LVG) system, which is up to 60 VDC. RMIT Motorsports (RMIT-M) uses a 600 V tractive system and a 13.2 V LVG system.
 The tractive system is supplied by the tractive battery, which contains 143 lithium cells. Similarly, the LVG system is supplied by a lithium battery.
@@ -60,37 +55,68 @@ However, it is a commercial unit certified by the FAA for aircraft!?
 
 The low-voltage grounded auxiliary power unit (LVG-APU) is a proposed design to feed the LVG system from the tractive system while the tractive battery
 is installed in the vehicle. This APU would also have to be able to supply power while the tractive battery is disconnected from the vehicle, so it is
-also proposed that the LVG battery is scoped within the component. Hence the name ``auxiliary power unit,'' as it provides the power required (LVG battery)
+also proposed that the LVG battery is scoped within the component. Hence the name ``auxiliary power unit'', as it provides the power required (LVG battery)
 during setup to close the contactor (similar to cranking amps), which is required to power the isolated (split grounds) DC-to-DC converter.
 
 \vspace{0.5cm}
 
 Later, the LVG battery buffers the line voltage during heavy loading, reducing the converter's required power output range. This also allows for the
 implementation of isolated external power input for the LVG battery, which is proposed to be an IP-rated (ingress protection) USB-C input to remove the 
-dependency of another charging apparatus within the supporting equipment. This allows for a design with high self-reliance. At worst, it could be a USB-C laptop charger!
+dependency of another charging apparatus within the vehicle supporting equipment. This allows for a design with high self-reliance. At worst, it could be a USB-C laptop charger!
 
 \vspace{0.5cm}
 
 \begin{quote}
   \textbf{Supporting:}
     The impedance (L, R) between the LVG battery and the DC-to-DC converter is important due to the coupling (mutual influence) between them when supplying the 
-    line voltage across a wide range of power draws and rates of change of that draw. Hence the inclusion within the APU system boundary.
+    line voltage across a wide range of power draws and rates of change of that draw. Hence the inclusion.
 \end{quote}
 
 \newpage
 
-% ========== Table of Contents ==========
-\tableofcontents
+% ========== "My" System specifications ==========
+\section{System Specification}
 
+The APU, as an intermediate component between the tractive system and the low-voltage grounded (LVG) system, is designed from the interfaces inwards (within reason). Hence the first specification 
+is the input voltage range, which can be derived from the voltage cycle of a single lithium battery. The average rating is \~3.7 V, the maximum is \~4.2 V, and the minimum is \~3.0 V, with 
+approximately 143 cells within the tractive battery. The input voltage range is \~600--400 V, whereas the output, for simplicity, will be \~12 V.
 
-% ========== SYSTEM SPECIFICATION ==========
-\section{System Specification}\label{sec:specification}
+\vspace{0.5cm}
 
-Here, you are to specify what your system is, the targets of this system and identify the major system design constraints. 
-This section is to serve as the effective Problem Statement for your project. As such, it must be clear and obvious what the objectives of your system are.
+This leads into the power requirements, which is quite a complex question to answer in any capacity other than building and measuring the R27 LVG system. However, the R26 design can be used as a 
+reference for this. According to an approximate current draw diagram, the LVG system should draw 15.9 A continuously with a peak of 66 A (Appendix 1a). This translates to a power output range of 
+\~190--790 W.
 
-% ========== LITERATURE AND DESIGN REVIEW ==========
-\section{Literature and Design Review}\label{sec:litreview}
+\begin{quote}
+  \textbf{Supporting:} 
+  It should be noted that the exact technique used to approximate these values is unknown.
+\end{quote}
+
+The two topologies that were assessed were a flyback converter and an LLC converter. A flyback works by storing energy in the magnetic field of a transformer and then releasing it in pulses. This allows 
+for the output voltage to be controlled at a high level by the duration of the repeating ``on'' pulse (PWM). The LLC converter uses a switching configuration to generate a square wave, and then that wave enters 
+a resonant tank, which is simply a capacitor and inductor in series or parallel. This tank produces a sinusoidal wave and, like the flyback, has a transformer which then outputs the energy (at a high level). 
+Similarly to the flyback, the output voltage can be effectively controlled by a PWM signal.
+
+\vspace{0.5cm}
+
+From those two topologies, the main cornerstone for selecting one is the power output required rather than specifically implementation complexity. From this perspective, the LLC is preferable as it 
+often has better scaling capabilities since it is not storing the energy in pulses, the maximal output range can be much higher. The LLC also has two different methods of controlling the output, each of which 
+has different power ranges. This allows for more implementation options on top (half-bridge vs. full-bridge). Hence, the LLC topology was chosen.
+
+\vspace{0.5cm}
+
+Therefore, the LLC converter will need to be sized for the approximate nominal power draw and acceptable current density within the LLC transformer. Using a rule-of-thumb model (Appendix 1b) based on current density and wire diameter, 
+a series of graphs relating current density and wire diameter were generated. From that and the power range inherited by the R26 documentation and R\&D report about future driver integration (Appendix 1c), a 
+final requirement of 300 W was decided, as it should allow up to 33\% output buffer based on R26 continuous draw, while also not making the transformer impractical to design.
+
+\begin{quote}
+  \textbf{Rational:} 
+  At a current density (current per cross-sectional area) of $\sim 2.6 \, {A/mm}^2$ on the secondary with a ratio from an RMIT-M paper of 21:1, a bulk (solid) diameter of 3.5 mm is required, which is reasonable. 
+  It falls within the natural cooling range at 2.0--3.0 ${A/mm}^2$ and insulation class A, which is abundant.
+\end{quote}
+
+% ========== Wait it cannot just be me talking to myself!?  ==========
+\section{Literature and Design Review}
 With your problem developed, you may now present, analyse and interpret external literature related to your project. 
 It is anticipated that all presented literature will assist in informing the overall and specific details of your design work --- if the literature does not inform your work, do not include that literature.
 
