@@ -6,7 +6,9 @@
 \usepackage{titlesec}
 \usepackage{tocloft}
 \usepackage{hyperref}
-\usepackage{fancyhdr}  % For headers and footers
+\usepackage{fancyhdr}
+\usepackage{textcomp} 
+
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
@@ -45,26 +47,44 @@
     \vfill
 \end{center}
 
-% Table of Contents
-\tableofcontents
-\newpage
 
-% ========== BACKGROUND ==========
-\section{Background}\label{sec:background}
-An isolated DC/DC converter is a component within the tractive and low-voltage grounded (LVG) system. Its purpose is to convert the tractive battery voltage (approximately 500–600 V) 
-to a regulated 12 V with minimal ripple, while maintaining galvanic isolation. This component also charges the LVG battery, which serves as an energy buffer and provides standby power when
- the tractive battery is removed from the vehicle.
+% ========== Overview ==========
+\section{Overview}
+\addcontentsline{toc}{section}{}
+Formula SAE Electric (FSAE-E) vehicles have two main potential levels: one is the tractive system, which is up to 600 VDC, and the
+other is the low-voltage grounded (LVG) system, which is up to 60 VDC. RMIT Motorsports (RMIT-M) uses a 600 V tractive system and a 13.2 V LVG system.
+The tractive system is supplied by the tractive battery, which contains 143 lithium cells. Similarly, the LVG system is supplied by a lithium battery.
+However, it is a commercial unit certified by the FAA for aircraft!?
 
 \vspace{0.5cm}
 
-The DC/DC converter removes the constraint of LVG battery capacity, improving endurance while potentially reducing packaging. Furthermore, according to Archer et al. (2024b), 
-it eliminates challenges associated with separate charging arrangements. This system also potentially enables future expansion of the LVG system to support actuators for driverless use cases.
+The low-voltage grounded auxiliary power unit (LVG-APU) is a proposed design to feed the LVG system from the tractive system while the tractive battery
+is installed in the vehicle. This APU would also have to be able to supply power while the tractive battery is disconnected from the vehicle, so it is
+also proposed that the LVG battery is scoped within the component. Hence the name ``auxiliary power unit,'' as it provides the power required (LVG battery)
+during setup to close the contactor (similar to cranking amps), which is required to power the isolated (split grounds) DC-to-DC converter.
+
+\vspace{0.5cm}
+
+Later, the LVG battery buffers the line voltage during heavy loading, reducing the converter's required power output range. This also allows for the
+implementation of isolated external power input for the LVG battery, which is proposed to be an IP-rated (ingress protection) USB-C input to remove the 
+dependency of another charging apparatus within the supporting equipment. This allows for a design with high self-reliance. At worst, it could be a USB-C laptop charger!
+
+\vspace{0.5cm}
+
+\begin{quote}
+  \textbf{Supporting:}
+    The impedance (L, R) between the LVG battery and the DC-to-DC converter is important due to the coupling (mutual influence) between them when supplying the 
+    line voltage across a wide range of power draws and rates of change of that draw. Hence the inclusion within the APU system boundary.
+\end{quote}
+
+\newpage
+
+% ========== Table of Contents ==========
+\tableofcontents
+
 
 % ========== SYSTEM SPECIFICATION ==========
 \section{System Specification}\label{sec:specification}
-
-
-
 
 Here, you are to specify what your system is, the targets of this system and identify the major system design constraints. 
 This section is to serve as the effective Problem Statement for your project. As such, it must be clear and obvious what the objectives of your system are.
