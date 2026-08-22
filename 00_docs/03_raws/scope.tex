@@ -48,7 +48,7 @@
 
 % Title Page
 \begin{center}
-    {\Large \textbf{Low Voltage Grounded Auxiliary Power Unit}} \\[0.3cm]
+    {\Large \textbf{Low Voltage Grounded Auxiliary Power Unit (Draft)}} \\[0.3cm]
     {\large AUTO1931 | Project Scope report} \\[0.2cm]
     {\today}\\[0.5cm]
 \end{center}
@@ -155,7 +155,7 @@ LV vehicle systems (12 V) (200 W Estimate)
 
 \subsection{A Customised Low-voltage Power Supply for a Formula SAE Electric Racing Vehicle}
 
-This paper is relevant as it describes the design and implementation of a 240 W LLC converter for FSAE and was completed in 2024 by RMIT students for a capstone.
+This paper is relevant as it describes the design and implementation of a 240 W LLC converter for FSAE and was completed in 2024 by RMIT-m students for a capstone.
 This design implements the LLC converter as a single package consisting of five different boards following a modular approach. The switching method is a half-bridge
 and gate driver, which is then controlled by a resonant controller. The switches were 1200 V silicon carbide FETs, and the frequency range was 100--200 kHz with a
 21:1 turn ratio within the transformer and series capacitor. The output is then filtered by a synchronous rectifier.
@@ -176,7 +176,7 @@ is quite small at only 167 grams and has a volume of 0.208 L.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.4]{scope/liv_dc_dc_design.png}
+    \includegraphics[scale=0.3]{scope/liv_dc_dc_design.png}
     \caption{DCDC PCB design populated with components.}
 \end{figure}
 
@@ -184,34 +184,83 @@ According to the repo, the design features a solid-state precharge circuit, acti
 has over-current protection and, lastly, HV and LV fuses. The repo notes that the dynamic operating range is 90 to 200 kHz to `ensure high efficiency for various loads'
 and `good EMI compliance due to \ldots LLC the topology'
 
-
 \subsection{Interpretation}
-Do not simply present the literature. You are to rigorously review the literature in the context of your problem. 
-It is incumbent on you --- as the design engineer --- to interpret the literature and communicate the influence of that literature on your project. 
-This may include, and is definitively not limited to, the critical analysis of designs from other Formula vehicles, evaluation of the Overall Vehicle 
-Specification on your system or concise summaries of engineering science and theory pertaining to your system.
 
-% ========== CONCEPTUAL DESIGN ==========
-\section{Conceptual Design}\label{sec:conceptual}
-At this stage of the report, it should be clear what the requirements of your system are 
-(from System Specification section) and what the engineering context of your design problem is 
-(from the Literature and Design Review).
+The two reviewed designs demonstrate that isolated LLC conversion is an established approach for high-voltage to low-voltage conversion. Both operate over an input 
+range overlapping with the 400--600 V requirement, while their power ratings of 240 W and 600 W provide precedent for the 300 W target.
 
-Now you are to present and discuss the overall concept of your system. You must indicate how 
-the features of the concept intend to meet the targets of the system, in a general manner. 
-You may make use of appendices to communicate information or present figures which do not fit into the page limitations of the report.
+\vspace{0.5cm}
 
-% ========== PROJECT MANAGEMENT ==========
-\section{Project Management}\label{sec:project}
+However, neither design directly establishes the proposed APU architecture. The reviewed systems seem to treat the DC/DC converter as the power-supply 
+component in abstract rather than as a coupled system. Therefore, these designs will be used as precedent for the LLC subsystem rather than as a complete implementation
+reference.
 
-Your Project Management plan should consist of a definition of project deliverables, an analysis of required resources (which may include materials,
-knowledge and data from RMIT's FSAE teams) and a timeline (preferably Gantt Chart) for the project. Please ensure that the timeline is effectively 
-in visually communicating when you intend for events to occur.
+\vspace{0.5cm}
 
-The focus of this section should be regarding the operation and completion of the design cycle.
+The 2024 RMIT-M paper will be the primary reference for the LLC converter design and implementation, as it shows the design methodology for designing the system using
+first harmonic approximation (FHA) and detailed transformer construction methods. The modular design approach is quite elegant from a testing perspective. Hence a similar
+approach will be adopted for this implementation.
 
-% ========== CONCLUSION ==========
-\section{Conclusion}\label{sec:conclusion}
-Summarise the outcomes of the report. Nominate any areas where particular progress or novel outcomes have been achieved.
+% ========== CONCEPTUAL DESIGN (FINALLY!!) ==========
+\section{Conceptual Design}
+
+The proposed design for the LVG-APU (APU) is to began with the LLC converter as two independent boards, which are then mechanically and electrically connected
+via the `high-frequency transformer'. This reflects the natural system boundaries between the high and low voltage sides while also improving the ability to perform
+sub-circuit testing following a similar approach to the 2024 RMIT-M paper.
+
+\vspace{0.5cm}
+
+\hbox{\large{High Level Topology:}}
+\begin{lstlisting}
+Interface (Undecided Connector) 
+LLV-HVS - Tractive battery input (400-600V domain) (Unknown EMI)
+-----------------------------------------------------------------
+EMI factor (Common-mode chokes) (Shunt Capacitors)
+        down
+Half Bridge Mosfets <- Half bridge Driver IC <- LLC Controller <- Optocoupler
+        down
+Resonant Tank Circuit
+-----------------------------------------------------------------
+High Frequency Transformer (Primary)  (600 AC) (Unknown Ripple)
+
+=============================================
+Ferrite Core (Magnetic & Structural Coupling)
+=============================================
+
+LLV-LVS - High Frequency transformer (Secondary) (12V AC) (Unknown Ripple)
+-----------------------------------------------------------------
+Synchronous Rectifier -> Status MCU (STM32) <- Optocoupler
+        down
+Integrated battery (12 V) (Undecided Capacity) <- Isolated Charger
+-----------------------------------------------------------------
+LV-Interface (Undecided Connector) (12V Domain) (Unknown EMI)
+\end{lstlisting}
+
+\vspace{0.5cm}
+This design follows the 2027 Formula SAE rules draft. It allows for a grounded low-voltage (GLV) system to operate independently of the tractive battery (EV.4.4.1). It also
+is galvanically isolated via magnetic coupling and optocouplers for signal routing (EV.7.5.1). It also avoids the same-board tractive system and GLV rule (EV.7.5.7) 
+with two independent boards; however, for the optocouplers on the LLC-HV board, the area will be clearly marked and have a clearance distance of 3.0 mm and a creepage distance under
+conformal coating of 4.0 mm when operating at 300--600 VDC.
+
+\vspace{0.5cm}
+The implementation plan is firstly to use planar finite element analysis to design the ferrite core transformer, and then design the LLC-HV board. The transformer will then be characterized,
+and an appropriate capacitor will be chosen. Then the LLC-HV board and transformer will be tested together with a dummy load. After that, the LLC-LV board will be made based on those testing
+results. The LLC-HV and LLC-LV boards will then be tested together and characterized, with the transient response depending in part on the capability of the APU-integrated battery. After which,
+the whole system will be packaged together as the LVG-APU and tested for EMI compliance, etc.
+
+\vspace{0.5cm}
+
+% ========== PROJECT MANAGEMENT (Ez stuff) ==========
+% \section{Project Management}
+
+% Your Project Management plan should consist of a definition of project deliverables, an analysis of required resources (which may include materials,
+% knowledge and data from RMIT's FSAE teams) and a timeline (preferably Gantt Chart) for the project. Please ensure that the timeline is effectively 
+% in visually communicating when you intend for events to occur.
+
+% The focus of this section should be regarding the operation and completion of the design cycle.
+
+% ========== CONCLUSION (finally..) ==========
+% \section{Conclusion}\label{sec:conclusion}
+% Summarise the outcomes of the report. Nominate any areas where particular progress or novel outcomes have been achieved.
 
 \end{document}
