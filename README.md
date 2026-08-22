@@ -18,17 +18,21 @@ e01e37 - Bold crimson-red
 A `600 V` to `12 V`, `300 W` isolated `LLC` converter for the FSAE low-voltage system. It is intended to be packaged with a `LV battery` for line 
 buffering and standby mode while the tractive battery is disconnected.
 
-This auxiliary power unit `(APU)` enables drive-less features in future vehicle iterations, potentially reducing LV battery mass and improving packaging. 
-It also moves the power architecture towards a more modern topology commonly seen in industry EV systems.
+This low voltage grounded auxiliary power unit `(LVG-APU)` enables drive-less features in future vehicle iterations, 
+potentially reducing LV battery mass and improving packaging.
 
 ### High-level System Topology
 
 ```
 Traction battery (600 V)
          ↓
+LVG-APU Interface (Undecided Connector) 
+-----------------------------------------------------------------
 Isolated LLC resonant half-bridge DC/DC (~300 W target) (LLV-HVS, LLV-LVS)
          ↓
 LV battery buffer (12 V) (Energy Buffer) (Undecided Capacity) ← Charger (External Supply) (12 V)
+-----------------------------------------------------------------
+LVG-APU Interface (Undecided Connector) 
          ↓
 LV vehicle systems (12 V) (~200 W estimate)
 ```
@@ -51,7 +55,7 @@ LLV-HVS - Tractive battery input (600V domain) (Unknown Noise)
 -----------------------------------------------------------------
 EMI factor (Common-mode chokes) (Shunt Capacitors)
         ↓
-Half Bridge Mosfets ← Half Bridge Driver IC ← LLC Controller ← Optocoupler
+Half or Full Bridge Mosfets ← Half or Full bridge Driver IC ← LLC Controller ← Optocoupler
         ↓
 Resonant Tank Circuit
 -----------------------------------------------------------------
