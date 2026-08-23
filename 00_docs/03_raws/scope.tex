@@ -38,7 +38,6 @@
 % Left header
 \fancyhead[L]{\textbf{Project Scope}}
 
-
 % Right header
 \fancyhead[R]{\textbf{LVG-APU}}
 
@@ -50,25 +49,25 @@
 % Title Page
 \begin{center}
     {\Large \textbf{Low Voltage Grounded Auxiliary Power Unit (Draft)}} \\[0.3cm]
-    {\large AUTO1931 | Project Scope report} \\[0.2cm]
+    {\large AUTO1931 | Project Scope Report} \\[0.2cm]
     {\today}\\[0.5cm]
 \end{center}
 
 \vfill
 
-% ========== Not so, Short overview ==========
+% ========== Overview ==========
 \section*{Overview}
 
-Formula SAE Electric (FSAE-E) vehicles have two main potential levels: one is the tractive system, which is up to 600 VDC, and the
+Formula SAE Electric (FSAE-E) vehicles have two main voltage levels: one is the tractive system, which is up to 600 VDC, and the
 other is the low-voltage grounded (LVG) system, which is up to 60 VDC. RMIT Motorsports (RMIT-M) uses a 600 V tractive system and a 13.2 V LVG system.
 The tractive system is supplied by the tractive battery, which contains 143 lithium cells. Similarly, the LVG system is supplied by a lithium battery.
-However, it is a commercial unit certified by the FAA for aircraft!?
+However, it is a commercial unit certified by the FAA for aircraft.
 
 \vspace{0.5cm}
 
-The low-voltage grounded auxiliary power unit (LVG-APU) is a proposed design to feed the LVG system from the tractive system while the tractive battery
+The low-voltage grounded auxiliary power unit (APU) is a proposed design to feed the LVG system from the tractive system while the tractive battery
 is installed in the vehicle. This APU would also have to be able to supply power while the tractive battery is disconnected from the vehicle, so it is
-also proposed that the LVG battery is scoped within the component. Hence the name ``auxiliary power unit'', as it provides the power required (LVG battery)
+also proposed that the LVG battery is scoped within the component. Hence the name ``auxiliary power unit,'' as it provides the power required (LVG battery)
 during setup to close the contactor (similar to cranking amps), which is required to power the isolated (split grounds) DC-to-DC converter.
 
 \vspace{0.5cm}
@@ -87,10 +86,10 @@ dependency of another charging apparatus within the vehicle supporting equipment
 
 \newpage
 
-% ========== "My" System specifications ==========
+% ========== System Specifications ==========
 \section{System Specification}
 
-The APU, as an intermediate component between the tractive system and the low-voltage grounded (LVG) system, is designed from the interfaces inwards (within reason). Hence the first specification 
+The APU, as an intermediate component between the tractive system and the LVG system, is designed from the interfaces inwards (within reason). Hence the first specification 
 is the input voltage range, which can be derived from the voltage cycle of a single lithium battery. The average rating is \~3.7 V, the maximum is \~4.2 V, and the minimum is \~3.0 V, with 
 approximately 143 cells within the tractive battery. The input voltage range is \~600--400 V, whereas the output, for simplicity, will be \~12 V.
 
@@ -102,7 +101,7 @@ reference for this. According to an approximate current draw diagram, the LVG sy
 
 \begin{quote}
   \textbf{Supporting:} 
-  It should be noted that the exact technique used to approximate these values is unknown. And a few items are poorly defined.
+  It should be noted that the exact technique used to approximate these values is unknown, and a few items are poorly defined.
 \end{quote}
 
 The two topologies that were assessed were a flyback converter and an LLC converter. A flyback works by storing energy in the magnetic field of a transformer and then releasing it in pulses. This allows 
@@ -119,31 +118,31 @@ This allows for more implementation options on top (half-bridge vs. full-bridge)
 \vspace{0.5cm}
 
 Therefore, the LLC converter will need to be sized for the approximate nominal power draw and acceptable current density within the LLC transformer. Using a rule-of-thumb model (Appendix 1b) based on current density and 
-wire diameter,  a series of graphs relating current density and wire diameter were generated. From that and the power range inherited by the R26 documentation and R\&D report about future driverless integration (Appendix 1c), a 
+wire diameter, a series of graphs relating current density and wire diameter were generated. From that and the power range inherited by the R26 documentation and R\&D report about future driverless integration, a 
 final requirement of 300 W was decided. It should allow up to 33\% output buffer based on R26 continuous draw, while also not making the transformer impractical to design.
 
 \begin{quote}
-  \textbf{Rational:} 
+  \textbf{Rationale:} 
   At a current density (current per cross-sectional area) of $\sim 2.6 \, {A/mm}^2$ on the secondary with a ratio from an RMIT-M paper of 21:1, a bulk (solid) diameter of 3.5 mm is required, which is reasonable. 
   It falls within the natural cooling range at 2.0--3.0 ${A/mm}^2$ and insulation class A, which is abundant.
 \end{quote}
 
-% ========== Wait it cannot just be me talking to myself!?  ==========
+% ========== Literature and Design Review ==========
 \section{Literature and Design Review}
 
-The search performed during this scoping phase did not identify the LVG-APU (APU) as an established discrete system architecture. Therefore, the review focuses on the isolated
-LLC converter (LLC), which forms the centre of gravity of the proposed architecture.
+The search performed during this scoping phase did not identify the APU as an established discrete system architecture. Therefore, the review focuses on the isolated
+LLC converter, which forms the centre of gravity of the proposed architecture.
 
 \begin{lstlisting}
 Traction battery (600 V)
         down
-LVG-APU Interface (Undecided Connector) 
+LVG-APU Input Interface
 -----------------------------------------------------------------
 Isolated LLC resonant DC/DC (300 W Target) <- (We're Here)
         down
 LV battery buffer (Energy Buffer) <- Isolated Charger (External Input)
 -----------------------------------------------------------------
-LVG-APU Interface (Undecided Connector) 
+LVG-APU Output Interface
         down
 LV vehicle systems (12 V) (200 W Estimate)
 \end{lstlisting}
@@ -156,7 +155,7 @@ LV vehicle systems (12 V) (200 W Estimate)
 
 \subsection{A Customised Low-voltage Power Supply for a Formula SAE Electric Racing Vehicle}
 
-This paper is relevant as it describes the design and implementation of a 240 W LLC converter for FSAE and was completed in 2024 by RMIT-m students for a capstone.
+This paper is relevant as it describes the design and implementation of a 240 W LLC converter for FSAE and was completed in 2024 by RMIT-M students for a capstone.
 This design implements the LLC converter as a single package consisting of five different boards following a modular approach. The switching method is a half-bridge
 and gate driver, which is then controlled by a resonant controller. The switches were 1200 V silicon carbide FETs, and the frequency range was 100--200 kHz with a
 21:1 turn ratio within the transformer and series capacitor. The output is then filtered by a synchronous rectifier.
@@ -167,8 +166,7 @@ and gate driver, which is then controlled by a resonant controller. The switches
     \caption{Block diagram of the LLC converter from the paper}
 \end{figure}
 
-
-\subsection{DCDC: An open source credit card sized DC/DC converter to convert up to 600 V to 24 V in an energy-, cost- and space-efficient way.}
+\subsection{DCDC: An open source credit card sized DC/DC converter to convert up to 600 V to 24 V in an energy-, cost- and space-efficient way}
 
 This repository (repo) contains a high-voltage DC/DC converter designed for the FSAE German competition and, according to the repo, passed 
 scrutineering twice and has been operating without issues for over 6 months. The maximum output power is 750 W for 60 seconds and 500 W continuous. The
@@ -178,12 +176,12 @@ is quite small at only 167 grams and has a volume of 0.208 L.
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.3]{scope/liv_dc_dc_design.png}
-    \caption{DCDC PCB design populated with components.}
+    \caption{DC/DC PCB design populated with components}
 \end{figure}
 
 According to the repo, the design features a solid-state precharge circuit, active rectification, and under- and over-voltage protection. It also
-has over-current protection and, lastly, HV and LV fuses. The repo notes that the dynamic operating range is 90 to 200 kHz to `ensure high efficiency for various loads'
-and `good EMI compliance due to \ldots LLC the topology'
+has over-current protection and, lastly, HV and LV fuses. The repo notes that the dynamic operating range is 90 to 200 kHz to ``ensure high efficiency for various loads''
+and ``good EMI compliance due to \ldots LLC topology.''
 
 \subsection{Interpretation}
 
@@ -199,14 +197,14 @@ reference.
 \vspace{0.5cm}
 
 The 2024 RMIT-M paper will be the primary reference for the LLC converter design and implementation, as it shows the design methodology for designing the system using
-first harmonic approximation (FHA) and detailed transformer construction methods. The modular design approach is quite elegant from a testing perspective. Hence a similar
-approach will be adopted for this implementation.
+first harmonic approximation (FHA) and detailed transformer construction methods. The modular design approach is quite elegant from a testing perspective. Hence, a similar approach
+will be adopted for this implementation.
 
-% ========== CONCEPTUAL DESIGN (FINALLY!!) ==========
+% ========== Conceptual Design ==========
 \section{Conceptual Design}
 
-The proposed design for the LVG-APU (APU) is to began with the LLC converter as two independent boards, which are then mechanically and electrically connected
-via the `high-frequency transformer'. This reflects the natural system boundaries between the high and low voltage sides while also improving the ability to perform
+The proposed design for the APU is to begin with the LLC converter as two independent boards, which are then mechanically and electrically connected
+via the high-frequency transformer. This reflects the natural system boundaries between the high and low voltage sides while also improving the ability to perform
 sub-circuit testing following a similar approach to the 2024 RMIT-M paper.
 
 \vspace{0.5cm}
@@ -214,21 +212,21 @@ sub-circuit testing following a similar approach to the 2024 RMIT-M paper.
 \hbox{\large{High Level Topology:}}
 \begin{lstlisting}
 Interface (Undecided Connector) 
-LLV-HVS - Tractive battery input (400-600V domain) (Unknown EMI)
+LLC-HV - Tractive battery input (400-600V domain) (Unknown EMI)
 -----------------------------------------------------------------
-EMI factor (Common-mode chokes) (Shunt Capacitors)
+EMI filter (Common-mode chokes) (Shunt Capacitors)
         down
 Half Bridge Mosfets <- Half bridge Driver IC <- LLC Controller <- Optocoupler
         down
 Resonant Tank Circuit
 -----------------------------------------------------------------
-High Frequency Transformer (Primary)  (600 AC) (Unknown Ripple)
+High Frequency Transformer (Primary) (400-600 HF AC)
 
 =============================================
 Ferrite Core (Magnetic & Structural Coupling)
 =============================================
 
-LLV-LVS - High Frequency transformer (Secondary) (12V AC) (Unknown Ripple)
+LLC-LV - High Frequency transformer (Secondary) (12V AC) (Unknown Ripple)
 -----------------------------------------------------------------
 Synchronous Rectifier -> Status MCU (STM32) <- Optocoupler
         down
@@ -238,41 +236,105 @@ LV-Interface (Undecided Connector) (12V Domain) (Unknown EMI)
 \end{lstlisting}
 
 \vspace{0.5cm}
-This design follows the 2027 Formula SAE rules draft. It allows for a grounded low-voltage (GLV) system to operate independently of the tractive battery (EV.4.4.1). It also
+
+This design follows the 2027 Formula SAE rules draft. It allows for a GLV system to operate independently of the tractive battery (EV.4.4.1). It also
 is galvanically isolated via magnetic coupling and optocouplers for signal routing (EV.7.5.1). It also avoids the same-board tractive system and GLV rule (EV.7.5.7) 
 with two independent boards; however, for the optocouplers on the LLC-HV board, the area will be clearly marked and have a clearance distance of 3.0 mm and a creepage distance under
 conformal coating of 4.0 mm when operating at 300--600 VDC.
 
 \vspace{0.5cm}
+
 The implementation plan is firstly to use planar finite element analysis to design the ferrite core transformer, and then design the LLC-HV board. The transformer will then be characterized,
 and an appropriate capacitor will be chosen. Then the LLC-HV board and transformer will be tested together with a dummy load. After that, the LLC-LV board will be made based on those testing
-results. The LLC-HV and LLC-LV boards will then be tested together and characterized, with the transient response depending in part on the capability of the APU-integrated battery. After which,
+results. The LLC-HV and LLC-LV boards will then be tested together and characterized, with the transient response helping to determine the capability of the APU-integrated battery. After which,
 the whole system will be packaged together as the LVG-APU and tested for EMI compliance, etc.
 
 \vspace{0.5cm}
 
-%========== PROJECT MANAGEMENT (Ez stuff) ==========
+%========== Project Management ==========
 \section{Project Management}
 
-The project will follow the waterfall structure with each deliverable within the APU providing information for the next. The project deliverables consist
-of the LLC-HVS and LLC-LVS board. The transformer, LVG battery and finally the APU packaging around the whole system. Please reference the gantt Chart below
-to under the design cycle of the LVG-APU.
+The project will follow a waterfall-like project cycle, with each deliverable design leading into the next (within reason). The project deliverables consist of the LLC-HV and LLC-LV boards, the 
+transformer, the LVG battery, and finally the APU package around those components.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{scope/grantt_chart.png}
+    \caption{Gantt chart showing the project timeline and deliverables}
+\end{figure}
+
+\begin{quote}
+  \textbf{Rationale:} 
+  The deliverables overlap, as the design phase of each defines enough information to begin development of the next. Given the timeframe of this project, 
+  the execution has to be concurrent. The ``Ordering \& Testing \& Validation'' blocks are due to the transient nature of procurement and safety reviews.
+\end{quote}
 
 \vspace{0.5cm}
 
-As like the work done on for scoping this project, all engineering notes and related information can be found on the projects Github page.
+Similar to the project scope phase, the implementation work will be hosted on GitHub with code, documentation, and reference implementation within the repo.
+Engineering notes and design rationale will be within the repo issues. The repo follows the information scheme for issues (Appendix 2).
 
-
-% ========== CONCLUSION (finally..) ==========
+% ========== Conclusion ==========
 \section{Conclusion}
-The LVG-APU for the R27 vehicle will be a first iteration of a new power system within the vehicle. The design arises from the architectural requirements 
-of the LVG system. And the requirements formed arise from current implementation and reference designs described in the literature review area. The system consist of 5 deliverables:
-the LLC-HVS and LLC-LVS boards, the transformer, LVG battery and the APU packaging.
 
+The LVG-APU for the R27 vehicle will be a first iteration of a new power system within the vehicle. The design arises from the architectural requirements 
+of the LVG system, and the requirements formed arise from the current implementation and reference designs described in the literature review. The system consists of five deliverables:
+the LLC-HV and LLC-LV boards, the transformer, the LVG battery, and the APU packaging.
+
+% ========== References ==========
 \section{References}
 
+\begin{enumerate}
+    \item RMIT Motorsports, ``A Customised Low-voltage Power Supply for a Formula SAE Electric Racing Vehicle,'' Capstone Project, RMIT University, 2024.
+    \item RMIT Motorsports, ``Innovative Actuation Systems for a Driverless Formula SAE Racing Car,'' Capstone Project, RMIT University, 2021.
+    \item liv (rootthecause), ``DCDC: An open source credit card sized DC/DC converter to convert up to 600 V to 24 V in an energy-, cost- and space-efficient way,'' 
+    GitHub repository. Available: https://github.com/liv-instruments/dcdc
+    \item Formula SAE Rules, ``2027 Formula SAE Rules,'' SAE International, Draft, 2026.
+\end{enumerate}
 
-
+% ========== Appendices ==========
 \section{Appendices}
+
+\subsection{Appendix 1a: R26 LVG System Current Draw Estimation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.7]{scope/ref_approximate_current_draw.png}
+    \caption{R26 LVG System Current Estimation}
+\end{figure}
+
+\newpage
+
+\subsection{Appendix 1b: Current Density and Wire Diameter Model}
+
+\begin{lstlisting}
+# Calculate wire diameter across current density range at target power
+current_density = parameters.transformer.range.min_current_density
+while current_density <= parameters.transformer.range.max_current_density:
+    # Calculates the wire diameter based on target current & current density
+    inner_term = 4 * target_current / (pi * current_density)
+    secondary_wire_diameter = inner_term ** 0.5
+    primary_wire_diameter = secondary_wire_diameter / parameters.transformer.turns
+
+    # Saves parameters as raw values (kA/m^2, mm, mm)
+    current_density_axis.append(current_density.stripped * 10 ** -3)
+    primary_wire_diameter_axis.append(primary_wire_diameter.stripped * 10 ** 3)
+    secondary_wire_diameter_axis.append(secondary_wire_diameter.stripped * 10 ** 3)
+
+    # Updates current density for next iteration
+    current_density += parameters.numerics.current_density
+\end{lstlisting}
+
+\subsection{Appendix 2: GitHub Issue Labelling Scheme}
+
+\begin{lstlisting}
+LX -> Documentation and project structure
+L0 -> Review and analysis of reference designs
+L1 -> System level design, topology and interfaces
+L2 -> Detailed design & prototyping
+L3 -> Testing & Validation of prototype
+DS -> De-scoped Feature, De-scoped Analysis
+AC -> Architectural Change
+\end{lstlisting}
 
 \end{document}
