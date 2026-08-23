@@ -48,7 +48,7 @@
 
 % Title Page
 \begin{center}
-    {\Large \textbf{Low Voltage Grounded Auxiliary Power Unit (Draft)}} \\[0.3cm]
+    {\Large \textbf{Low Voltage Grounded Auxiliary Power Unit}} \\[0.3cm]
     {\large AUTO1931 | Project Scope Report} \\[0.2cm]
     {\today}\\[0.5cm]
 \end{center}
@@ -61,7 +61,7 @@
 Formula SAE Electric (FSAE-E) vehicles have two main voltage levels: one is the tractive system, which is up to 600 VDC, and the
 other is the low-voltage grounded (LVG) system, which is up to 60 VDC. RMIT Motorsports (RMIT-M) uses a 600 V tractive system and a 13.2 V LVG system.
 The tractive system is supplied by the tractive battery, which contains 143 lithium cells. Similarly, the LVG system is supplied by a lithium battery.
-However, it is a commercial unit certified by the FAA for aircraft.
+However, it is a commercial unit certified by the FAA for aircraft!?
 
 \vspace{0.5cm}
 
@@ -89,7 +89,7 @@ dependency of another charging apparatus within the vehicle supporting equipment
 % ========== System Specifications ==========
 \section{System Specification}
 
-The APU, as an intermediate component between the tractive system and the LVG system, is designed from the interfaces inwards (within reason). Hence the first specification 
+The APU as an intermediate component between the tractive system and the LVG system, is designed from the interfaces inwards (within reason). Hence the first specification 
 is the input voltage range, which can be derived from the voltage cycle of a single lithium battery. The average rating is \~3.7 V, the maximum is \~4.2 V, and the minimum is \~3.0 V, with 
 approximately 143 cells within the tractive battery. The input voltage range is \~600--400 V, whereas the output, for simplicity, will be \~12 V.
 
@@ -239,8 +239,8 @@ LV-Interface (Undecided Connector) (12V Domain) (Unknown EMI)
 
 This design follows the 2027 Formula SAE rules draft. It allows for a GLV system to operate independently of the tractive battery (EV.4.4.1). It also
 is galvanically isolated via magnetic coupling and optocouplers for signal routing (EV.7.5.1). It also avoids the same-board tractive system and GLV rule (EV.7.5.7) 
-with two independent boards; however, for the optocouplers on the LLC-HV board, the area will be clearly marked and have a clearance distance of 3.0 mm and a creepage distance under
-conformal coating of 4.0 mm when operating at 300--600 VDC.
+with two independent boards. However, for the optocouplers on the LLC-HV board, the area will be clearly marked and have a clearance distance of 3.0 mm and a creepage distance under
+conformal coating of 4.0 mm when operating at 300--600 VDC (EV 7.5.7).
 
 \vspace{0.5cm}
 
@@ -285,11 +285,11 @@ the LLC-HV and LLC-LV boards, the transformer, the LVG battery, and the APU pack
 \section{References}
 
 \begin{enumerate}
-    \item RMIT Motorsports, ``A Customised Low-voltage Power Supply for a Formula SAE Electric Racing Vehicle,'' Capstone Project, RMIT University, 2024.
-    \item RMIT Motorsports, ``Innovative Actuation Systems for a Driverless Formula SAE Racing Car,'' Capstone Project, RMIT University, 2021.
-    \item liv (rootthecause), ``DCDC: An open source credit card sized DC/DC converter to convert up to 600 V to 24 V in an energy-, cost- and space-efficient way,'' 
+    \item RMIT Motorsports, ``A Customised Low-voltage Power Supply for a Formula SAE Electric Racing Vehicle'', Capstone Project, RMIT University, 2024.
+    \item RMIT Motorsports, ``Innovative Actuation Systems for a Driverless Formula SAE Racing Car'', Capstone Project, RMIT University, 2021.
+    \item liv (rootthecause), ``DCDC: An open source credit card sized DC/DC converter to convert up to 600 V to 24 V in an energy-, cost- and space-efficient way'',
     GitHub repository. Available: https://github.com/liv-instruments/dcdc
-    \item Formula SAE Rules, ``2027 Formula SAE Rules,'' SAE International, Draft, 2026.
+    \item Formula SAE Rules, ``2027 Formula SAE Rules'', SAE International, Draft, 2026.
 \end{enumerate}
 
 % ========== Appendices ==========
