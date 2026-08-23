@@ -28,7 +28,7 @@ Traction battery (600 V)
          ↓
 LVG-APU Interface (Undecided Connector) 
 -----------------------------------------------------------------
-Isolated LLC resonant half-bridge DC/DC (~300 W target) (LLV-HVS, LLV-LVS)
+Isolated LLC resonant half-bridge DC/DC (~300 W target) (LLV-HS, LLV-LV)
          ↓
 LV battery buffer (12 V) (Energy Buffer) (Undecided Capacity) ← Charger (External Supply) (12 V)
 -----------------------------------------------------------------
@@ -43,35 +43,33 @@ LV vehicle systems (12 V) (~200 W estimate)
 ## Implementation
 
 The design will be implemented as two independent boards, which are then mechanically and electrically 
-connected via the `high-frequency transformer`. 
-This reflects the natural system boundaries between the high and low voltage sides while also 
-improving the ability to perform sub-circuit testing.
+connected via the `high-frequency transformer`. This reflects the natural system boundaries between the high and low voltage sides while also improving the ability to perform sub-circuit testing.
 
 ### High-level APU Topology
 
 ```
 Interface (Undecided Connector) 
-LLV-HVS - Tractive battery input (600V domain) (Unknown Noise)
+LLC-HV - Tractive battery input (400-600V domain) (Unknown EMI)
 -----------------------------------------------------------------
-EMI factor (Common-mode chokes) (Shunt Capacitors)
-        ↓
-Half or Full Bridge Mosfets ← Half or Full bridge Driver IC ← LLC Controller ← Optocoupler
-        ↓
+EMI filter (Common-mode chokes) (Shunt Capacitors)
+         ↓
+Half Bridge Mosfets <- Half bridge Driver IC <- LLC Controller <- Optocoupler
+         ↓
 Resonant Tank Circuit
 -----------------------------------------------------------------
-High Frequency Transformer (Primary)  (600 AC) (Unknown Noise)
+High Frequency Transformer (Primary) (400-600 HF AC)
 
 =============================================
 Ferrite Core (Magnetic & Structural Coupling)
 =============================================
 
-LLV-LVS - High Frequency transformer (Secondary) (12V AC) (Unknown Noise)
+LLC-LV - High Frequency transformer (Secondary) (12V AC) (Unknown Ripple)
 -----------------------------------------------------------------
-Synchronous Rectifier → Status MCU (STM32) ← Optocoupler
-        ↓
-Integrated battery (12 V) (Undecided Capacity) ← Galvanic isolation ← Charger (External Supply)
+Synchronous Rectifier -> Status MCU (STM32) <- Optocoupler
+         ↓
+Integrated battery (12 V) (Undecided Capacity) <- Isolated Charger
 -----------------------------------------------------------------
-LV-Interface (Undecided Connector) (12V Domain) (Unknown Ripple)
+LV-Interface (Undecided Connector) (12V Domain) (Unknown EMI)
 ```
 
 ## Documentation
