@@ -10,7 +10,7 @@ e01e37 - Bold crimson-red
   <br>
   <br>
   <em>
-    A proposed APU for FSAE-A vehicles 
+    A proposed low-voltage grounded APU for FSAE-A vehicles 
     <br>
     Engineered by 
     <a href="https://github.com/wgbowley">William Bowley</a>
