@@ -1,20 +1,32 @@
 [version]
-format: 0.1.0
-unit_frame: metric.ut
+format: 0.1.1
+unit_frame: derived.ut
+
+# --------------------------------------------------------------------
 
 [note]
 description: "Analytical Model for a Resonant Half Bridge Converter"
 application: "Graphs the transfer gain over changing input voltage"
 
+# --------------------------------------------------------------------
+
 [numerics]
 voltage_step: 1 (V)
+
+# ----------------------------
 
 [model]
 max_voltage: 600 (V)
 min_voltage: 400 (V)
 
+# ----------------------------
+
 [load]
 nominal_voltage: 12 (V)
 
+# ----------------------------
+
 [transformer]
 turns: 21
+
+# ----------------------------
