@@ -25,12 +25,14 @@ parameters = Parser.open(parameters_path, ROOT_DIR / "../derived.ut")
 solver = ModelSolver(parameters)
 solver.info()
 
+
 # Calculates the number of samples
 frequency_step = parameters.numerics.frequency_step
 frequency_sample_space = parameters.numerics.frequency_sample
 
 num_samples = int(frequency_sample_space/frequency_step)
 print(f"Sample Space: {frequency_sample_space}, Samples: {num_samples}")
+
 
 # Calculates the gain characteristic vs normalized frequency
 normalized_results = []
@@ -43,6 +45,7 @@ for index in range(0, num_samples):
     # Appends the resulting normalized frequency and gain, removed units
     normalized_results.append(normalized_frequency.stripped)
     gain_results.append(gain)
+
 
 # Plots the normalized frequency vs characteristic gain
 plt.figure(figsize=(10, 6))
@@ -66,6 +69,7 @@ peak_idx = gain_results.index(max(gain_results))
 f_at_gain_min = None
 f_at_gain_max = None
 
+
 for i in range(peak_idx, len(gain_results)):
     gain = gain_results[i]
 
@@ -80,6 +84,7 @@ for i in range(peak_idx, len(gain_results)):
     if f_at_gain_min and f_at_gain_max:
         # Breaks the loop if both are true
         break
+
 
 plt.axvline(f_at_gain_min, color='red', linestyle=':', label=f'Fn, max = ~{f_at_gain_min:.3f}')
 plt.axvline(f_at_gain_max, color='red', linestyle=':', label=f'Fn, min = ~{f_at_gain_max:.3f}')
