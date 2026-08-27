@@ -6,4 +6,6 @@
 *.fdb_latexmk
 *.aux
 *.toc
+*.ans
+
 00_docs/03_raws/scope.pdf

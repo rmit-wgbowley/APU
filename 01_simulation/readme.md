@@ -1,7 +1,7 @@
 ### Overview
 
-This folder contains the simulation workflows used within this project, including finite element analysis, analytical modelling, 
-and circuit-net (SPICE) simulations.
+This folder contains the simulation workflows used within this project, including finite element analysis, 
+analytical modelling, and circuit-net (SPICE) simulations.
 
 ---
 
@@ -9,12 +9,14 @@ and circuit-net (SPICE) simulations.
 
 This folder contains analytical models for exploring design variables and building system intuition at medium fidelity but extremely fast.
 
-For detailed simulation documentation, refer to [00_analytical/readme.md](00_analytical/readme.md).
+For detailed documentation, refer to [00_analytical/readme.md](00_analytical/readme.md).
 
 ---
 
-### 02_finite_element
+### 01_finite_element
 
-*(TBD) — Work in progress*
+This folder contains finite element models for exploring transformer design variables.
+
+For detailed documentation, refer to [01_finite_element/readme.md](01_finite_element/readme.md).
 
 ---
