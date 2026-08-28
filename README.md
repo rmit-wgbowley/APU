@@ -24,8 +24,6 @@ e01e37 - Bold crimson-red
 ![Power Electronics](https://img.shields.io/badge/Domain-Power_Electronics-e01e37?style=flat-square&logoColor=FFFFFF)
 ![LLC Resonant](https://img.shields.io/badge/Topology-LLC_Resonant%2FDC-FFFFFF?style=flat-square&logoColor=e01e37)
 
-
-> [!important]
 > This repository was done for the `FSAE` elective `(AUTO1931)` at RMIT between 20 July and 13 Nov, 2026.
 
 A proposed architecture to feed the low-voltage grounded `(LVG)` system using the tractive battery's `400–600 V` domain via an LLC 
