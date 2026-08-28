@@ -1,0 +1,26 @@
+[version]
+format: 0.1.1
+
+# -----------------------------------------------------------------------------------
+
+[note]
+application: "Characterizes the primary and secondary windings of the transformer"
+description: "Generate flux linkage vs current of the primary and secondary windings"
+
+# -----------------------------------------------------------------------------------
+
+[primary]
+steps: 25
+
+name: "Primary"
+current: [0, 500] m(A)
+
+# ----------------------
+
+[secondary]
+steps: 25
+
+name: "Secondary"
+current: [0, 25000] m(A)
+
+# ----------------------

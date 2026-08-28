@@ -403,13 +403,13 @@
 [CircuitProps]  = 2
   <BeginCircuit>
     <CircuitName> = "Primary"
-    <TotalAmps_re> = 0.5
+    <TotalAmps_re> = 0
     <TotalAmps_im> = 0
     <CircuitType> = 1
   <EndCircuit>
   <BeginCircuit>
     <CircuitName> = "Secondary"
-    <TotalAmps_re> = 0
+    <TotalAmps_re> = 25
     <TotalAmps_im> = 0
     <CircuitType> = 1
   <EndCircuit>

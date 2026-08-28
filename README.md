@@ -6,7 +6,7 @@ e01e37 - Bold crimson-red
 
 <p align="center">
   <em> (An appropriate header logo/image is under development) </em>
-  <!-- <img src="05_media/01_logos/logo.png" alt="OpenLSM" style="width:100%; max-width:100%; display:block;"> -->
+  <!-- <img src="" alt="" style="width:100%; max-width:100%; display:block;"> -->
   <br>
   <br>
   <em>
@@ -24,16 +24,15 @@ e01e37 - Bold crimson-red
 ![Power Electronics](https://img.shields.io/badge/Domain-Power_Electronics-e01e37?style=flat-square&logoColor=FFFFFF)
 ![LLC Resonant](https://img.shields.io/badge/Topology-LLC_Resonant%2FDC-FFFFFF?style=flat-square&logoColor=e01e37)
 
-<!--
+
 > [!important]
 > This repository was done for the `FSAE` elective `(AUTO1931)` at RMIT between 20 July and 13 Nov, 2026.
--->
 
-A proposed architecture to feed the low-voltage grounded (LVG) system using the tractive battery's `400–600 V` domain via an LLC 
+A proposed architecture to feed the low-voltage grounded `(LVG)` system using the tractive battery's `400–600 V` domain via an LLC 
 converter to step down the voltage to `12 V`, which feeds an LVG battery. The proposed implementation would be a `12 V`, `25 A` 
 isolated `LLC` converter with the LVG battery allowing for standby mode, absorbing line noise from the converter, and handling high load transients.
 
-This low-voltage grounded auxiliary power unit (LVG-APU) enables drive-less features in future vehicle iterations while potentially 
+This low-voltage grounded auxiliary power unit `(LVG-APU)` enables drive-less features in future vehicle iterations while potentially 
 reducing LVG battery mass and improving packaging. The component-level packaging also allows for long-term usage and reduces validation
 per iteration via the ability to black-box the solution.
 
@@ -70,7 +69,7 @@ EMI filter (Common-mode chokes) (Shunt Capacitors)
          ↓
 Half Bridge Mosfets <- Half bridge Driver IC <- LLC Controller <- Optocoupler
          ↓
-Resonant Tank Circuit
+Resonant Tank Circuit (Capacitor & External Inductor)
 -----------------------------------------------------------------
 High Frequency Transformer (Primary) (400-600 HF AC)
 

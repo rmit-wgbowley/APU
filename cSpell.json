@@ -2,7 +2,7 @@
   "version": "0.2",
   "language": "en-US",
   "ignorePaths": [
-    "**/*.{asc,lib,asy}"
+    "**/*.{asc,lib,asy,FEM,ANS,fem,ans}"
   ],
   "words": [
     "analyse",

@@ -5,14 +5,13 @@ unit_frame: derived.ut
 # --------------------------------------------------------------------
 
 [note]
+application: "Graphs the transfer gain over changing input voltage"
 description: "Analytical Model for a Resonant Half Bridge Converter"
-application: "Quality Factor & Transfer gain over normalized frequency"
 
 # --------------------------------------------------------------------
 
 [numerics]
-frequency_sample: 10 M(s^-1)
-frequency_step: 1000 (s^-1)
+voltage_step: 1 (V)
 
 # ----------------------------
 
@@ -23,19 +22,11 @@ min_voltage: 400 (V)
 # ----------------------------
 
 [load]
-max_current: 25     (A)
 nominal_voltage: 12 (V)
 
 # ----------------------------
 
 [transformer]
 turns: 21
-magnetising: 44.33      u(H)
-series_resonant: 14.56  u(H)
-
-# ----------------------------
-
-[capacitor]
-series_resonant: 91.5 n(F)
 
 # ----------------------------

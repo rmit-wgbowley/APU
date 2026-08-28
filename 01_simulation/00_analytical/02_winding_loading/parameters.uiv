@@ -5,8 +5,8 @@ unit_frame: derived.ut
 # -------------------------------------------------------------------------------------------
 
 [note]
-description: "Generates a 2D design tradeoff for Wire Diameter vs Current Density at target"
 application: "Quickly size transformer windings across a wire diameter and current densities"
+description: "Generates a 2D design tradeoff for Wire Diameter vs Current Density at target"
 
 # -------------------------------------------------------------------------------------------
 
