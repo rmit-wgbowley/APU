@@ -2,12 +2,26 @@
 Colors:
 FFFFFF - Pure white
 e01e37 - Bold crimson-red 
+
+Hello,
+I think this is/was (for future tense) a very fun
+project and I believe it's a good demonstration of my
+engineering skills outside of me just making a linear
+motor for example or some complex PCB at home. 
+
+I enjoyed working with others for once, and being able
+to have my own architecturally defined piece in the 
+car is pretty damn cool.
+
+- William Bowley, 2026-08-17
+
+P.S: 
+Thanks for downloading the APU repository `▽`ʃ♡ — but please be safe with high-voltage boards :)
+
 -->
 
 <p align="center">
-  <em> (An appropriate header logo/image is under development) </em>
-  <!-- <img src="" alt="" style="width:100%; max-width:100%; display:block;"> -->
-  <br>
+  <img src="05_media/00_logo/logo.png" alt="APU Logo" style="width:400px; max-width:100%; display:block;">
   <br>
   <em>
     A proposed low-voltage grounded APU for FSAE-A vehicles 
