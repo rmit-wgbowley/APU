@@ -70,9 +70,15 @@ Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Syste
 
 The transformer forms the magnetising inductance $L_m$, which provides galvanic isolation and sets the baseline voltage of the system.
 
+<div align="center">
+  <img src="./05_media/01_simulation/01_finite_element/FEMM_solution.png" alt="Planar transformer solution" style="max-width: 600px">
+  <br>
+  <em>Planar approximation using FEMM of Transformer |B| field</em>
+</div>
+
 #### Inductor
 
-> *(Dependency). The resonant inductor is dependent on on the implementation of the transformer.*
+> *(Dependency). The resonant inductor is dependent on the implementation of the transformer.*
 
 The inductor forms the series inductance $L_r$, which tunes the frequency response of the LLC circuit.
 
@@ -85,21 +91,21 @@ The inductor forms the series inductance $L_r$, which tunes the frequency respon
 #### Proposed Topology
 
 ```
-LLC-HVS - Tractive battery input (400-600V domain) (Unknown EMI)
+LLC-HVS — Tractive Battery Input (400–600 V Domain) (Unknown EMI)
 -----------------------------------------------------------------
-EMI filter (Common-mode chokes) (Shunt Capacitors)
+EMI Filter (Common-mode chokes) (Shunt Capacitors)
          ↓
-Half Bridge Mosfets ← Half bridge Driver IC ← LLC Controller ← HVS Optocoupler
+Half-Bridge MOSFETs ← Half-Bridge Driver IC ← LLC Controller ← HVS Optocoupler
          ↓
 Resonant Tank Circuit (Capacitor & Inductor)
 -----------------------------------------------------------------
-High Frequency Transformer (Primary) (400-600 HF AC)
+High-Frequency Transformer (Primary) (400-600 HF AC)
 
 =============================================
 Ferrite Core (Magnetic & Structural Coupling)
 =============================================
 
-LLC-LVS - High Frequency transformer (Secondary) (12V AC) (Unknown Ripple)
+LLC-LVS — High-Frequency Transformer (Secondary) (12 V AC)
 -----------------------------------------------------------------
 Synchronous Rectifier
         ↓
