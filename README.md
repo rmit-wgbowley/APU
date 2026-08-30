@@ -101,7 +101,7 @@ LLC-HVS — Tractive Battery Input (400–600 V Domain) (Unknown EMI)
 -----------------------------------------------------------------
 EMI Filter (Common-mode chokes) (Shunt Capacitors)
          ↓
-Half-Bridge MOSFETs ← Half-Bridge Driver IC ← LLC Controller ← LLC-HVS Optocoupler
+Half-Bridge MOSFETs ← Half-Bridge Driver IC ← LLC Controller → LLC-HVS Optocoupler
          ↓
 Resonant Tank Circuit (Capacitor & Inductor)
 -----------------------------------------------------------------
