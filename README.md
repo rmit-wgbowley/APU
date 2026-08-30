@@ -51,7 +51,7 @@ Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Syste
 ### Objectives
 
 ```
-- Support a `600-400 V` input range from the tractive battery.
+- Support a `400-600 V` input range from the tractive battery.
 - Support up to `300 W` continuous loads on the APU and `800 W` peaks.
 - Reach an asymptote temperature under `70°C` with passive cooling.
 - Validate the APU architecture and generate performance curves.
