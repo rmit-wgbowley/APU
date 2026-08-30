@@ -44,8 +44,6 @@ The APU is a proposed low-voltage grounded (LVG) system that allows the tractive
 isolated LLC converter, effectively using the LVG battery as a line buffer. This has the secondary benefit of allowing standby mode while 
 the tractive battery is disconnected.
 
-#### High-level Topology
-
 ```
 Traction battery (600 V) → APU-LLC Converter (12 V) → APU-Battery (12 V) → LVG Systems (12 V)
 ```
