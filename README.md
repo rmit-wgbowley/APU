@@ -68,7 +68,9 @@ Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Syste
 
 > *(Work in progress). The resonant transformer is currently being designed and implemented.*
 
-The transformer forms the magnetising inductance $L_m$, which provides galvanic isolation and sets the baseline voltage of the system.
+The transformer forms the magnetising inductance $L_m$, which provides galvanic isolation and sets the baseline voltage of the system. 
+This specific implementation uses an `N87` core with a `glass fibre` coil former. The turns ratio is `21:1`, with litz wire used on both 
+the primary and secondary due to the ~100–200 kHz operating frequency.
 
 <div align="center">
   <img src="./05_media/01_simulation/01_finite_element/FEMM_solution.png" alt="Planar transformer solution" style="max-width: 600px">
@@ -84,7 +86,8 @@ See the [simulation notes](./01_simulation/readme.md) for implementation details
 
 > *(Dependency). The resonant inductor is dependent on the implementation of the transformer.*
 
-The inductor forms the series inductance $L_r$, which tunes the frequency response of the LLC circuit.
+The inductor forms the series inductance $L_r$, which allows for frequency response tuning. For this specific implementation, this inductor 
+enables less precise transformer design and manufacturing compared to combining $L_r$ into the transformer via leakage inductance.
 
 ---
 
