@@ -38,69 +38,123 @@ Thanks for downloading the APU repository `▽`ʃ♡ — but please be safe with
 ![Power Electronics](https://img.shields.io/badge/Domain-Power_Electronics-e01e37?style=flat-square&logoColor=FFFFFF)
 ![LLC Resonant](https://img.shields.io/badge/Topology-LLC_Resonant%2FDC-FFFFFF?style=flat-square&logoColor=e01e37)
 
-> This repository was done for the `FSAE` elective `(AUTO1931)` at RMIT between 20 July and 13 Nov, 2026.
+<!-- > This repository was done for the `FSAE` elective `(AUTO1931)` at RMIT between 20 July and 13 Nov, 2026. -->
 
-A proposed architecture to feed the low-voltage grounded `(LVG)` system using the tractive battery's `400–600 V` domain via an LLC 
-converter to step down the voltage to `12 V`, which feeds an LVG battery. The proposed implementation would be a `12 V`, `25 A` 
-isolated `LLC` converter with the LVG battery allowing for standby mode, absorbing line noise from the converter, and handling high load transients.
-
-This low-voltage grounded auxiliary power unit `(LVG-APU)` enables drive-less features in future vehicle iterations while potentially 
-reducing LVG battery mass and improving packaging. The component-level packaging also allows for long-term usage and reduces validation
-per iteration via the ability to black-box the solution.
-
-#### High-level System Topology
+The APU is a proposed low-voltage grounded (LVG) power architecture that allows the tractive battery, while connected, to feed the LVG system via an
+isolated LLC converter, effectively using the LVG battery as a line buffer. This has the secondary benefit of allowing standby mode 
+while the tractive battery is disconnected.
 
 ```
-Traction battery (600 V)
-         ↓
-LVG-APU Interface (Undecided Connector) (Unknown EMI / Ripple)
------------------------------------------------------------------
-Isolated LLC resonant half-bridge DC/DC (~300 W target) (LLV-HS, LLV-LV)
-         ↓
-LV battery buffer (12 V) (Energy Buffer) (Undecided Capacity) ← Charger (Isolated Supply) (Unknown Range)
------------------------------------------------------------------
-LVG-APU Interface (Undecided Connector) (Unknown EMI / Ripple)
-         ↓
-LV vehicle systems (12 V) (~200 W estimate)
+Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Systems (12 V)
 ```
+
+### Objectives
+
+```
+- Support a `400-600 V` input range from the tractive battery.
+- Support up to `300 W` continuous loads on the APU and `800 W` peaks.
+- Reach an asymptote temperature under `70°C` with passive cooling.
+- Validate the APU architecture and generate performance curves.
+- Pass the EMC/EMI requirements and pass the 2027 Formula SAE rules inspection.
+```
+
+> The project scoping document can be found within [00_docs](./00_docs/) or [directly](./00_docs/01_scope.pdf).
 
 ---
 
-### Implementation
+### Magnetic Passives
 
-The design will be implemented as two independent boards, which are then mechanically and electrically connected via the transformer. 
-This reflects the natural system boundaries between the high and low voltage sides while also improving the ability to perform sub-circuit testing.
+#### Transformer
 
-#### APU Topology
+> *(Work in progress). The resonant transformer is currently being designed and implemented.*
+
+The transformer forms the magnetising inductance $L_m$ and sets the baseline voltage of the system. This specific implementation uses an `N87` core with a 
+`glass fibre` coil former. The turns ratio is `21:1`, with litz wire used on both the primary and secondary due to the ~100–200 kHz operating frequency.
+
+<div align="center">
+  <img src="./05_media/01_simulation/01_finite_element/FEMM_solution.png" alt="Planar transformer solution" style="max-width: 600px">
+  <br>
+  <em>Planar approximation using FEMM of Transformer |B| field</em>
+</div>
+
+#### Inductor
+
+> *(Dependency). The resonant inductor is dependent on the implementation of the transformer.*
+
+The inductor forms the series inductance $L_r$, which allows for frequency response tuning. For this specific implementation, this inductor 
+enables less precise transformer design and manufacturing compared to combining $L_r$ into the transformer via leakage inductance.
+
+See the [simulation notes](./01_simulation/readme.md) for implementation details and other tooling. <br>
+See the [02_passives](./02_passives/readme.md) for implementation details.
+
+---
+
+### LLC-HVS & LLC-LVS Boards
+
+> *(Dependency). The LLC-HVS and LLC-LVS are dependent on the implementation of the magnetic passives.*
+
+#### Proposed Topology
 
 ```
-Interface (Undecided Connector) 
-LLC-HVS - Tractive battery input (400-600V domain) (Unknown EMI)
+LLC-HVS — Tractive Battery Input (400–600 V Domain) (Unknown EMI)
 -----------------------------------------------------------------
-EMI filter (Common-mode chokes) (Shunt Capacitors)
+EMI Filter (Common-mode chokes) (Shunt Capacitors)
          ↓
-Half Bridge Mosfets <- Half bridge Driver IC <- LLC Controller <- Optocoupler
+Half-Bridge MOSFETs ← Half-Bridge Driver IC ← LLC Controller → LLC-HVS Optocoupler
          ↓
-Resonant Tank Circuit (Capacitor & External Inductor)
+Resonant Tank Circuit (Capacitor & Inductor)
 -----------------------------------------------------------------
-High Frequency Transformer (Primary) (400-600 HF AC)
+High-Frequency Transformer (Primary) (400-600 HF AC)
 
 =============================================
 Ferrite Core (Magnetic & Structural Coupling)
 =============================================
 
-LLC-LVS - High Frequency transformer (Secondary) (12V AC) (Unknown Ripple)
+LLC-LVS — High-Frequency Transformer (Secondary) (12 V AC)
 -----------------------------------------------------------------
-Synchronous Rectifier -> Status MCU (STM32) <- Optocoupler
-         ↓
-Integrated battery (12 V) (Undecided Capacity) <- Isolated Charger
+Synchronous Rectifier
+        ↓
+Status MCU (STM32) ← LLC-HVS Optocoupler 
 -----------------------------------------------------------------
-LV-Interface (Undecided Connector) (12V Domain) (Unknown EMI)
 ```
+
+See the [03_boards](./03_boards/readme.md) for implementation details.
+
+---
+
+### APU Battery & External Charging Interface
+
+> *(Dependency). The APU battery is dependent on the implementation of the LLC-HVS and LLC-LVS.*
+
+#### Proposed Topology
+
+```
+APU-EBC (Isolated Supply) (Unknown Range) → APU-BI → APU-battery (12 V) (Undecided Capacity)
+```
+
+APU-EBC = Auxiliary Power Unit External Battery Charger. <br>
+APU-BI = Auxiliary Power Unit Battery Interface.
+
+See the [03_boards](./03_boards/readme.md) for implementation details.
+
+---
+
+### APU Packaging & Integration
+
+> *(Dependency). The APU packaging is dependent on all of the above.*
+
+#### Proposed Integration
+
+> *(Note). This is a very early conceptual integration.* <br>
+
+The proposed integration is to package the LLC converter above the APU battery, with the converter ultimately sitting next to 
+the APU-BI and APU-EBC boards, with a separation plane between the battery. That plane splits the APU into two sections: 
+the `electronics box` with EMI shielding and the `battery box` with appropriate containment systems.
 
 ---
 
 ### Documentation
+
 All internal documentation can be found within this repo's [issues](https://github.com/rmit-wgbowley/LV-Isolated-Buck/issues).
 
 #### Tags
@@ -113,7 +167,11 @@ L1 -> System level design, topology and interfaces
 L2 -> Detailed design & prototyping
 L3 -> Testing & Validation of prototype
 ----------------------------------------------------
+```
 
+<br>
+
+```
 Miscellaneous:
 ----------------------------------------------------
 DS -> De-scoped Feature, De-scoped Analysis
