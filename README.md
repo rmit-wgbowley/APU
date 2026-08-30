@@ -45,7 +45,7 @@ isolated LLC converter, effectively using the LVG battery as a line buffer. This
 the tractive battery is disconnected.
 
 ```
-Traction battery (600 V) → APU-LLC Converter (12 V) → APU-Battery (12 V) → LVG Systems (12 V)
+Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Systems (12 V)
 ```
 
 #### Objectives
