@@ -64,13 +64,13 @@ Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Syste
 
 #### Resonant Inductor & Transformer
 
-*(Work in progress). The resonant inductor and transformer are currently being designed and implemented.*
+> *(Work in progress). The resonant inductor and transformer are currently being designed and implemented.*
 
 ---
 
 #### LLC-HVS & LLC-LVS
 
-*(Work in progress). The LLC-HVS and LLC-LVS are dependent on the implementation of the custom passives.*
+> *(Work in progress). The LLC-HVS and LLC-LVS are dependent on the implementation of the custom passives.*
 
 ---
 
