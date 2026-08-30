@@ -76,6 +76,10 @@ The transformer forms the magnetising inductance $L_m$, which provides galvanic 
   <em>Planar approximation using FEMM of Transformer |B| field</em>
 </div>
 
+<br>
+
+See the [simulation notes](./01_simulation/readme.md) for implementation details and other tooling.
+
 #### Inductor
 
 > *(Dependency). The resonant inductor is dependent on the implementation of the transformer.*
