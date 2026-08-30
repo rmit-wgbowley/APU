@@ -119,6 +119,8 @@ Status MCU (STM32) ← LLC-HVS Optocoupler
 -----------------------------------------------------------------
 ```
 
+See the [03_boards](./03_boards/readme.md) for implementation details.
+
 ---
 
 ### APU Battery & External Charging Interface
@@ -133,6 +135,8 @@ APU-EBC (Isolated Supply) (Unknown Range) → APU-BI → APU-battery (12 V) (Und
 
 APU-EBC = Auxiliary Power Unit External Battery Charger. <br>
 APU-BI = Auxiliary Power Unit Battery Interface.
+
+See the [03_boards](./03_boards/readme.md) for implementation details.
 
 ---
 
