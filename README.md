@@ -40,9 +40,9 @@ Thanks for downloading the APU repository `▽`ʃ♡ — but please be safe with
 
 <!-- > This repository was done for the `FSAE` elective `(AUTO1931)` at RMIT between 20 July and 13 Nov, 2026. -->
 
-The APU is a proposed low-voltage grounded `(LVG)` system to allow the tractive battery while connected, to feed the LVG system a via
-an isolated `LLC converter` effectively using the LVG battery as a line buffer. This has the secondary benefit of allowing standby
-mode while the tractive battery is disconnected.
+The APU is a proposed low-voltage grounded (LVG) system that allows the tractive battery, while connected, to feed the LVG system via an 
+isolated `LLC converter`, effectively using the LVG battery as a line buffer. This has the secondary benefit of allowing standby mode while 
+the tractive battery is disconnected.
 
 #### Objectives
 
