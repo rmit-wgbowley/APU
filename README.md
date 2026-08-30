@@ -48,7 +48,7 @@ while the tractive battery is disconnected.
 Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Systems (12 V)
 ```
 
-#### Objectives
+### Objectives
 
 ```
 - Support a `600 V` to `400 V` input range from the tractive battery.
@@ -62,13 +62,21 @@ Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Syste
 
 ---
 
-#### Resonant Inductor & Transformer
+### Resonant Passives
 
 > *(Work in progress). The resonant inductor and transformer are currently being designed and implemented.*
 
+#### Inductor
+
+The inductor forms the series inductance $L_r$, which tunes the frequency response of the LLC circuit.
+
+#### Transformer
+
+The transformer forms the magnetising inductance $L_m$, which provides galvanic isolation and sets the baseline voltage of the system.
+
 ---
 
-#### LLC-HVS & LLC-LVS
+### LLC-HVS & LLC-LVS
 
 > *(Work in progress). The LLC-HVS and LLC-LVS are dependent on the implementation of the custom passives.*
 
