@@ -84,11 +84,8 @@ The transformer forms the magnetising inductance $L_m$ and sets the baseline vol
 The inductor forms the series inductance $L_r$, which allows for frequency response tuning. For this specific implementation, this inductor 
 enables less precise transformer design and manufacturing compared to combining $L_r$ into the transformer via leakage inductance.
 
-<br>
-
-See the [simulation notes](./01_simulation/readme.md) for implementation details and other tooling.
-See [02_passives](./02_passives/readme.md) for implementation details.
-
+See the [simulation notes](./01_simulation/readme.md) for implementation details and other tooling. <br>
+See the [02_passives](./02_passives/readme.md) for implementation details.
 
 ---
 
@@ -121,7 +118,7 @@ Status MCU (STM32) ← LLC-HVS Optocoupler
 -----------------------------------------------------------------
 ```
 
-See [03_boards](./03_boards/readme.md) for implementation details.
+See the [03_boards](./03_boards/readme.md) for implementation details.
 
 ---
 
@@ -138,7 +135,7 @@ APU-EBC (Isolated Supply) (Unknown Range) → APU-BI → APU-battery (12 V) (Und
 APU-EBC = Auxiliary Power Unit External Battery Charger. <br>
 APU-BI = Auxiliary Power Unit Battery Interface.
 
-See [03_boards](./03_boards/readme.md) for implementation details.
+See the [03_boards](./03_boards/readme.md) for implementation details.
 
 ---
 
