@@ -125,11 +125,28 @@ Status MCU (STM32) ← LLC-HVS Optocoupler
 
 > *(Dependency). The APU battery is dependent on the implementation of the LLC-HVS and LLC-LVS.*
 
+#### Proposed Topology
+
+```
+APU-EBC (Isolated Supply) (Unknown Range) → APU-BI (interface) → APU-battery (12 V) (Undecided Capacity)
+```
+
+> EBC = External Battery Charger & BI = Battery Interface.
+
 ---
 
 ### APU Packaging & Integration
 
 > *(Dependency). The APU packaging is dependent on all of the above systems.*
+
+#### Proposed Integration
+
+> [!NOTE]
+> This is a very early conceptual integration. Boundaries are likely to evolve given the number of dependencies.
+
+The proposed integration is to package the LLC converter above the APU battery, with the converter ultimately sitting next to 
+the APU-BI and APU-EBC boards, with a separation plane between the battery. That plane splits the APU into two sections: 
+the `electronics box` with EMI shielding and the `battery box` with appropriate containment systems.
 
 ---
 
