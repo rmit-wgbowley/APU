@@ -40,9 +40,9 @@ Thanks for downloading the APU repository `▽`ʃ♡ — but please be safe with
 
 <!-- > This repository was done for the `FSAE` elective `(AUTO1931)` at RMIT between 20 July and 13 Nov, 2026. -->
 
-The APU is a proposed low-voltage grounded (LVG) system that allows the tractive battery, while connected, to feed the LVG system via an 
-isolated LLC converter, effectively using the LVG battery as a line buffer. This has the secondary benefit of allowing standby mode while 
-the tractive battery is disconnected.
+The APU is a proposed low-voltage grounded (LVG) system that allows the tractive battery, while connected, to feed the LVG system via an
+isolated LLC converter, effectively using the LVG battery as a line buffer. This has the secondary benefit of allowing standby mode 
+while the tractive battery is disconnected.
 
 ```
 Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Systems (12 V)
@@ -51,16 +51,31 @@ Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Syste
 #### Objectives
 
 ```
-- Support a 600 V to 400 V input range from the tractive battery.
-- Support up to 300 W continuous loads on the APU and 800 W peaks.
-- Reach an asymptote temperature under 70°C with passive cooling.
+- Support a `600 V` to `400 V` input range from the tractive battery.
+- Support up to `300 W` continuous loads on the APU and `800 W` peaks.
+- Reach an asymptote temperature under `70°C` with passive cooling.
 - Validate the APU architecture and generate performance curves.
 - Pass the EMC/EMI requirements and pass the 2027 Formula SAE rules inspection.
 ```
 
+> The project scoping document can be found within [00_docs](./00_docs/) or [directly](./00_docs/01_scope.pdf).
+
+---
+
+#### Resonant Inductor & Transformer
+
+*(Work in progress). The resonant inductor and transformer are currently being designed and implemented.*
+
+---
+
+#### LLC-HVS & LLC-LVS
+
+*(Work in progress). The LLC-HVS and LLC-LVS are dependent on the implementation of the custom passives.*
+
 ---
 
 ### Documentation
+
 All internal documentation can be found within this repo's [issues](https://github.com/rmit-wgbowley/LV-Isolated-Buck/issues).
 
 #### Tags
