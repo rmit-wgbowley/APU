@@ -131,7 +131,7 @@ Status MCU (STM32) ← LLC-HVS Optocoupler
 APU-EBC (Isolated Supply) (Unknown Range) → APU-BI → APU-battery (12 V) (Undecided Capacity)
 ```
 
-EBC = External Battery Charger.
+EBC = External Battery Charger. <br>
 BI = Battery Interface.
 
 ---
