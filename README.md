@@ -82,12 +82,14 @@ The inductor forms the series inductance $L_r$, which tunes the frequency respon
 
 > *(Dependency). The LLC-HVS and LLC-LVS are dependent on the implementation of the resonant passives.*
 
+#### Proposed Topology
+
 ```
 LLC-HVS - Tractive battery input (400-600V domain) (Unknown EMI)
 -----------------------------------------------------------------
 EMI filter (Common-mode chokes) (Shunt Capacitors)
          ↓
-Half Bridge Mosfets <- Half bridge Driver IC <- LLC Controller <- Optocoupler
+Half Bridge Mosfets ← Half bridge Driver IC ← LLC Controller ← HVS Optocoupler
          ↓
 Resonant Tank Circuit (Capacitor & Inductor)
 -----------------------------------------------------------------
@@ -99,7 +101,9 @@ Ferrite Core (Magnetic & Structural Coupling)
 
 LLC-LVS - High Frequency transformer (Secondary) (12V AC) (Unknown Ripple)
 -----------------------------------------------------------------
-Synchronous Rectifier -> Status MCU (STM32) <- Optocoupler
+Synchronous Rectifier
+        ↓
+Status MCU (STM32) ← HVS Optocoupler 
 -----------------------------------------------------------------
 ```
 
