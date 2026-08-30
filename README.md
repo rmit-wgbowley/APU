@@ -137,7 +137,7 @@ APU-EBC (Isolated Supply) (Unknown Range) → APU-BI (interface) → APU-battery
 
 ### APU Packaging & Integration
 
-> *(Dependency). The APU packaging is dependent on all of the above systems.*
+> *(Dependency). The APU packaging is dependent on all of the above.*
 
 #### Proposed Integration
 
