@@ -141,8 +141,8 @@ APU-EBC (Isolated Supply) (Unknown Range) → APU-BI (interface) → APU-battery
 
 #### Proposed Integration
 
-> *(NOTE)*
-> This is a very early conceptual integration. Boundaries are likely to evolve given the number of dependencies.
+> *(NOTE). This is a very early conceptual integration.*
+> *Boundaries are likely to evolve given the number of dependencies.*
 
 The proposed integration is to package the LLC converter above the APU battery, with the converter ultimately sitting next to 
 the APU-BI and APU-EBC boards, with a separation plane between the battery. That plane splits the APU into two sections: 
