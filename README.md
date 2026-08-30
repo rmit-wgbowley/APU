@@ -161,11 +161,11 @@ All internal documentation can be found within this repo's [issues](https://gith
 ```
 Project Progress:
 ----------------------------------------------------
-LX -> Documentation and project structure
-L0 -> Review and analysis of reference designs
-L1 -> System level design, topology and interfaces
-L2 -> Detailed design & prototyping
-L3 -> Testing & Validation of prototype
+LX → Documentation and project structure
+L0 → Review and analysis of reference designs
+L1 → System level design, topology and interfaces
+L2 → Detailed design & prototyping
+L3 → Testing & Validation of prototype
 ----------------------------------------------------
 ```
 
@@ -174,8 +174,9 @@ L3 -> Testing & Validation of prototype
 ```
 Miscellaneous:
 ----------------------------------------------------
-DS -> De-scoped Feature, De-scoped Analysis
-AC -> Architectural Change
+DS → De-scoped Feature, De-scoped Analysis
+AC → Architectural Change
+AN → Weekly application note
 ----------------------------------------------------
 ```
 
