@@ -115,6 +115,18 @@ Status MCU (STM32) ← HVS Optocoupler
 
 ---
 
+### APU Battery & External Charging Interface
+
+> *(Dependency). The APU battery is dependent on the implementation of the LLC-HVS and LLC-LVS.*
+
+---
+
+### APU Packaging & Integration
+
+> *(Dependency). The APU packaging is dependent on all of the above systems.*
+
+---
+
 ### Documentation
 
 All internal documentation (design notes) can be found within this repo's [issues](https://github.com/rmit-wgbowley/LV-Isolated-Buck/issues).
