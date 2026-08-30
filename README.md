@@ -101,7 +101,7 @@ LLC-HVS — Tractive Battery Input (400–600 V Domain) (Unknown EMI)
 -----------------------------------------------------------------
 EMI Filter (Common-mode chokes) (Shunt Capacitors)
          ↓
-Half-Bridge MOSFETs ← Half-Bridge Driver IC ← LLC Controller ← HVS Optocoupler
+Half-Bridge MOSFETs ← Half-Bridge Driver IC ← LLC Controller ← LLC-HVS Optocoupler
          ↓
 Resonant Tank Circuit (Capacitor & Inductor)
 -----------------------------------------------------------------
@@ -115,7 +115,7 @@ LLC-LVS — High-Frequency Transformer (Secondary) (12 V AC)
 -----------------------------------------------------------------
 Synchronous Rectifier
         ↓
-Status MCU (STM32) ← HVS Optocoupler 
+Status MCU (STM32) ← LLC-HVS Optocoupler 
 -----------------------------------------------------------------
 ```
 
