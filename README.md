@@ -90,7 +90,7 @@ enables less precise transformer design and manufacturing compared to combining 
 
 ---
 
-### LLC-HVS & LLC-LVS
+### LLC-HVS & LLC-LVS Boards
 
 > *(Dependency). The LLC-HVS and LLC-LVS are dependent on the implementation of the magnetic passives.*
 
