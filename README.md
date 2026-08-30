@@ -151,7 +151,7 @@ the `electronics box` with EMI shielding and the `battery box` with appropriate 
 
 ### Documentation
 
-All internal documentation (design notes) can be found within this repo's [issues](https://github.com/rmit-wgbowley/LV-Isolated-Buck/issues).
+All internal documentation can be found within this repo's [issues](https://github.com/rmit-wgbowley/LV-Isolated-Buck/issues).
 
 #### Tags
 ```
