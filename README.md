@@ -62,7 +62,7 @@ Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Syste
 
 ---
 
-### Resonant Passives
+### Magnetic Passives
 
 #### Transformer
 
@@ -86,7 +86,7 @@ The inductor forms the series inductance $L_r$, which tunes the frequency respon
 
 ### LLC-HVS & LLC-LVS
 
-> *(Dependency). The LLC-HVS and LLC-LVS are dependent on the implementation of the resonant passives.*
+> *(Dependency). The LLC-HVS and LLC-LVS are dependent on the implementation of the magnetic passives.*
 
 #### Proposed Topology
 
