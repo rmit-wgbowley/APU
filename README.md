@@ -51,7 +51,7 @@ Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Syste
 ### Objectives
 
 ```
-- Support a `600 V` to `400 V` input range from the tractive battery.
+- Support a `600-400 V` input range from the tractive battery.
 - Support up to `300 W` continuous loads on the APU and `800 W` peaks.
 - Reach an asymptote temperature under `70°C` with passive cooling.
 - Validate the APU architecture and generate performance curves.
@@ -68,9 +68,8 @@ Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Syste
 
 > *(Work in progress). The resonant transformer is currently being designed and implemented.*
 
-The transformer forms the magnetising inductance $L_m$, which provides galvanic isolation and sets the baseline voltage of the system. 
-This specific implementation uses an `N87` core with a `glass fibre` coil former. The turns ratio is `21:1`, with litz wire used on both 
-the primary and secondary due to the ~100–200 kHz operating frequency.
+The transformer forms the magnetising inductance $L_m$ and sets the baseline voltage of the system. This specific implementation uses an `N87` core with a 
+`glass fibre` coil former. The turns ratio is `21:1`, with litz wire used on both the primary and secondary due to the ~100–200 kHz operating frequency.
 
 <div align="center">
   <img src="./05_media/01_simulation/01_finite_element/FEMM_solution.png" alt="Planar transformer solution" style="max-width: 600px">
