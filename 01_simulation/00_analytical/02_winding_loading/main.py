@@ -45,10 +45,10 @@ while current_density <= parameters.transformer.range.max_current_density:
     secondary_wire_diameter = inner_term ** 0.5
     primary_wire_diameter = secondary_wire_diameter / parameters.transformer.turns
 
-    # Saves parameters as raw values (kA/m^2, mm, mm)
-    current_density_axis.append(current_density.stripped * 10 ** -3)
-    primary_wire_diameter_axis.append(primary_wire_diameter.stripped * 10 ** 3)
-    secondary_wire_diameter_axis.append(secondary_wire_diameter.stripped * 10 ** 3)
+    # Saves iteration qualities
+    current_density_axis.append(current_density)
+    primary_wire_diameter_axis.append(primary_wire_diameter)
+    secondary_wire_diameter_axis.append(secondary_wire_diameter)
 
     # Updates current density for next iteration
     current_density += parameters.numerics.current_density
@@ -59,8 +59,8 @@ fig, ax = plt.subplots()
 ax.plot(current_density_axis, secondary_wire_diameter_axis,linewidth=2, color='black', label='Secondary')
 ax.plot(current_density_axis, primary_wire_diameter_axis, linewidth=2, color='red', label='Primary')
 
-ax.set_xlabel('Current Density k(A/m²)')
-ax.set_ylabel('Wire Diameter (mm)')
+ax.set_xlabel('Current Density (A/m²)')
+ax.set_ylabel('Wire Diameter (m)')
 ax.set_title(f'Wire Diameter vs Current Density at {target_power.stripped} (W)')
 ax.legend()
 ax.grid(True, linestyle='--', alpha=0.7)

@@ -34,7 +34,7 @@ class ModelSolver:
         self.equivalent_load_resistance = term / denom
         self.quality_factor = self.char_imp / self.equivalent_load_resistance
 
-    def gain_characteristic(self, normalized_frequency: Q) -> float:
+    def gain_characteristic(self, normalized_frequency: Q) -> Q:
         """ Computes the transfer gain characteristic at a normalized frequency """
         normalized_frequency = validate(normalized_frequency, NULLSET)
 
@@ -44,14 +44,14 @@ class ModelSolver:
         term1 = (1 + self.ind_ratio - self.ind_ratio / normalized_frequency **2 ) ** 2
         term2 = self.quality_factor ** 2 * (normalized_frequency - 1 / normalized_frequency) ** 2
 
-        return 1 / (term1 + term2) ** 0.5
+        return 1 / (term1 + term2) ** 0.5 * NULLSET
 
-    def gain_range(self) -> tuple[float, float]:
+    def gain_range(self) -> tuple[Q, Q]:
         """ Calculates the required gain range based off max and min voltages """
         m_min = 2 * self.turns * self.load_nominal_voltage / self.max_voltage
         m_max = 2 * self.turns * self.load_nominal_voltage / self.min_voltage
 
-        return (m_min, m_max)
+        return (m_min, m_max) * NULLSET
 
     def _extract_validate(self, parameters: DynamicLoader) -> None:
         """ Extracts qualities from attribute tree and validates units """

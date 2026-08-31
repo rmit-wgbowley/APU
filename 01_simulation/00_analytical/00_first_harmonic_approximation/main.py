@@ -43,19 +43,16 @@ for index in range(0, num_samples):
     gain = solver.gain_characteristic(normalized_frequency)
 
     # Appends the resulting normalized frequency and gain, removed units
-    normalized_results.append(normalized_frequency.stripped)
+    normalized_results.append(normalized_frequency)
     gain_results.append(gain)
 
 
 # Plots the normalized frequency vs characteristic gain
 plt.figure(figsize=(10, 6))
 plt.semilogx(normalized_results, gain_results, linewidth=2, color='black')
-plt.xlabel('Normalized Frequency (f/f₀)', fontsize=12)
+plt.xlabel('Normalized Frequency (f/f_o)', fontsize=12)
 plt.ylabel('Transfer Gain (M)', fontsize=12)
-plt.title(
-    f'Transfer Gain at L_r = {solver.ind_ratio:.3f} (Lr/Lm), Qe = {solver.quality_factor:.3f}',
-    fontsize=14
-)
+plt.title(f'Transfer Gain at L_r = {solver.ind_ratio:.3f} (Lr/Lm), Qe = {solver.quality_factor:.3f}')
 plt.grid(True, alpha=0.3)
 
 # Add gain range as lines

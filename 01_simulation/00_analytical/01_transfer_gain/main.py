@@ -32,18 +32,15 @@ for index in range(0, int(samples)):
     gain = 2 * parameters.transformer.turns * (parameters.load.nominal_voltage/voltage)
 
     # Strips and appends voltage/gain results
-    input_voltage.append(voltage.stripped)
-    transfer_gain.append(gain.stripped)
+    input_voltage.append(voltage)
+    transfer_gain.append(gain)
 
 
 plt.figure(figsize=(10, 6))
 plt.plot(input_voltage, transfer_gain, linewidth=2, color='black')
 plt.xlabel('Input voltage (V)', fontsize=12)
 plt.ylabel('Transfer Gain (M)', fontsize=12)
-plt.title(
-    f'Transfer Gain vs Input Voltage, Nominal Output: {parameters.load.nominal_voltage:.3f}',
-    fontsize=14
-)
+plt.title(f'Transfer Gain vs Input Voltage, Nominal Output: {parameters.load.nominal_voltage:.3f}')
 plt.grid(True, alpha=0.3)
 plt.legend()
 plt.show()
