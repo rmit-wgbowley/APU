@@ -38,13 +38,15 @@ class ModelSolver:
         """ Computes the transfer gain characteristic at a normalized frequency """
         normalized_frequency = validate(normalized_frequency, NULLSET)
 
-        # Returns to avoid division by zero
-        if normalized_frequency == 0: return 0.0
+        if normalized_frequency == 0: 
+            # Returns to avoid division by zero
+            return 0.0 * NULLSET
 
         term1 = (1 + self.ind_ratio - self.ind_ratio / normalized_frequency **2 ) ** 2
         term2 = self.quality_factor ** 2 * (normalized_frequency - 1 / normalized_frequency) ** 2
 
-        return 1 / (term1 + term2) ** 0.5 * NULLSET
+        result = 1 / (term1 + term2) ** 0.5 * NULLSET
+        return result * NULLSET
 
     def gain_range(self) -> tuple[Q, Q]:
         """ Calculates the required gain range based off max and min voltages """
