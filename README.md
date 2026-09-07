@@ -146,10 +146,9 @@ See the [03_boards](./03_boards/readme.md) for implementation details.
 ### APU Packaging & Integration
 
 > *(Dependency). The APU packaging is dependent on all of the above.*
+> *(Note). This is a very early conceptual integration.* <br>
 
 #### Proposed Integration
-
-> *(Note). This is a very early conceptual integration.* <br>
 
 The proposed integration is to package the LLC converter above the APU battery, with the converter ultimately sitting next to 
 the APU-BI and APU-EBC boards, with a separation plane between the battery. That plane splits the APU into two sections: 
