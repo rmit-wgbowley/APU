@@ -56,7 +56,7 @@ Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Syste
 
 ```
 - [/] Support a `400-600 V` input range from the tractive battery.
-- [/] Support up to `300 W` peak continuous loads on the APU and `800 W` peak transient loads.
+- [/] Support up to `300 W (DC)` peak continuous loads on the APU and `800 W (DC)` peak transient loads.
 - [/] Reach an asymptote temperature under `70°C` with passive cooling.
 - [ ] Validate the APU architecture and generate performance curves.
 - [ ] Pass the EMC/EMI requirements and pass the 2027 Formula SAE rules inspection.
