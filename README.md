@@ -145,8 +145,8 @@ See the [03_boards](./03_boards/readme.md) for implementation details.
 
 ### APU Packaging & Integration
 
-> *(Dependency). The APU packaging is dependent on all of the above.*
-> *(Note). This is a very early conceptual integration.* <br>
+> *(Dependency). The APU packaging is dependent on all of the above.* <br>
+> *(Note). This is a very early conceptual integration.*
 
 #### Proposed Integration
 
