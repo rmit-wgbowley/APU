@@ -38,7 +38,7 @@ class ModelSolver:
         """ Computes the transfer gain characteristic at a normalized frequency """
         normalized_frequency = validate(normalized_frequency, NULLSET)
 
-        if normalized_frequency == 0: 
+        if normalized_frequency == 0:
             # Returns to avoid division by zero
             return 0.0 * NULLSET
 

@@ -19,8 +19,7 @@ ROOT_DIR = Path(__file__).resolve().parents[0]
 file_location = str(ROOT_DIR / '00_resources/transformer.FEM')
 
 # Loads the parameter file
-parameters_path = ROOT_DIR / "parameters.uiv"
-parameters = Parser.open(parameters_path)
+parameters = Parser.open(ROOT_DIR / "parameters.uiv")
 
 # Loads the FEMM model into pyFEMM
 pyFEMM.openfemm(0)

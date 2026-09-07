@@ -12,13 +12,9 @@ from picounits import Parser
 
 from matplotlib import pyplot as plt
 
-# Loads unit system, material library & parameters
+# Loads unit system & parameters
 ROOT_DIR = Path(__file__).resolve().parents[0]
-
-# Materials & Parameter files
-parameters_path = ROOT_DIR / "parameters.uiv"
-parameters = Parser.open(parameters_path, ROOT_DIR / "../derived.ut")
-
+parameters = Parser.open(ROOT_DIR / "parameters.uiv", ROOT_DIR / "../../derived.ut")
 
 initial = parameters.model.min_voltage
 samples = (parameters.model.max_voltage - initial) / parameters.numerics.voltage_step

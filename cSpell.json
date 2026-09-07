@@ -54,6 +54,7 @@
     "xlabel",
     "ylabel",
     "zlabel",
-    "ifemm"
+    "ifemm",
+    "pylintrc"
   ]
 }

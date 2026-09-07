@@ -2,8 +2,8 @@
 Filename: field_viewer.py
 
 Description:
-    This file allows the inductor.ans
-    file to be viewed directly within python
+    This file allows for the FEMM solution
+    to be viewed directly within python
     
     Uses: 
     pip install FEMMInterpreter
@@ -17,7 +17,7 @@ from ifemm import Parser
 
 # Imports the parser and parses the .ans file
 ROOT_DIR = Path(__file__).resolve().parents[0]
-data = Parser.open(ROOT_DIR / '00_resources/inductor.ans')
+data = Parser.open(ROOT_DIR / '00_transformer/00_resources/transformer.ans')
 
 # Get the B field
 length_unit = data.length_unit

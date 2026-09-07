@@ -51,14 +51,14 @@ Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Syste
 ### Objectives
 
 ```
-- Support a `400-600 V` input range from the tractive battery.
-- Support up to `300 W` continuous loads on the APU and `800 W` peaks.
-- Reach an asymptote temperature under `70°C` with passive cooling.
-- Validate the APU architecture and generate performance curves.
-- Pass the EMC/EMI requirements and pass the 2027 Formula SAE rules inspection.
+- [/] Support a `400-600 V` input range from the tractive battery.
+- [/] Support up to `300 W` continuous loads on the APU and `800 W` peaks.
+- [/] Reach an asymptote temperature under `70°C` with passive cooling.
+- [ ] Validate the APU architecture and generate performance curves.
+- [ ] Pass the EMC/EMI requirements and pass the 2027 Formula SAE rules inspection.
 ```
 
-> The project scoping document can be found within [00_docs](./00_docs/) or [directly](./00_docs/01_scope.pdf).
+> *(Note). `[ ]` Not started. `[/]` In progress. `[x]` Complete.*
 
 ---
 
@@ -84,7 +84,6 @@ The transformer forms the magnetising inductance $L_m$ and sets the baseline vol
 The inductor forms the series inductance $L_r$, which allows for frequency response tuning. For this specific implementation, this inductor 
 enables less precise transformer design and manufacturing compared to combining $L_r$ into the transformer via leakage inductance.
 
-See the [simulation notes](./01_simulation/readme.md) for implementation details and other tooling. <br>
 See the [02_passives](./02_passives/readme.md) for implementation details.
 
 ---
@@ -132,9 +131,6 @@ See the [03_boards](./03_boards/readme.md) for implementation details.
 APU-EBC (Isolated Supply) (Unknown Range) → APU-BI → APU-battery (12 V) (Undecided Capacity)
 ```
 
-APU-EBC = Auxiliary Power Unit External Battery Charger. <br>
-APU-BI = Auxiliary Power Unit Battery Interface.
-
 See the [03_boards](./03_boards/readme.md) for implementation details.
 
 ---
@@ -158,6 +154,7 @@ the `electronics box` with EMI shielding and the `battery box` with appropriate 
 All internal documentation can be found within this repo's [issues](https://github.com/rmit-wgbowley/LV-Isolated-Buck/issues).
 
 #### Tags
+
 ```
 Project Progress:
 ----------------------------------------------------
