@@ -8,7 +8,7 @@ This folder contains finite element models to explore design variables related t
 
 *(Work in progress)*
 
-<div align="center"><img src="../../05_media/01_simulation/01_finite_element/flux_linkage_vs_current.png" alt="Transformer Model" style="max-width: 600px">
+<div align="center"><img src="../../05_media/01_simulation/01_finite_element/flux_vs_b_field_vs_current.png" alt="Transformer Model" style="max-width: 600px">
 <p><em>Figure 1: Flux linkage (linear) vs current (linear) vs b-field (linear) for the primary and secondary windings.</em></p></div>
 
 > Model: [transformer](./00_transformer/orchestrator.py)  

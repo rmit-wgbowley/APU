@@ -56,7 +56,7 @@ Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Syste
 
 ```
 - [/] Support a `400-600 V` input range from the tractive battery.
-- [/] Support up to `300 W` continuous loads on the APU and `800 W` peaks.
+- [/] Support up to `300 W (DC)` continuous loads on the APU and `800 W` peaks.
 - [/] Reach an asymptote temperature under `70°C` with passive cooling.
 - [ ] Validate the APU architecture and generate performance curves.
 - [ ] Pass the EMC/EMI requirements and pass the 2027 Formula SAE rules inspection.
@@ -73,16 +73,16 @@ Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Syste
 > *(Work in progress). The resonant transformer is currently being designed and implemented.*
 
 The transformer forms the magnetising inductance $L_m$ and sets the baseline voltage of the system. This specific implementation uses an `N87` core with a 
-`glass fibre` coil former. The turns ratio is `21:1`, with litz wire used on both the primary and secondary due to the ~100–200 kHz operating frequency.
+`glass fibre` coil former. The turns ratio is `21:1`, with litz wire used on both the primary, secondary and tertiary due to the ~100–200 kHz operating frequency.
 
 <div align="center">
   <img 
-    src="./05_media/01_simulation/01_finite_element/FEMM_solution.png" 
+    src="./05_media/01_simulation/01_finite_element/flux_vs_b_field_vs_current.png" 
     alt="Planar transformer solution" 
     style="max-width: 600px"
   >
   <br>
-  <em>Planar approximation using FEMM of Transformer |B| field</em>
+  <em>Primary & Secondary Excitation of The Transformer Using FEMM</em>
 </div>
 
 #### Inductor
