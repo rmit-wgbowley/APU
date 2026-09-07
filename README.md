@@ -159,7 +159,7 @@ the `electronics box` with EMI shielding and the `battery box` with appropriate 
 ### Documentation
 
 Each section of the repo is self-documenting. <br>
-For internal documentation, credits, and contributors, refer to [00_docs](./00_docs/).
+For internal documentation, credits, and contributors, refer to [00_docs](./00_docs/readme.md).
 
 ---
 
