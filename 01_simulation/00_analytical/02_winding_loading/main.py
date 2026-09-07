@@ -18,12 +18,14 @@ Description:
 
 from math import pi
 from pathlib import Path
-from picounits import Parser
+from picounits import Parser, resolve_derived
 from matplotlib import pyplot as plt
 
 # Loads unit system & parameters
+resolve_derived()
+
 ROOT_DIR = Path(__file__).resolve().parents[0]
-parameters = Parser.open(ROOT_DIR / "parameters.uiv", ROOT_DIR / "../../derived.ut")
+parameters = Parser.open(ROOT_DIR / "parameters.uiv")
 
 # Target design point
 target_power = parameters.design.target.power

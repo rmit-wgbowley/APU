@@ -8,13 +8,15 @@ Description:
 """
 
 from pathlib import Path
-from picounits import Parser
+from picounits import Parser, resolve_derived
 
 from matplotlib import pyplot as plt
 
 # Loads unit system & parameters
+resolve_derived()
+
 ROOT_DIR = Path(__file__).resolve().parents[0]
-parameters = Parser.open(ROOT_DIR / "parameters.uiv", ROOT_DIR / "../../derived.ut")
+parameters = Parser.open(ROOT_DIR / "parameters.uiv")
 
 initial = parameters.model.min_voltage
 samples = (parameters.model.max_voltage - initial) / parameters.numerics.voltage_step

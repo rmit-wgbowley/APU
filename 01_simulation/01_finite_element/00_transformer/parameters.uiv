@@ -9,18 +9,24 @@ description: "Generate flux linkage vs current of the primary and secondary wind
 
 # -----------------------------------------------------------------------------------
 
+[core]
+
+
+
 [primary]
+name: "Primary"
 steps: 25
 
-name: "Primary"
+turns: 42
 current: [0, 500] m(A)
 
 # ----------------------
 
 [secondary]
+name: "Secondary"
 steps: 25
 
-name: "Secondary"
-current: [0, 25000] m(A)
+turns: 2
+current: [0, 25] (A)
 
 # ----------------------

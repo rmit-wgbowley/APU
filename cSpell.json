@@ -55,6 +55,9 @@
     "ylabel",
     "zlabel",
     "ifemm",
-    "pylintrc"
+    "pylintrc",
+    "mo_groupselectblock",
+    "mo_blockintegral",
+    "mo_clearblock"
   ]
 }

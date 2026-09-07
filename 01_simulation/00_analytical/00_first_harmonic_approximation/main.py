@@ -8,15 +8,17 @@ Description:
 """
 
 from pathlib import Path
-from picounits import Parser
+from picounits import Parser, resolve_derived
 from picounits import FREQUENCY
 
 from matplotlib import pyplot as plt
 from model.solver import ModelSolver
 
 # Loads unit system & parameters
+resolve_derived()
+
 ROOT_DIR = Path(__file__).resolve().parents[0]
-parameters = Parser.open(ROOT_DIR / "parameters.uiv", ROOT_DIR / "../../derived.ut")
+parameters = Parser.open(ROOT_DIR / "parameters.uiv")
 
 # Loads in the Solver and prints derived values
 solver = ModelSolver(parameters)
