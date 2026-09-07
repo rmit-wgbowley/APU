@@ -5,10 +5,13 @@ Description:
     Orchestrates FEMM to produce flux linkage
     curves with respect to current using a 
     magnetostatic approach for a transformer.
+    
+    It also uses the core area to derive the
+    b-field within the core.
 """
 
 from pathlib import Path
-from picounits import Parser, CURRENT
+from picounits import Parser, MAGNETIC_FLUX
 
 from femm import femm as pyFEMM
 from matplotlib import pyplot as plt
@@ -28,7 +31,7 @@ pyFEMM.opendocument(file_location)
 
 # Primary excitation
 primary_range = parameters.primary.current[1] - parameters.primary.current[0]
-primary_size = primary_range.stripped / parameters.primary.steps.stripped
+primary_size = primary_range / parameters.primary.steps
 
 steps = parameters.primary.steps.stripped
 
@@ -36,15 +39,15 @@ primary_flux_linkage = []
 primary_current = []
 for step in range(0, steps + 1):
     current = primary_size * step
-    print(f"Step {step}/{steps}: Setting primary current to {current * CURRENT:.2f}")
+    print(f"Step {step}/{steps}: Primary current = {current:.2f}")
 
-    pyFEMM.mi_setcurrent(parameters.primary.name, current)
+    pyFEMM.mi_setcurrent(parameters.primary.name, current.stripped)
     pyFEMM.mi_setcurrent(parameters.secondary.name, 0)
 
     pyFEMM.mi_analyze(1)
     pyFEMM.mi_loadsolution()
 
-    flux_linkage = pyFEMM.mo_getcircuitproperties('Primary')[2]
+    flux_linkage = pyFEMM.mo_getcircuitproperties('Primary')[2] * MAGNETIC_FLUX
 
     primary_flux_linkage.append(flux_linkage)
     primary_current.append(current)
@@ -52,7 +55,7 @@ for step in range(0, steps + 1):
 
 # Secondary excitation
 secondary_range = parameters.secondary.current[1] - parameters.secondary.current[0]
-secondary_size = secondary_range.stripped / parameters.secondary.steps.stripped
+secondary_size = secondary_range / parameters.secondary.steps
 
 steps = parameters.secondary.steps.stripped
 
@@ -60,15 +63,15 @@ secondary_flux_linkage = []
 secondary_current = []
 for step in range(0, steps + 1):
     current = secondary_size * step
-    print(f"Step {step}/{steps}: Setting secondary current to {current * CURRENT:.2f} A")
+    print(f"Step {step}/{steps}: Secondary current = {current:.2f}")
 
     pyFEMM.mi_setcurrent(parameters.primary.name, 0)
-    pyFEMM.mi_setcurrent(parameters.secondary.name, current)
+    pyFEMM.mi_setcurrent(parameters.secondary.name, current.stripped)
 
     pyFEMM.mi_analyze(1)
     pyFEMM.mi_loadsolution()
 
-    flux_linkage = pyFEMM.mo_getcircuitproperties('Secondary')[2]
+    flux_linkage = pyFEMM.mo_getcircuitproperties('Secondary')[2] * MAGNETIC_FLUX
 
     secondary_flux_linkage.append(flux_linkage)
     secondary_current.append(current)
@@ -82,7 +85,7 @@ plt.figure(figsize=(12, 5))
 plt.subplot(1, 2, 1)
 plt.plot(primary_current, primary_flux_linkage, color='black')
 plt.xlabel('Primary Current (A)')
-plt.ylabel('Flux Linkage (Wb-Turns)')
+plt.ylabel('Flux Linkage (Wb)')
 plt.title('Primary Excitation')
 plt.grid(True)
 
@@ -90,7 +93,7 @@ plt.grid(True)
 plt.subplot(1, 2, 2)
 plt.plot(secondary_current, secondary_flux_linkage, color='black')
 plt.xlabel('Secondary Current (A)')
-plt.ylabel('Flux Linkage (Wb-Turns)')
+plt.ylabel('Flux Linkage (Wb)')
 plt.title('Secondary Excitation')
 plt.grid(True)
 
