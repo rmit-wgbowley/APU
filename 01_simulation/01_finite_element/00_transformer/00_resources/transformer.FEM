@@ -409,7 +409,7 @@
   <EndCircuit>
   <BeginCircuit>
     <CircuitName> = "Secondary"
-    <TotalAmps_re> = 17.699999999999999
+    <TotalAmps_re> = 0
     <TotalAmps_im> = 0
     <CircuitType> = 1
   <EndCircuit>
