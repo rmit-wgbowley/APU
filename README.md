@@ -77,11 +77,11 @@ The transformer forms the magnetising inductance $L_m$ and sets the baseline vol
 
 <div align="center">
   <img 
-    src="./05_media/01_simulation/01_finite_element/flux_vs_b_field_vs_current.png" 
+    src="./05_media/01_simulation/01_finite_element/primary_saturation.png" 
     alt="Planar transformer solution"
   >
   <br>
-  <em>Primary & Secondary Excitation of The Transformer Using FEMM</em>
+  <em>Primary Excitation of The Transformer Using FEMM magnetostatic. </em>
 </div>
 
 #### Inductor

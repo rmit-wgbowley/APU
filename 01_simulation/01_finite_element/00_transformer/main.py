@@ -67,7 +67,7 @@ secondary_flux = []
 secondary_current = []
 
 for step in range(0, steps + 1):
-    current = secondary_range * step
+    current = secondary_current * step
     print(f"Step {step}/{steps}: Secondary Current = {current:.2f}")
 
     # Computes the magnetic flux linkage
