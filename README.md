@@ -73,7 +73,7 @@ Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Syste
 > *(Work in progress). The resonant transformer is currently being designed and implemented.*
 
 The transformer forms the magnetising inductance $L_m$ and sets the baseline voltage of the system. This specific implementation uses an `N87` core with a 
-`glass fibre` coil former. The turns ratio is `21:1`, with litz wire used on both the primary, secondary and tertiary due to the ~100–200 kHz operating frequency.
+`glass fibre` coil former. The turns ratio is `21:1`, with litz wire used on both the primary `(41 bulk turns)`, secondary `(2 bulk turns)` and tertiary `(2 bulk turns)` due to the ~100–200 kHz operating frequency.
 
 <div align="center">
   <img 
@@ -91,7 +91,7 @@ The transformer forms the magnetising inductance $L_m$ and sets the baseline vol
 The inductor forms the series inductance $L_r$, which allows for frequency response tuning. For this specific implementation, this inductor 
 enables less precise transformer design and manufacturing compared to combining $L_r$ into the transformer via leakage inductance.
 
-See the [02_passives](./02_passives/readme.md) for implementation details.
+See the [`02_passives`](./02_passives/readme.md) for implementation details.
 
 ---
 
@@ -124,7 +124,7 @@ Status MCU (STM32) ← LLC-HVS Optocoupler
 -----------------------------------------------------------------
 ```
 
-See the [03_boards](./03_boards/readme.md) for implementation details.
+See the [`03_boards`](./03_boards/readme.md) for implementation details.
 
 ---
 
@@ -138,7 +138,7 @@ See the [03_boards](./03_boards/readme.md) for implementation details.
 APU-EBC (Isolated Supply) (Unknown Range) → APU-BI → APU-battery (12 V) (Undecided Capacity)
 ```
 
-See the [03_boards](./03_boards/readme.md) for implementation details.
+See the [`03_boards`](./03_boards/readme.md) for implementation details.
 
 ---
 
@@ -158,7 +158,7 @@ the `electronics box` with EMI shielding and the `battery box` with appropriate 
 ### Documentation
 
 Each section of the repo is self-documenting. <br>
-For internal documentation, credits, and contributors, refer to [00_docs](./00_docs/readme.md).
+For internal documentation, credits, and contributors, refer to [`00_docs`](./00_docs/readme.md).
 
 ---
 
