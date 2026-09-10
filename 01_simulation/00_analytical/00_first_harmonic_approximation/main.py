@@ -8,23 +8,21 @@ Description:
 """
 
 from pathlib import Path
-from picounits import Parser
+from picounits import Parser, resolve_derived
 from picounits import FREQUENCY
 
 from matplotlib import pyplot as plt
 from model.solver import ModelSolver
 
-# Loads unit system, material library & parameters
-ROOT_DIR = Path(__file__).resolve().parents[0]
+# Loads unit system & parameters
+resolve_derived()
 
-# Materials & Parameter files
-parameters_path = ROOT_DIR / "parameters.uiv"
-parameters = Parser.open(parameters_path, ROOT_DIR / "../derived.ut")
+ROOT_DIR = Path(__file__).resolve().parents[0]
+parameters = Parser.open(ROOT_DIR / "parameters.uiv")
 
 # Loads in the Solver and prints derived values
 solver = ModelSolver(parameters)
 solver.info()
-
 
 # Calculates the number of samples
 frequency_step = parameters.numerics.frequency_step
@@ -43,19 +41,16 @@ for index in range(0, num_samples):
     gain = solver.gain_characteristic(normalized_frequency)
 
     # Appends the resulting normalized frequency and gain, removed units
-    normalized_results.append(normalized_frequency.stripped)
+    normalized_results.append(normalized_frequency)
     gain_results.append(gain)
 
 
 # Plots the normalized frequency vs characteristic gain
 plt.figure(figsize=(10, 6))
 plt.semilogx(normalized_results, gain_results, linewidth=2, color='black')
-plt.xlabel('Normalized Frequency (f/f₀)', fontsize=12)
+plt.xlabel('Normalized Frequency (f/f_o)', fontsize=12)
 plt.ylabel('Transfer Gain (M)', fontsize=12)
-plt.title(
-    f'Transfer Gain at L_r = {solver.ind_ratio:.3f} (Lr/Lm), Qe = {solver.quality_factor:.3f}',
-    fontsize=14
-)
+plt.title(f'Transfer Gain at L_r = {solver.ind_ratio:.3f} (Lr/Lm), Qe = {solver.quality_factor:.3f}')
 plt.grid(True, alpha=0.3)
 
 # Add gain range as lines

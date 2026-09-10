@@ -32,12 +32,9 @@ transfer gain vs input voltage using the equations described in application note
 
 #### Winding Loading
 
-This analytical model is written in `Python` and uses `picounits` for parameter loading and unit validation. It calculates primary and secondary
-wire diameters across a range of current densities at a target power level, helping to inform winding design for the LLC converter.
+This analytical model is written in `Python` and uses `picounits` for parameter loading and unit validation. It calculates primary and secondary wire diameters across a range of current densities at a target power level, helping to inform winding design for the LLC converter.
 
-> [!IMPORTANT]
->
-> Wire diameters shown are bulk equivalents. Litz wire or multi-strand conductors are required in practice due to skin.
+> Wire diameters shown are bulk equivalents. Litz wire or multi-strand conductors are required in practice due to skin effect at high frequencies.
 
 <div align="center"><img src="../../05_media/01_simulation/00_analytical_models/winding_loading.png" alt="Winding loading analysis" style="max-width: 600px">
 <p><em>Figure 3: Primary and secondary wire diameter vs current density at a fixed target power.</em></p></div>

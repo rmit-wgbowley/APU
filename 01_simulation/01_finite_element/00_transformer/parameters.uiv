@@ -1,5 +1,5 @@
 [version]
-format: 0.1.1
+format: 0.1.2
 
 # -----------------------------------------------------------------------------------
 
@@ -9,18 +9,24 @@ description: "Generate flux linkage vs current of the primary and secondary wind
 
 # -----------------------------------------------------------------------------------
 
-[primary]
+[numerics]
 steps: 25
 
-name: "Primary"
-current: [0, 500] m(A)
+# -----------------------------------
 
-# ----------------------
+[core]
+inner_dia: 12.8 m(m)
+
+# -----------------------------------
+
+[primary]
+turns: 42
+current: [0, 707] m(A)  # Peak current
+
+# -----------------------------------
 
 [secondary]
-steps: 25
+turns: 2
+current: [0, 17.7] (A)  # Peak current
 
-name: "Secondary"
-current: [0, 25000] m(A)
-
-# ----------------------
+# -----------------------------------

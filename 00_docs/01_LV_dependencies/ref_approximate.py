@@ -20,7 +20,6 @@ from picounits import Q, VOLTAGE, CURRENT, POWER, expects
 NOMINAL_VOLTAGE = 12 * VOLTAGE
 devices: list[Device] = []
 
-
 @dataclass(slots=True, frozen=True)
 class Device:
     """ Stores the values for a specific device """

@@ -1,3 +1,6 @@
+# .gitignore
+
+# File extensions
 *.pyc
 *.log
 *.gz
@@ -8,4 +11,5 @@
 *.toc
 *.ans
 
+# Specific files & folders.
 00_docs/03_raws/scope.pdf
