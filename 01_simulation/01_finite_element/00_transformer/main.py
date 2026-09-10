@@ -67,8 +67,8 @@ secondary_flux = []
 secondary_current = []
 
 for step in range(0, steps + 1):
-    current = secondary_current * step
-    print(f"Step {step}/{steps}: Secondary Current = {current:.2f}")
+    current = secondary_range * step
+    print(f"Step {step}/{steps}: Secondary Current = {current}")
 
     # Computes the magnetic flux linkage
     _, linkage = compute_magnetic_flux(0 * CURRENT, current)
@@ -86,6 +86,8 @@ disconnect_femm()
 area = core_area(parameters)
 primary_b_field = [flux / area for flux in primary_flux]
 secondary_b_field = [flux / area for flux in secondary_flux]
+
+print(primary_b_field, primary_current)
 
 # Create figure with 2x2 subplots
 plt.figure(figsize=(12, 10))

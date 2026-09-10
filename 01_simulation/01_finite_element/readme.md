@@ -20,7 +20,4 @@ This folder contains finite element models to explore design variables related t
 
 *(Work in progress)*
 
-> Model: [inductor](./01_inductor/orchestrator.py)  
-> Parameters: [parameters.uiv](./01_inductor/parameters.uiv)
-
 ---
