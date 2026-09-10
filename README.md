@@ -75,15 +75,6 @@ Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Syste
 The transformer forms the magnetising inductance $L_m$ and sets the baseline voltage of the system. This specific implementation uses an `N87` `(B66363Q0100K187)` core with a 
 `glass fibre` coil former. The turns ratio is `21:1`, with litz wire used on both the primary `(41 bulk turns)`, secondary `(2 bulk turns)` and tertiary `(2 bulk turns)` due to the ~100–200 kHz operating frequency.
 
-<div align="center">
-  <img 
-    src="./05_media/01_simulation/01_finite_element/primary_saturation.png" 
-    alt="Planar transformer solution"
-  >
-  <br>
-  <em>Primary Excitation of The Transformer Using FEMM magnetostatic. </em>
-</div>
-
 #### Inductor
 
 > *(Dependency). The resonant inductor is dependent on the implementation of the transformer.*
