@@ -87,7 +87,34 @@ area = core_area(parameters)
 primary_b_field = [flux / area for flux in primary_flux]
 secondary_b_field = [flux / area for flux in secondary_flux]
 
-print(primary_b_field, primary_current)
+# Calculates the inductance of the secondary and primary
+primary_inductance = []
+secondary_inductance = []
+
+for i in range(1, len(primary_current)):
+    linkage = primary_flux[i] * parameters.primary.turns
+    primary_inductance.append(linkage / primary_current[i])
+
+for i in range(1, len(secondary_current)):
+    linkage = secondary_flux[i] * parameters.primary.turns
+    secondary_inductance.append(linkage / secondary_current[i])
+
+# Calculates the average inductance from secant inductance
+primary_avg_inductance = primary_inductance[0]
+for inductance in primary_inductance[1:]:
+    primary_avg_inductance = primary_avg_inductance + inductance
+    
+primary_avg_inductance = primary_avg_inductance / len(primary_inductance)
+
+secondary_avg_inductance = secondary_inductance[0]
+for inductance in secondary_inductance[1:]:
+    secondary_avg_inductance = secondary_avg_inductance + inductance
+
+secondary_avg_inductance = secondary_avg_inductance / len(secondary_inductance)
+
+print("\n===== Secant Inductance Results =====")
+print(f"Primary   average inductance: {primary_avg_inductance}")
+print(f"Secondary average inductance: {secondary_avg_inductance}")
 
 # Create figure with 2x2 subplots
 plt.figure(figsize=(12, 10))
