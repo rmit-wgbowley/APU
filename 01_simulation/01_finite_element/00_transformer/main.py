@@ -103,7 +103,7 @@ for i in range(1, len(secondary_current)):
 primary_avg_inductance = primary_inductance[0]
 for inductance in primary_inductance[1:]:
     primary_avg_inductance = primary_avg_inductance + inductance
-    
+
 primary_avg_inductance = primary_avg_inductance / len(primary_inductance)
 
 secondary_avg_inductance = secondary_inductance[0]
@@ -113,8 +113,8 @@ for inductance in secondary_inductance[1:]:
 secondary_avg_inductance = secondary_avg_inductance / len(secondary_inductance)
 
 print("\n===== Secant Inductance Results =====")
-print(f"Primary   average inductance: {primary_avg_inductance}")
-print(f"Secondary average inductance: {secondary_avg_inductance}")
+print(f"Primary Avg Inductance: {primary_avg_inductance}")
+print(f"Secondary Avg Inductance: {secondary_avg_inductance}")
 
 # Create figure with 2x2 subplots
 plt.figure(figsize=(12, 10))

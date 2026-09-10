@@ -27,6 +27,6 @@ current: [0, 500] m(A)  # Peak current
 
 [secondary]
 turns: 2
-current: [0, 500] m(A)  # Peak current
+current: [0, 10.5] (A)  # Peak current
 
 # -----------------------------------
