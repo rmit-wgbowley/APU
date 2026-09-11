@@ -72,7 +72,7 @@ Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Syste
 
 > *(Work in progress). The resonant transformer is currently being designed and implemented.*
 
-The transformer forms the magnetising inductance $L_m$ and sets the baseline voltage of the system. This specific implementation uses an `N87` `(B66363Q0100K187)` core with a 
+This specific implementation uses an `N87` `(B66363Q0100K187)` core with a 
 `glass fibre` coil former. The turns ratio is `21:1`, with litz wire used on both the primary `(41 bulk turns)`, secondary `(2 bulk turns)` and tertiary `(2 bulk turns)` due to the ~100–200 kHz operating frequency.
 
 #### Inductor
