@@ -18,16 +18,3 @@ This folder contains analytical models for exploring design variables and buildi
 For detailed documentation, refer to [00_analytical/readme.md](00_analytical/readme.md).
 
 ---
-
-### 01_finite_element
-
-This folder contains finite element models for exploring transformer and inductor design variables using specific cores and coil forms.
-
-```
-- Magnetostatic Transformer
-- Magnetostatic Inductor
-```
-
-For detailed documentation, refer to [01_finite_element/readme.md](01_finite_element/readme.md).
-
----
