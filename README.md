@@ -72,8 +72,14 @@ Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Syste
 
 > *(Work in progress). The resonant transformer is currently being designed and implemented.*
 
-This specific implementation uses an `N87` `(B66363Q0100K187)` core with a 
-`glass fibre` coil former. The turns ratio is `21:1`, with litz wire used on both the primary `(42 bulk turns)`, secondary `(2 bulk turns)` and tertiary `(2 bulk turns)` due to the ~100–200 kHz operating frequency.
+> *(Transformer 1) - Smaller, may saturate during testing.*
+
+This specific implementation uses an `N87` `(B66363Q0100K187)` core with a `glass fibre` coil former. 
+The turns ratio is `21:1`, with litz wire used on both the primary `(42 bulk turns)`, secondary `(2 bulk turns)` and 
+tertiary `(2 bulk turns)` due to the ~100–200 kHz operating frequency.
+
+> *(Work in progress) (Transformer 2) - larger, encase transformer 1 saturates.*
+
 
 #### Inductor
 
