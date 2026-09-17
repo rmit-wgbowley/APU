@@ -31,6 +31,8 @@ Thanks for downloading the APU repository `▽`ʃ♡ — but please be safe with
   Engineered by [`William Bowley`](https://github.com/wgbowley)
 </div>
 
+<br>
+
 The APU is a proposed low-voltage grounded (LVG) power architecture that allows the tractive battery, while connected, 
 to feed the LVG system via an isolated LLC converter, effectively using the LVG battery as a line buffer. 
 This has the secondary benefit of allowing standby mode while the tractive battery is disconnected.
