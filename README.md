@@ -27,19 +27,9 @@ Thanks for downloading the APU repository `▽`ʃ♡ — but please be safe with
     alt="APU Logo" 
     style="width:400px; max-width:100%; display:block;"
   >
-  
   A proposed low-voltage grounded APU for FSAE-A vehicles <br>
   Engineered by [`William Bowley`](https://github.com/wgbowley)
 </div>
-
-### Overview
-
-![Status](https://img.shields.io/badge/Status-L1-e01e37?style=flat-square)
-![CERN-OHL-W License](https://img.shields.io/badge/License-CERN--OHL--W-FFFFFF?style=flat-square&logoColor=black)
-![Power Electronics](https://img.shields.io/badge/Domain-Power_Electronics-e01e37?style=flat-square&logoColor=FFFFFF)
-![LLC Resonant](https://img.shields.io/badge/Topology-LLC_Resonant%2FDC-FFFFFF?style=flat-square&logoColor=e01e37)
-
-<!-- > This repository was done for the `FSAE` elective `(AUTO1931)` at RMIT between 20 July and 13 Nov, 2026. -->
 
 The APU is a proposed low-voltage grounded (LVG) power architecture that allows the tractive battery, while connected, 
 to feed the LVG system via an isolated LLC converter, effectively using the LVG battery as a line buffer. 
