@@ -20,33 +20,22 @@ Thanks for downloading the APU repository `▽`ʃ♡ — but please be safe with
 
 -->
 
-<p align="center">
+
+<div align="center">
   <img 
-    src="05_media/00_logo/logo.png" 
+    src="./05_media/00_logo/logo.png" 
     alt="APU Logo" 
     style="width:400px; max-width:100%; display:block;"
   >
-  <br>
-  <em>
-    A proposed low-voltage grounded APU for FSAE-A vehicles 
-    <br>
-    Engineered by 
-    <a href="https://github.com/wgbowley">William Bowley</a>
-  </em>
-</p>
+
+  A proposed low-voltage grounded APU for FSAE-A vehicles <br>
+  Designed by [`William Bowley`](https://github.com/wgbowley)
+</div>
 
 ### Overview
 
-![Status](https://img.shields.io/badge/Status-L1-e01e37?style=flat-square)
-![CERN-OHL-W License](https://img.shields.io/badge/License-CERN--OHL--W-FFFFFF?style=flat-square&logoColor=black)
-![Power Electronics](https://img.shields.io/badge/Domain-Power_Electronics-e01e37?style=flat-square&logoColor=FFFFFF)
-![LLC Resonant](https://img.shields.io/badge/Topology-LLC_Resonant%2FDC-FFFFFF?style=flat-square&logoColor=e01e37)
-
-<!-- > This repository was done for the `FSAE` elective `(AUTO1931)` at RMIT between 20 July and 13 Nov, 2026. -->
-
-The APU is a proposed low-voltage grounded (LVG) power architecture that allows the tractive battery, while connected, to feed the LVG system via an
-isolated LLC converter, effectively using the LVG battery as a line buffer. This has the secondary benefit of allowing standby mode 
-while the tractive battery is disconnected.
+The APU is a proposed power architecture that allows the tractive battery, while connected, to feed the low-voltage grounded (LVG) system via an isolated LLC converter, using the LVG battery as a line buffer. 
+The LVG battery also allows for standby mode while the tractive battery is disconnected.
 
 ```
 Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Systems (12 V)
@@ -57,7 +46,7 @@ Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Syste
 ```
 - [/] Support a `400-600 V` input range from the tractive battery.
 - [/] Support up to `300 W (DC)` peak continuous loads on the APU and `800 W (DC)` peak transient loads.
-- [/] Reach an asymptote temperature under `70°C` with passive cooling.
+- [ ] Reach an asymptote temperature under `70°C` with passive cooling.
 - [ ] Validate the APU architecture and generate performance curves.
 - [ ] Pass the EMC/EMI requirements and pass the 2027 Formula SAE rules inspection.
 ```
@@ -68,28 +57,45 @@ Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Syste
 
 ### Magnetic Passives
 
-#### Transformer
+#### Primary Transformer
 
-> *(Work in progress). The resonant transformer is currently being designed and implemented.*
+> *(Ordered). Primary Transformer core former and core are on-hand. Litz wire has been ordered.*
 
-The transformer forms the magnetising inductance $L_m$ and sets the baseline voltage of the system. This specific implementation uses an `N87` `(B66363Q0100K187)` core with a 
-`glass fibre` coil former. The turns ratio is `21:1`, with litz wire used on both the primary `(41 bulk turns)`, secondary `(2 bulk turns)` and tertiary `(2 bulk turns)` due to the ~100–200 kHz operating frequency.
+The primary transformer used for this design has an `N87` core with a `glass fibre` coil former and snap-on `ABS` insulation rings. 
+The turns ratio is `21:1:1`, with `0.125 mm × 64` litz wire used on the primary across 3 layers of 14 turns each. 
+The secondary and tertiary windings each have a single layer of 2 turns with `0.125 mm × 420` litz wire.
 
 <div align="center">
-  <img 
-    src="./05_media/01_simulation/01_finite_element/primary_saturation.png" 
-    alt="Planar transformer solution"
-  >
-  <br>
-  <em>Primary Excitation of The Transformer Using FEMM magnetostatic. </em>
+  <table>
+    <tr>
+      <td><img src="./05_media/02_passives/00_primary_transformer/top_right_corner.png" alt="Transformer 1 Side" style="height:375px; width:auto;"></td>
+      <td><img src="./05_media/02_passives/01_backup_transformer/cross_section.png" alt="Transformer 1 Cross Section" style="height:375px; width:auto;"></td>
+    </tr>
+  </table>
+</div>
+
+#### Backup Transformer
+
+> *(Ordered). Backup Transformer core former, core, and litz wire have been ordered.*
+
+This backup transformer is in case the primary transformer saturates during operation. 
+This transformer uses a `40%` larger `N87` core with a matching `glass fibre` coil former. 
+The same turns ratio of `21:1:1` and the same construction method are used.
+
+<div align="center">
+  <table>
+    <tr>
+      <td><img src="./05_media/02_passives/01_backup_transformer/top_right_corner.png" alt="Transformer 2 Side" style="height:375px; width:auto;"></td>
+      <td><img src="./05_media/02_passives/01_backup_transformer/cross_section.png" alt="Transformer 2 Cross Section" style="height:375px; width:auto;"></td>
+    </tr>
+  </table>
 </div>
 
 #### Inductor
 
 > *(Dependency). The resonant inductor is dependent on the implementation of the transformer.*
 
-The inductor forms the series inductance $L_r$, which allows for frequency response tuning. For this specific implementation, this inductor 
-enables less precise transformer design and manufacturing compared to combining $L_r$ into the transformer via leakage inductance.
+The inductor forms the series inductance $L_r$, which allows for frequency response tuning. 
 
 See the [`02_passives`](./02_passives/readme.md) for implementation details.
 

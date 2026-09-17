@@ -11,12 +11,6 @@ along with the implementation plan.
 
 ---
 
-#### [Transformer]() — Transformer Design
-
-*(Work in progress)*
-
----
-
 #### Internal Resources
 
 All internal documentation can be found within this repo's [issues](https://github.com/rmit-wgbowley/APU/issues).
