@@ -20,20 +20,17 @@ Thanks for downloading the APU repository `▽`ʃ♡ — but please be safe with
 
 -->
 
-<p align="center">
+
+<div align="center">
   <img 
-    src="05_media/00_logo/logo.png" 
+    src="05_media/01_logos/logo.png" 
     alt="APU Logo" 
-    style="width:400px; max-width:100%; display:block;"
+    style="width:100%; max-width:100%;"
   >
-  <br>
-  <em>
-    A proposed low-voltage grounded APU for FSAE-A vehicles 
-    <br>
-    Engineered by 
-    <a href="https://github.com/wgbowley">William Bowley</a>
-  </em>
-</p>
+  
+  A proposed low-voltage grounded APU for FSAE-A vehicles <br>
+  Engineered by [`William Bowley`](https://github.com/wgbowley)
+</div>
 
 ### Overview
 
@@ -44,9 +41,9 @@ Thanks for downloading the APU repository `▽`ʃ♡ — but please be safe with
 
 <!-- > This repository was done for the `FSAE` elective `(AUTO1931)` at RMIT between 20 July and 13 Nov, 2026. -->
 
-The APU is a proposed low-voltage grounded (LVG) power architecture that allows the tractive battery, while connected, to feed the LVG system via an
-isolated LLC converter, effectively using the LVG battery as a line buffer. This has the secondary benefit of allowing standby mode 
-while the tractive battery is disconnected.
+The APU is a proposed low-voltage grounded (LVG) power architecture that allows the tractive battery, while connected, 
+to feed the LVG system via an isolated LLC converter, effectively using the LVG battery as a line buffer. 
+This has the secondary benefit of allowing standby mode while the tractive battery is disconnected.
 
 ```
 Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Systems (12 V)
