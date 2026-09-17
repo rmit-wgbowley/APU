@@ -78,10 +78,6 @@ Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Syste
       <td><img src="" alt="Transformer 1 Side" style="max-width:375px;"></td>
       <td><img src="" alt="Transformer 1 Cross Section" style="max-width:375px;"></td>
     </tr>
-    <tr>
-      <td><em>Side-View</em></td>
-      <td><em>Cross Section</em></td>
-    </tr>
   </table>
 </div>
 
@@ -98,10 +94,6 @@ The secondary and tertiary windings each have a single layer of 2 turns with `0.
     <tr>
       <td><img src="" alt="Transformer 2 Side" style="max-width:375px;"></td>
       <td><img src="" alt="Transformer 2 Cross Section" style="max-width:375px;"></td>
-    </tr>
-    <tr>
-      <td><em>Side-View</em></td>
-      <td><em>Cross Section</em></td>
     </tr>
   </table>
 </div>
