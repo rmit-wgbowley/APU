@@ -6,6 +6,12 @@ This folder contains the designs for the resonant transformer and inductor withi
 
 ### 00_resonant_transformer
 
+#### Primary Transformer
+
+*(TBD) — Work in progress*
+
+#### Backup Transformer
+
 *(TBD) — Work in progress*
 
 ---
