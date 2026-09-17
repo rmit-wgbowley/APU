@@ -59,8 +59,6 @@ Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Syste
 
 #### Primary Transformer
 
-> *(Ordered). Primary Transformer core former and core are on-hand. Litz wire has been ordered.*
-
 <div align="center">
   <table>
     <tr>
@@ -70,13 +68,13 @@ Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Syste
   </table>
 </div>
 
+> *(Ordered). Primary Transformer core former and core are on-hand. Litz wire has been ordered.*
+
 The primary transformer used for this design has an `N87` core with a `glass fibre` coil former and snap-on `ABS` insulation rings. 
 The turns ratio is `21:1:1`, with `0.125 mm × 64` litz wire used on the primary across 3 layers of 14 turns each. 
 The secondary and tertiary windings each have a single layer of 2 turns with `0.125 mm × 420` litz wire.
 
 #### Backup Transformer
-
-> *(Ordered). Backup Transformer core former, core, and litz wire have been ordered.*
 
 <div align="center">
   <table>
@@ -86,6 +84,8 @@ The secondary and tertiary windings each have a single layer of 2 turns with `0.
     </tr>
   </table>
 </div>
+
+> *(Ordered). Backup Transformer core former, core, and litz wire have been ordered.*
 
 This backup transformer is in case the primary transformer saturates during operation. 
 This transformer uses a `40%` larger `N87` core with a matching `glass fibre` coil former. 
