@@ -23,7 +23,7 @@ Thanks for downloading the APU repository `▽`ʃ♡ — but please be safe with
 
 <div align="center">
   <img 
-    src="./05_media/01_logo/logo.png" 
+    src="./05_media/00_logo/logo.png" 
     alt="APU Logo" 
     style="width:100%; max-width:100%;"
   >
