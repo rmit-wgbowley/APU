@@ -34,9 +34,8 @@ Thanks for downloading the APU repository `▽`ʃ♡ — but please be safe with
 
 ### Overview
 
-The APU is a proposed low-voltage grounded (LVG) power architecture that allows the tractive battery, while connected, 
-to feed the LVG system via an isolated LLC converter, effectively using the LVG battery as a line buffer. 
-This has the secondary benefit of allowing standby mode while the tractive battery is disconnected.
+The APU is a proposed power architecture that allows the tractive battery, while connected, to feed the low-voltage grounded (LVG) system via an isolated LLC converter, using the LVG battery as a line buffer. 
+The LVG battery also allows for standby mode while the tractive battery is disconnected.
 
 ```
 Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Systems (12 V)
