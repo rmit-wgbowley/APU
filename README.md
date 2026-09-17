@@ -29,7 +29,7 @@ Thanks for downloading the APU repository `▽`ʃ♡ — but please be safe with
   >
 
   A proposed low-voltage grounded APU for FSAE-A vehicles <br>
-  By [`William Bowley`](https://github.com/wgbowley)
+  Designed by [`William Bowley`](https://github.com/wgbowley)
 </div>
 
 ### Overview
