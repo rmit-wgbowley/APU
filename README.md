@@ -57,7 +57,7 @@ Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Syste
 ```
 - [/] Support a `400-600 V` input range from the tractive battery.
 - [/] Support up to `300 W (DC)` peak continuous loads on the APU and `800 W (DC)` peak transient loads.
-- [/] Reach an asymptote temperature under `70°C` with passive cooling.
+- [ ] Reach an asymptote temperature under `70°C` with passive cooling.
 - [ ] Validate the APU architecture and generate performance curves.
 - [ ] Pass the EMC/EMI requirements and pass the 2027 Formula SAE rules inspection.
 ```
@@ -70,16 +70,17 @@ Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Syste
 
 #### Transformer
 
-> *(Work in progress). The resonant transformer is currently being designed and implemented.*
+> *(Ordered). Transformer 1 core former and core are on-hand. Litz wire has been ordered.*
 
-> *(Transformer 1) - Smaller, may saturate during testing.*
+The primary transformer used for this design has an `N87` core with a `glass fibre` coil former and snap-on `ABS` insulation rings. 
+The turns ratio is `21:1:1`, with `0.125 mm × 64` litz wire used on the primary across 3 layers of 14 turns each. 
+The secondary and tertiary windings each have a single layer of 2 turns with `0.125 mm × 420` litz wire.
 
-This specific implementation uses an `N87` `(B66363Q0100K187)` core with a `glass fibre` coil former. 
-The turns ratio is `21:1`, with litz wire used on both the primary `(42 bulk turns)`, secondary `(2 bulk turns)` and 
-tertiary `(2 bulk turns)` due to the ~100–200 kHz operating frequency.
+> *(Ordered). Transformer 2 core former, core, and litz wire have been ordered.*
 
-> *(Work in progress) (Transformer 2) - larger, encase transformer 1 saturates.*
-
+This secondary transformer is a backup in case the primary transformer saturates during operation. 
+This transformer uses a `40%` larger `N87` core with a matching `glass fibre` coil former. 
+The same turns ratio of `21:1:1` and the same construction method are used.
 
 #### Inductor
 
