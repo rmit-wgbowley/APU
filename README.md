@@ -64,8 +64,8 @@ Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Syste
 <div align="center">
   <table>
     <tr>
-      <td><img src="" alt="Transformer 1 Side" style="max-width:375px;"></td>
-      <td><img src="" alt="Transformer 1 Cross Section" style="max-width:375px;"></td>
+      <td><img src="./05_media/02_passives/00_primary_transformer/top_right_corner.png" alt="Transformer 1 Side" style="height:375px; width:auto;"></td>
+      <td><img src="./05_media/02_passives/01_backup_transformer/cross_section.png" alt="Transformer 1 Cross Section" style="height:375px; width:auto;"></td>
     </tr>
   </table>
 </div>
@@ -81,8 +81,8 @@ The secondary and tertiary windings each have a single layer of 2 turns with `0.
 <div align="center">
   <table>
     <tr>
-      <td><img src="" alt="Transformer 2 Side" style="max-width:375px;"></td>
-      <td><img src="" alt="Transformer 2 Cross Section" style="max-width:375px;"></td>
+      <td><img src="./05_media/02_passives/01_backup_transformer/top_right_corner.png" alt="Transformer 2 Side" style="height:375px; width:auto;"></td>
+      <td><img src="./05_media/02_passives/01_backup_transformer/cross_section.png" alt="Transformer 2 Cross Section" style="height:375px; width:auto;"></td>
     </tr>
   </table>
 </div>
@@ -95,8 +95,7 @@ The same turns ratio of `21:1:1` and the same construction method are used.
 
 > *(Dependency). The resonant inductor is dependent on the implementation of the transformer.*
 
-The inductor forms the series inductance $L_r$, which allows for frequency response tuning. For this specific implementation, this inductor 
-enables less precise transformer design and manufacturing compared to combining $L_r$ into the transformer via leakage inductance.
+The inductor forms the series inductance $L_r$, which allows for frequency response tuning. 
 
 See the [`02_passives`](./02_passives/readme.md) for implementation details.
 
