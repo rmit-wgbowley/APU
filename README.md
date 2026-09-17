@@ -25,7 +25,7 @@ Thanks for downloading the APU repository `▽`ʃ♡ — but please be safe with
   <img 
     src="./05_media/00_logo/logo.png" 
     alt="APU Logo" 
-    style="width:100%; max-width:100%;"
+    style="width:400px; max-width:100%; display:block;"
   >
   
   A proposed low-voltage grounded APU for FSAE-A vehicles <br>
