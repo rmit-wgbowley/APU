@@ -113,34 +113,21 @@ See the [`02_passives`](./02_passives/readme.md) for implementation details.
 
 ---
 
-### LLC-HVS & LLC-LVS Boards
+### LLC Boards
 
 > *(Work in progress). The LLC-HVS and LLC-LVS are currently being designed and implemented.*
 
-#### Proposed Topology
+#### LLC-HVS
 
-```
-LLC-HVS — Tractive Battery Input (400–600 V Domain) (Unknown EMI)
------------------------------------------------------------------
-EMI Filter (Common-mode chokes) (Shunt Capacitors)
-         ↓
-Half-Bridge MOSFETs ← Half-Bridge Driver IC ← LLC Controller → LLC-HVS Optocoupler
-         ↓
-Resonant Tank Circuit (Capacitor & Inductor)
------------------------------------------------------------------
-High-Frequency Transformer (Primary) (400-600 HF AC)
+LLC High Voltage Side
 
-=============================================
-Ferrite Core (Magnetic & Structural Coupling)
-=============================================
+*(TBD) — Work in progress*
 
-LLC-LVS — High-Frequency Transformer (Secondary) (12 V AC)
------------------------------------------------------------------
-Synchronous Rectifier
-        ↓
-Status MCU (STM32) ← LLC-HVS Optocoupler 
------------------------------------------------------------------
-```
+#### LLC-LVS 
+
+LLC Low Voltage Side
+
+*(TBD) — Work in progress*
 
 See the [`03_boards`](./03_boards/readme.md) for implementation details.
 
