@@ -115,7 +115,7 @@ See the [`02_passives`](./02_passives/readme.md) for implementation details.
 
 ### LLC-HVS & LLC-LVS Boards
 
-> *(Dependency). The LLC-HVS and LLC-LVS are dependent on the implementation of the magnetic passives.*
+> *(Work in progress). The LLC-HVS and LLC-LVS are currently being designed and implemented.*
 
 #### Proposed Topology
 
