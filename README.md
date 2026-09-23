@@ -4,11 +4,6 @@ FFFFFF - Pure white
 e01e37 - Bold crimson-red 
 
 Hello,
-I think this is/was (for future tense) a very fun
-project and I believe it's a good demonstration of my
-engineering skills outside of me just making a linear
-motor for example or some complex PCB at home. 
-
 I enjoyed working with others for once, and being able
 to have my own architecturally defined piece in the 
 car is pretty damn cool.
