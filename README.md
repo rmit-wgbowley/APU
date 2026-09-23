@@ -76,7 +76,7 @@ The secondary and tertiary windings each have a single layer of 2 turns with `0.
 
 #### Backup Transformer
 
-> *(Ordered). Backup Transformer core former and core ordered. With litz wire yet to be ordered.*
+> *(Ordered). Backup Transformer core former and core ordered. With litz wire is yet to be ordered.*
 
 This backup transformer is in case the primary transformer saturates during operation. 
 This transformer uses a `40%` larger `N87` core with a matching `glass fibre` coil former. 
@@ -93,7 +93,7 @@ The same turns ratio of `21:1:1` and the same construction method are used.
 
 #### External Inductor
 
-> *(On-hand). The core former and core are on-hand, with litz wire yet to be ordered.*  
+> *(On-hand). The core former and core are on-hand, with litz wire is yet to be ordered.*  
 > *(Dependency). The number of turns within the inductor is dependent on the transformer's characteristics.*
 
 The external inductor used for this design has an `N87` core with a `glass fibre` coil former. 
