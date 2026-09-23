@@ -1,4 +1,4 @@
-## 01_external_inductor
+### 01_external_inductor
 
 The external inductor uses the  `N87` core with a `B65812N1012D001` coil former and `0.125 mm × 64` litz wire used on the primary with polymer casing.
 
