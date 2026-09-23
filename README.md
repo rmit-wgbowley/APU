@@ -94,7 +94,7 @@ The same turns ratio of `21:1:1` and the same construction method are used.
 #### External Inductor
 
 > *(On-hand). The core former and core are on-hand, with litz wire yet to be ordered.*  
-> *(Dependency). The number of turns within the inductor is dependent on the transformer's measured characteristics.*
+> *(Dependency). The number of turns within the inductor is dependent on the transformer's characteristics.*
 
 The external inductor used for this design has an `N87` core with a `glass fibre` coil former. 
 The same litz wire (`0.125 mm × 64`) as the transformer primary is used for this inductor.
