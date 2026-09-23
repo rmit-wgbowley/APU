@@ -1,6 +1,6 @@
 ### 00_resonant_transformer
 
-Both resonant transformers use an `N87` core with a `glass fibre` coil former and snap-on `ABS` insulation rings. The turns ratio is `21:1:1`, with `0.125 mm × 64` litz wire used on the primary across 3 layers of 14 turns each. The secondary and tertiary windings each have a single layer of 2 turns with `0.125 mm × 420` litz wire.
+Both resonant transformers use an `N87` core with a `glass fibre` coil former and snap-on `ABS` insulation rings. The turns ratio is `21:1:1`, with `0.125 mm × 64` litz wire used on the primary with polymer casing across 3 layers of 14 turns each. The secondary and tertiary windings each have a single layer of 2 turns with `0.125 mm × 420` litz wire.
 
 #### Primary Transformer
 

@@ -62,7 +62,7 @@ Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Syste
 > *(On-hand). Primary Transformer core former and core are on-hand. Litz wire yet to be ordered.*
 
 The primary transformer used for this design has an `N87` core with a `glass fibre` coil former and snap-on `ABS` insulation rings. 
-The turns ratio is `21:1:1`, with `0.125 mm × 64` litz wire used on the primary across 3 layers of 14 turns each. 
+The turns ratio is `21:1:1`, with `0.125 mm × 64` litz wire used on the primary with a polymer casing across 3 layers of 14 turns each. 
 The secondary and tertiary windings each have a single layer of 2 turns with `0.125 mm × 420` litz wire.
 
 <div align="center">
@@ -98,6 +98,15 @@ The same turns ratio of `21:1:1` and the same construction method are used.
 
 The external inductor used for this design has an `N87` core with a `glass fibre` coil former. 
 The same litz wire (`0.125 mm × 64`) as the transformer primary is used for this inductor.
+
+<div align="center">
+  <table>
+    <tr>
+      <td><img src="./05_media/02_passives/02_external_inductor/top_right_corner.png" alt="External Inductor Side" style="height:375px; width:auto;"></td>
+      <td><img src="./05_media/02_passives/02_external_inductor/cross_section.png" alt="External Inductor Cross Section" style="height:375px; width:auto;"></td>
+    </tr>
+  </table>
+</div>
 
 
 See the [`02_passives`](./02_passives/readme.md) for implementation details.
