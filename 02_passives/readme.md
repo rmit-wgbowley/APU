@@ -1,6 +1,6 @@
 ### 02_passives
 
-This folder contains the designs for the resonant transformer and inductor within the LLC converter.
+This folder contains the designs for the resonant transformer and external inductor within the LLC converter.
 
 ---
 
@@ -19,12 +19,14 @@ This folder contains the designs for the resonant transformer and inductor withi
   </table>
 </div>
 
-*(TBD) — Work in progress*
+The resonant transformer makes up a part of the resonant tank circuit, serving as galvanic isolation and setting the step-down or step-up ratio of the system, with the driving frequency fine-tuning the system into resonance.
 
 ---
 
-### 01_resonant_inductor
+### 01_external_inductor
 
-*(TBD) — Work in progress*
+The external inductor allows for tuning of the resonant tank circuit via its inductance.
+Without this inductor, the transformer would have to be designed with a specific leakage inductance in mind to allow for self-resonance. 
+This transformer attribute is extremely hard to design without 3D finite element magnetics or experimental iteration.
 
 ---
