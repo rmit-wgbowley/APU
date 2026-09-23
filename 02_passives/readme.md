@@ -4,7 +4,7 @@ This folder contains the designs for the resonant transformer and external induc
 
 ---
 
-#### [00_resonant_transformer](00_resonant_transformer/readme.md) — Primary & Backup transformers
+#### [00_resonant_transformer](./00_resonant_transformer/readme.md) — Primary & Backup transformers
 
 <div align="center">
   <table>
@@ -23,10 +23,8 @@ The resonant transformer makes up a part of the resonant tank circuit, serving a
 
 ---
 
-### 01_external_inductor
+### [01_external_inductor](./01_external_inductor/readme.md) - External Inductor
 
-The external inductor allows for tuning of the resonant tank circuit via its inductance.
-Without this inductor, the transformer would have to be designed with a specific leakage inductance in mind to allow for self-resonance. 
-This transformer attribute is extremely hard to design without 3D finite element magnetics or experimental iteration.
+The external inductor allows for tuning of the resonant tank circuit via its self-inductance.
 
 ---
