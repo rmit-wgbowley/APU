@@ -121,13 +121,9 @@ See the [`02_passives`](./02_passives/readme.md) for implementation details.
 
 LLC High Voltage Side
 
-*(TBD) — Work in progress*
-
 #### LLC-LVS 
 
 LLC Low Voltage Side
-
-*(TBD) — Work in progress*
 
 See the [`03_boards`](./03_boards/readme.md) for implementation details.
 
