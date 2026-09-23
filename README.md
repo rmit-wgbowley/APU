@@ -69,7 +69,7 @@ The secondary and tertiary windings each have a single layer of 2 turns with `0.
   <table>
     <tr>
       <td><img src="./05_media/02_passives/00_primary_transformer/top_right_corner.png" alt="Transformer 1 Side" style="height:250px; width:auto;"></td>
-      <td><img src="./05_media/02_passives/01_backup_transformer/cross_section.png" alt="Transformer 1 Cross Section" style="height:250px; width:auto;"></td>
+      <td><img src="./05_media/02_passives/00_primary_transformer/cross_section.png" alt="Transformer 1 Cross Section" style="height:250px; width:auto;"></td>
     </tr>
   </table>
 </div>
