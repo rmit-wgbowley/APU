@@ -150,8 +150,7 @@ See the [`03_boards`](./03_boards/readme.md) for implementation details.
 #### Proposed Integration
 
 The proposed integration is to package the LLC converter above the APU battery, with the converter ultimately sitting next to 
-the APU-BI and APU-EBC boards, with a separation plane between the battery. That plane splits the APU into two sections: 
-the `electronics box` with EMI shielding and the `battery box` with appropriate containment systems.
+the APU-BI and APU-EBC boards, with a separation plane between the battery.
 
 ---
 
