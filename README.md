@@ -119,7 +119,7 @@ It also contains the resonant network, the LLC resonant controller, and optocoup
 
 #### LLC-LVS 
 
-LLC Low Voltage Side
+> *(LLC Low Voltage Side).*
 
 See the [`03_boards`](./03_boards/readme.md) for implementation details.
 
