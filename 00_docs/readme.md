@@ -13,7 +13,7 @@ along with the implementation plan.
 
 #### Internal Resources
 
-All internal documentation can be found within this repo's [issues](https://github.com/rmit-wgbowley/APU/issues).
+All internal documentation can be found within this repo's [`issues`](https://github.com/rmit-wgbowley/APU/issues).
 
 #### Tags:
 
@@ -45,9 +45,9 @@ AN  -> Weekly application notes
 #### Application Notes
 
 ```
-0x0 = Week 0    <- Current State
+0x0 = Week 0
 0x1 = Week 1
-0x2 = Week 2
+0x2 = Week 2    <- Current State
 0x3 = Week 3
 0x4 = Week 4
 0x5 = Week 5
@@ -63,6 +63,6 @@ AN  -> Weekly application notes
 0xF = Week 15   <- Terminal State
 ```
 
-> Check [here](https://github.com/rmit-wgbowley/APU/issues?q=is%3Aissue%20label%3AAN) to view the weekly application notes.
+> Check [`here`](https://github.com/rmit-wgbowley/APU/issues?q=is%3Aissue%20label%3AAN) to view the weekly application notes.
 
 ---

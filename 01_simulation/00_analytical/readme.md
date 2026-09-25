@@ -12,8 +12,8 @@ and also in a `2024 RMIT` paper, though they use different models. The ST FHA mo
 <div align="center"><img src="../../05_media/01_simulation/00_analytical_models/fha_example.png" alt="FHA_Example" style="max-width: 600px">
 <p><em>Figure 1: First Harmonic Approximation output showing transfer gain (linear) vs frequency (log).</em></p></div>
 
-> Model: [first_harmonic_approximation](./00_first_harmonic_approximation/main.py)  
-> Parameters: [parameters.uiv](./00_first_harmonic_approximation/parameters.uiv)
+> Model: [`first_harmonic_approximation`](./00_first_harmonic_approximation/main.py)  
+> Parameters: [`parameters.uiv`](./00_first_harmonic_approximation/parameters.uiv)
 
 ---
 
@@ -25,8 +25,8 @@ transfer gain vs input voltage using the equations described in application note
 <div align="center"><img src="../../05_media/01_simulation/00_analytical_models/transfer_vs_input_voltage.png" alt="Transfer gain vs input voltage" style="max-width: 600px">
 <p><em>Figure 2: Analytical model showing transfer gain (linear) vs input voltage (linear).</em></p></div>
 
-> Model: [transfer_gain](./01_transfer_gain/main.py)  
-> Parameters: [parameters.uiv](./01_transfer_gain/parameters.uiv)
+> Model: [`transfer_gain`](./01_transfer_gain/main.py)  
+> Parameters: [`parameters.uiv`]`(./01_transfer_gain/parameters.uiv)
 
 ---
 
@@ -39,7 +39,7 @@ This analytical model is written in `Python` and uses `picounits` for parameter 
 <div align="center"><img src="../../05_media/01_simulation/00_analytical_models/winding_loading.png" alt="Winding loading analysis" style="max-width: 600px">
 <p><em>Figure 3: Primary and secondary wire diameter vs current density at a fixed target power.</em></p></div>
 
-> Model: [winding_load](./02_winding_loading/main.py)  
-> Parameters: [parameters.uiv](./02_winding_load/parameters.uiv)
+> Model: [`winding_load`](./02_winding_loading/main.py)  
+> Parameters: [`parameters.uiv`](./02_winding_load/parameters.uiv)
 
 ---

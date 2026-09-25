@@ -15,7 +15,7 @@
     "colorbar",
     "contourf",
     "Customised",
-    "datasheets",
+    "datasheet",
     "DCDC",
     "Descoped",
     "FEMM",
@@ -58,6 +58,10 @@
     "pylintrc",
     "mo_groupselectblock",
     "mo_blockintegral",
-    "mo_clearblock"
+    "mo_clearblock",
+    "EPCOS",
+    "PTFE",
+    "STFE",
+    "MOSFET"
   ]
 }

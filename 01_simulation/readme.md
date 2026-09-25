@@ -15,6 +15,6 @@ This folder contains analytical models for exploring design variables and buildi
 - Winding Loading
 ```
 
-For detailed documentation, refer to [00_analytical/readme.md](00_analytical/readme.md).
+For detailed documentation, refer to [`00_analytical/readme.md`](00_analytical/readme.md).
 
 ---

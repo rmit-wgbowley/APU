@@ -4,7 +4,7 @@ This folder contains the board designs for the LLC converter, external battery c
 
 ---
 
-### 00_LLC_HVS
+### [00_LLC_HVS](./00_llc_hvs/readme.md)
 
 LLC High Voltage Side
 
@@ -12,7 +12,7 @@ LLC High Voltage Side
 
 ---
 
-### 01_LLC_LVS
+### [01_LLC_LVS](./01_llc_lvs/readme.md)
 
 LLC Low Voltage Side
 
