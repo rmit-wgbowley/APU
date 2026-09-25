@@ -113,7 +113,9 @@ See the [`02_passives`](./02_passives/readme.md) for implementation details.
 
 #### LLC-HVS
 
-LLC High Voltage Side
+This board contains the high-voltage side of the APU. 
+It includes the EMI filter, the N-channel MOSFET half-bridge, and its driver. 
+It also contains the resonant network, the LLC resonant controller, and optocouplers for communicating with the low-voltage side.
 
 #### LLC-LVS 
 
@@ -132,6 +134,9 @@ See the [`03_boards`](./03_boards/readme.md) for implementation details.
 ```
 APU-EBC (Isolated Supply) (Unknown Range) → APU-BI → APU-battery (12 V) (Undecided Capacity)
 ```
+
+The proposed battery type for the APU battery is a soft-case LiPo using 4 cells in series to achieve the required 12 V. 
+LiPo batteries also tend to have a high C-rating, hence they can buffer high line transients.
 
 See the [`03_boards`](./03_boards/readme.md) for implementation details.
 
