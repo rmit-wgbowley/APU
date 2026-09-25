@@ -60,5 +60,7 @@
     "mo_blockintegral",
     "mo_clearblock",
     "EPCOS",
+    "PTFE",
+    "STFE",
   ]
 }

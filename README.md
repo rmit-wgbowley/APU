@@ -57,7 +57,7 @@ Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Syste
 > *(On-hand). Primary Transformer core former and core are on-hand. Litz wire yet to be ordered.*
 
 The primary transformer used for this design has an `N87` core with a `glass fibre` coil former and snap-on `ABS` insulation rings. 
-The turns ratio is `21:1:1`, with `0.125 mm × 64` litz wire used on the primary with a polymer casing across 3 layers of 14 turns each. 
+The turns ratio is `21:1:1`, with `0.125 mm × 64` litz wire used on the primary with a PTFE sleeve across 3 layers of 14 turns each. 
 The secondary and tertiary windings each have a single layer of 2 turns with `0.125 mm × 420` litz wire.
 
 <div align="center">
@@ -71,7 +71,7 @@ The secondary and tertiary windings each have a single layer of 2 turns with `0.
 
 #### Backup Transformer
 
-> *(Ordered). Backup Transformer core former and core ordered. With litz wire is yet to be ordered.*
+> *(Ordered). Backup transformer core former and core ordered, with litz wire yet to be ordered.*
 
 This backup transformer is in case the primary transformer saturates during operation. 
 This transformer uses a `40%` larger `N87` core with a matching `glass fibre` coil former. 
@@ -91,8 +91,7 @@ The same turns ratio of `21:1:1` and the same construction method are used.
 > *(On-hand). The core former and core are on-hand, with litz wire is yet to be ordered.*  
 > *(Dependency). The number of turns within the inductor is dependent on the transformer's characteristics.*
 
-The external inductor used for this design has an `N87` core with a `glass fibre` coil former. 
-The same litz wire (`0.125 mm × 64`) as the transformer primary is used for this inductor.
+The external inductor used for this design has an `N87` core with a `glass fibre` coil former, and uses the same litz wire (`0.125 mm × 64`) as the transformer primary.
 
 <div align="center">
   <table>
