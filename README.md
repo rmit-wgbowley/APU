@@ -51,9 +51,9 @@ Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Syste
 
 ### Magnetic Passives
 
-#### Transformer
+> *(Ordered). The transformer & inductor formers and cores are on-hand, with litz wire yet to be ordered.*
 
-> *(Ordered). Transformer core former and core are on-hand, with litz wire yet to be ordered.*
+#### Transformer
 
 The transformer used for this design has an `N87` core with a `glass fibre` coil former and snap-on `ABS` insulation rings. 
 The turns ratio is `21:1:1`, with `0.125 mm × 64` litz wire used on the primary with a PTFE sleeve across 3 layers of 14 turns each. 
@@ -70,10 +70,7 @@ The secondary and tertiary windings each have a single layer of 2 turns with `0.
 
 #### External Inductor
 
-> *(On-hand). The core former and core are on-hand, with litz wire is yet to be ordered.*  
-> *(Dependency). The number of turns within the inductor is dependent on the transformer's characteristics.*
-
-The external inductor used for this design has an `N87` core with a `glass fibre` coil former, and uses the same litz wire (`0.125 mm × 64`) as the transformer primary.
+The external inductor used for this design has an `N87` core with a `glass fibre` coil former, and uses the same litz wire (`0.125 mm × 64`) as the transformer primary. The number of turns within the inductor is dependent on the transformer's characteristics.
 
 <div align="center">
   <table>
