@@ -51,7 +51,7 @@ Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Syste
 
 ### Magnetic Passives
 
-> *(Ordered). The transformer & inductor formers and cores are on-hand, with litz wire yet to be ordered.*
+> *(Ordered). The transformer and inductor formers and cores are on-hand, with litz wire yet to be ordered.*
 
 #### Transformer
 
@@ -93,9 +93,7 @@ See the [`02_passives`](./02_passives/readme.md) for implementation details.
 
 #### LLC-HVS
 
-This board contains the high-voltage side of the APU. 
-It includes the EMI filter, the N-channel MOSFET half-bridge, and its driver. 
-It also contains the resonant network, the LLC resonant controller, and optocouplers for communicating with the low-voltage side.
+This board uses the `UCC25600DRG4` resonant mode controller to control the LLC half-bridge via the `ISO7720DWVR` for digital isolation. The half-bridge itself is built around the `IR2214SSPBF` with two `E3M0075120K` FETs. This board also contains the resonant network and the primary side of the transformer.
 
 #### LLC-LVS 
 
@@ -109,11 +107,6 @@ See the [`03_boards`](./03_boards/readme.md) for implementation details.
 
 > *(Dependency). The APU battery is dependent on the implementation of the LLC-HVS and LLC-LVS.*
 
-#### Proposed Topology
-
-```
-APU-EBC (Isolated Supply) (Unknown Range) → APU-BI → APU-battery (12 V) (Undecided Capacity)
-```
 
 The proposed battery type for the APU battery is a soft-case LiPo using 4 cells in series to achieve the required 12 V. 
 LiPo batteries also tend to have a high C-rating, hence they can buffer high line transients.
@@ -125,12 +118,6 @@ See the [`03_boards`](./03_boards/readme.md) for implementation details.
 ### APU Packaging & Integration
 
 > *(Dependency). The APU packaging is dependent on all of the above.* <br>
-> *(Note). This is a very early conceptual integration.*
-
-#### Proposed Integration
-
-The proposed integration is to package the LLC converter above the APU battery, with the converter ultimately sitting next to 
-the APU-BI and APU-EBC boards, with a separation plane between the battery.
 
 ---
 

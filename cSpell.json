@@ -63,6 +63,8 @@
     "PTFE",
     "STFE",
     "MOSFET",
-    "polyimide"
+    "polyimide",
+    "DWVR",
+    "SSPBF"
   ]
 }
