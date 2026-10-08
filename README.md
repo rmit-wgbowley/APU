@@ -89,9 +89,9 @@ See the [`02_passives`](./02_passives/readme.md) for implementation details.
 
 ### LLC Boards
 
-> *(Work in progress). The LLC-HVS and LLC-LVS are currently being designed and implemented.*
-
 #### LLC High Voltage Side (LLC-HVS)
+
+> *(Work in progress).*
 
 This board uses the `UCC25600DRG4` resonant mode controller to control the LLC half-bridge via the `ISO7720DWVR` for digital isolation. The half-bridge itself is built around the `IR2214SSPBF` with two `E3M0075120K` FETs. This board also contains the resonant network and the primary side of the transformer.
 
