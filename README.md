@@ -97,7 +97,7 @@ This board uses the `UCC25600DRG4` resonant mode controller to control the LLC h
 
 #### LLC Low Voltage Side
 
-*(Work in progress).*
+> *(Work in progress).*
 
 See the [`03_boards`](./03_boards/readme.md) for implementation details.
 
