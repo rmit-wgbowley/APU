@@ -7,7 +7,7 @@
 | [-] | Former  | 1 | B65812N1008D001 | TDK:RM8 | Vertical Coil Former |
 | [-] | Core | 2 | B65811J0400A087 | TDK:RM8 | Vertical Ferrite Core Sections | 
 | [-] | Sleeve 1 | 1 | STFE 20 CLR | N/A | PTFE Sleeve | 
-| [ ] | Litz | 1 | 420/42LITZ.125 | Wire:Litz_Rectangular | Litz Wire Winding |
+| [ ] | Litz 2 | 1 | 64/38LITZ.125 | Wire:Litz_Rectangular | Litz Wire |
 
 > *(Note). `[ ]` Not Ordered. `[-]` Not Required. `[x]` Ordered.*
 

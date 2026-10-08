@@ -24,7 +24,6 @@ Thanks for downloading the APU repository `▽`ʃ♡ — but please be safe with
   >
 
   A proposed low-voltage grounded APU for FSAE-A vehicles <br>
-  Designed by [`William Bowley`](https://github.com/wgbowley)
 </div>
 
 ### Overview
@@ -52,30 +51,13 @@ Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Syste
 
 ### Magnetic Passives
 
-#### Primary Transformer
+#### Transformer
 
-> *(On-hand). Primary Transformer core former and core are on-hand. Litz wire yet to be ordered.*
+> *(Ordered). Transformer core former and core are on-hand, with litz wire yet to be ordered.*
 
-The primary transformer used for this design has an `N87` core with a `glass fibre` coil former and snap-on `ABS` insulation rings. 
+The transformer used for this design has an `N87` core with a `glass fibre` coil former and snap-on `ABS` insulation rings. 
 The turns ratio is `21:1:1`, with `0.125 mm × 64` litz wire used on the primary with a PTFE sleeve across 3 layers of 14 turns each. 
-The secondary and tertiary windings each have a single layer of 2 turns with `0.125 mm × 420` litz wire.
-
-<div align="center">
-  <table>
-    <tr>
-      <td><img src="./05_media/02_passives/00_primary_transformer/top_right_corner.png" alt="Transformer 1 Side" style="height:250px; width:auto;"></td>
-      <td><img src="./05_media/02_passives/00_primary_transformer/cross_section.png" alt="Transformer 1 Cross Section" style="height:250px; width:auto;"></td>
-    </tr>
-  </table>
-</div>
-
-#### Backup Transformer
-
-> *(Ordered). Backup transformer core former and core ordered, with litz wire yet to be ordered.*
-
-This backup transformer is in case the primary transformer saturates during operation. 
-This transformer uses a `40%` larger `N87` core with a matching `glass fibre` coil former. 
-The same turns ratio of `21:1:1` and the same construction method are used.
+The secondary and tertiary windings each have a single layer of 2 turns with `0.125 mm × 650` litz wire.
 
 <div align="center">
   <table>
