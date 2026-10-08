@@ -107,11 +107,8 @@ See the [`03_boards`](./03_boards/readme.md) for implementation details.
 
 > *(Dependency). The APU battery is dependent on the implementation of the LLC-HVS and LLC-LVS.*
 
-
 The proposed battery type for the APU battery is a soft-case LiPo using 4 cells in series to achieve the required 12 V. 
 LiPo batteries also tend to have a high C-rating, hence they can buffer high line transients.
-
-See the [`03_boards`](./03_boards/readme.md) for implementation details.
 
 ---
 
