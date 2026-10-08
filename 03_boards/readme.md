@@ -19,19 +19,3 @@ LLC Low Voltage Side
 *(TBD) — Work in progress*
 
 ---
-
-### 02_APU_EBC
-
-Auxiliary Power Unit External Battery Charger
-
-*(TBD) — Work in progress*
-
----
-
-### 03_APU_BI
-
-Auxiliary Power Unit Battery Interface
-
-*(TBD) — Work in progress*
-
----
