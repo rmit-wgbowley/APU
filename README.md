@@ -96,7 +96,13 @@ See the [`02_passives`](./02_passives/readme.md) for implementation details.
 This board uses the `UCC25600DRG4` resonant mode controller to control the LLC half-bridge via the `ISO7720DWVR` for digital isolation. The half-bridge itself is built around the `IR2214SSPBF` with two `E3M0075120K` FETs. This board also contains the resonant network and the primary side of the transformer.
 
 ```
-Resonant Controller (UCC25600DRG4) → Digital Isolator (ISO7720DWVR) → Half Bridge Driver (IR2214SSPBF) → FETs (E3M0075120K) -> Resonant Network.
+Resonant Controller (UCC25600DRG4)
+              ↓
+Digital Isolator (ISO7720DWVR)
+              ↓
+Half Bridge Driver (IR2214SSPBF) → FETs (E3M0075120K)
+              ↓
+Resonant Network (Series Capacitor, Inductor & Transformer Primary)
 ```
 
 #### LLC Low Voltage Side (LLC-LVS)
