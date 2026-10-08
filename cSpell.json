@@ -62,6 +62,7 @@
     "EPCOS",
     "PTFE",
     "STFE",
-    "MOSFET"
+    "MOSFET",
+    "polyimide"
   ]
 }
