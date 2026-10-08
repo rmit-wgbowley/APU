@@ -107,7 +107,7 @@ Resonant Network (Series Capacitor, Inductor & Transformer Primary)
 
 #### LLC Low Voltage Side (LLC-LVS)
 
-> *(Paused). This board is currently paused util LLC-HVS is finished.*
+> *(Dependency). This board is currently paused util LLC-HVS is finished.*
 
 See the [`03_boards`](./03_boards/readme.md) for implementation details.
 
