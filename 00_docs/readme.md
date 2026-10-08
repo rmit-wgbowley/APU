@@ -47,9 +47,9 @@ AN  -> Weekly application notes
 ```
 0x0 = Week 0
 0x1 = Week 1
-0x2 = Week 2    <- Current State
+0x2 = Week 2
 0x3 = Week 3
-0x4 = Week 4
+0x4 = Week 4    <- Current State
 0x5 = Week 5
 0x6 = Week 6
 0x7 = Week 7

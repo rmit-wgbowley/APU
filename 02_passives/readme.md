@@ -16,7 +16,6 @@
 </div>
 
 The resonant transformer forms part of the resonant tank circuit. 
-It provides galvanic isolation and sets the step-down or step-up ratio, with the driving frequency fine-tuning the system into resonance.
 
 ---
 

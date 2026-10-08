@@ -2,9 +2,24 @@
   "version": "0.2",
   "language": "en-US",
   "ignorePaths": [
-    "**/*.{asc,lib,asy,FEM,ANS,fem,ans}"
+    "**/*.ans",
+    "**/*.asc",
+    "**/*.asy",
+    "**/*.csv",
+    "**/*.fem",
+    "**/*.FEM",
+    "**/*.kicad_csh",
+    "**/*.kicad_mod",
+    "**/*.kicad_prl",
+    "**/*.kicad_pro",
+    "**/*.kicad_sch",
+    "**/*.kicad_sym",
+    "**/*.lib",
+    "**/*.net",
+    "**/*.step",
   ],
   "words": [
+    "altium",
     "analyse",
     "axhline",
     "axvline",
@@ -62,6 +77,9 @@
     "EPCOS",
     "PTFE",
     "STFE",
-    "MOSFET"
+    "MOSFET",
+    "polyimide",
+    "DWVR",
+    "SSPBF"
   ]
 }

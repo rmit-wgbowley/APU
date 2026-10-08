@@ -24,7 +24,6 @@ Thanks for downloading the APU repository `▽`ʃ♡ — but please be safe with
   >
 
   A proposed low-voltage grounded APU for FSAE-A vehicles <br>
-  Designed by [`William Bowley`](https://github.com/wgbowley)
 </div>
 
 ### Overview
@@ -52,30 +51,14 @@ Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Syste
 
 ### Magnetic Passives
 
-#### Primary Transformer
+> *(Ordered). The transformer and inductor formers and cores are on-hand, with litz wire yet to be ordered.*
 
-> *(On-hand). Primary Transformer core former and core are on-hand. Litz wire yet to be ordered.*
+#### Transformer
 
-The primary transformer used for this design has an `N87` core with a `glass fibre` coil former and snap-on `ABS` insulation rings. 
+The transformer used for this design has an `N87` core with a `glass fibre` coil former and snap-on `ABS` insulation rings. 
 The turns ratio is `21:1:1`, with `0.125 mm × 64` litz wire used on the primary with a PTFE sleeve across 3 layers of 14 turns each. 
-The secondary and tertiary windings each have a single layer of 2 turns with `0.125 mm × 420` litz wire.
-
-<div align="center">
-  <table>
-    <tr>
-      <td><img src="./05_media/02_passives/00_primary_transformer/top_right_corner.png" alt="Transformer 1 Side" style="height:250px; width:auto;"></td>
-      <td><img src="./05_media/02_passives/00_primary_transformer/cross_section.png" alt="Transformer 1 Cross Section" style="height:250px; width:auto;"></td>
-    </tr>
-  </table>
-</div>
-
-#### Backup Transformer
-
-> *(Ordered). Backup transformer core former and core ordered, with litz wire yet to be ordered.*
-
-This backup transformer is in case the primary transformer saturates during operation. 
-This transformer uses a `40%` larger `N87` core with a matching `glass fibre` coil former. 
-The same turns ratio of `21:1:1` and the same construction method are used.
+The secondary and tertiary windings each have a single layer of 2 turns with `0.125 mm × 650` litz wire. Each layer is wrapped in `0.1 mm`
+polyimide tape.
 
 <div align="center">
   <table>
@@ -88,10 +71,7 @@ The same turns ratio of `21:1:1` and the same construction method are used.
 
 #### External Inductor
 
-> *(On-hand). The core former and core are on-hand, with litz wire is yet to be ordered.*  
-> *(Dependency). The number of turns within the inductor is dependent on the transformer's characteristics.*
-
-The external inductor used for this design has an `N87` core with a `glass fibre` coil former, and uses the same litz wire (`0.125 mm × 64`) as the transformer primary.
+The external inductor used for this design has an `N87` core with a `glass fibre` coil former, and uses the same litz wire (`0.125 mm × 64`) as the transformer primary. The number of turns within the inductor is dependent on the transformer's characteristics.
 
 <div align="center">
   <table>
@@ -109,17 +89,25 @@ See the [`02_passives`](./02_passives/readme.md) for implementation details.
 
 ### LLC Boards
 
-> *(Work in progress). The LLC-HVS and LLC-LVS are currently being designed and implemented.*
+#### LLC High Voltage Side (LLC-HVS)
 
-#### LLC-HVS
+> *(Work in progress). This board is currently being designed in altium*
 
-This board contains the high-voltage side of the APU. 
-It includes the EMI filter, the N-channel MOSFET half-bridge, and its driver. 
-It also contains the resonant network, the LLC resonant controller, and optocouplers for communicating with the low-voltage side.
+This board uses the `UCC25600DRG4` resonant mode controller to control the LLC half-bridge via the `ISO7720DWVR` for digital isolation. The half-bridge itself is built around the `IR2214SSPBF` with two `E3M0075120K` FETs. This board also contains the resonant network and the primary side of the transformer.
 
-#### LLC-LVS 
+```
+Resonant Controller (UCC25600DRG4)
+              ↓
+Digital Isolator (ISO7720DWVR)
+              ↓
+Half Bridge Driver (IR2214SSPBF) → FETs (E3M0075120K)
+              ↓
+Resonant Network (Series Capacitor, Inductor & Transformer Primary)
+```
 
-> *(LLC Low Voltage Side).*
+#### LLC Low Voltage Side (LLC-LVS)
+
+> *(Dependency). This board is currently paused until the LLC-HVS is finished.*
 
 See the [`03_boards`](./03_boards/readme.md) for implementation details.
 
@@ -129,28 +117,17 @@ See the [`03_boards`](./03_boards/readme.md) for implementation details.
 
 > *(Dependency). The APU battery is dependent on the implementation of the LLC-HVS and LLC-LVS.*
 
-#### Proposed Topology
-
-```
-APU-EBC (Isolated Supply) (Unknown Range) → APU-BI → APU-battery (12 V) (Undecided Capacity)
-```
-
-The proposed battery type for the APU battery is a soft-case LiPo using 4 cells in series to achieve the required 12 V. 
+The proposed battery type for the APU battery is a soft-case LiPo using cells in series to achieve the required 12 V. 
 LiPo batteries also tend to have a high C-rating, hence they can buffer high line transients.
-
-See the [`03_boards`](./03_boards/readme.md) for implementation details.
 
 ---
 
 ### APU Packaging & Integration
 
 > *(Dependency). The APU packaging is dependent on all of the above.* <br>
-> *(Note). This is a very early conceptual integration.*
 
-#### Proposed Integration
-
-The proposed integration is to package the LLC converter above the APU battery, with the converter ultimately sitting next to 
-the APU-BI and APU-EBC boards, with a separation plane between the battery.
+The proposed integration is to package the LLC converter above the APU battery, with the converter ultimately sitting next to the 
+APU-BI and APU-EBC boards, with a separation plane between the battery.
 
 ---
 
