@@ -119,6 +119,9 @@ See the [`03_boards`](./03_boards/readme.md) for implementation details.
 
 > *(Dependency). The APU packaging is dependent on all of the above.* <br>
 
+The proposed integration is to package the LLC converter above the APU battery, with the converter ultimately sitting next to the 
+APU-BI and APU-EBC boards, with a separation plane between the battery.
+
 ---
 
 ### Documentation
