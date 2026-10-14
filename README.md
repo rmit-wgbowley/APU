@@ -67,8 +67,10 @@ transformer ratio.
 <div align="center">
   <img src="./05_media/01_simulation/00_analytical_models/transfer_vs_input_voltage.png" alt="Transfer gain Example" width="700">
   <br>
-  <em>Transfer gain over `600-400 V` with nominal output voltage of `12 V`.</em>
+  <em>Transfer gain over 600-400 V with nominal output voltage of 12 V.</em>
 </div>
+
+<br>
 
 See [`01_simulation`](./01_simulation/) for more details.
 
