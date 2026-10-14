@@ -45,9 +45,7 @@ an isolated LLC converter, using the LVG battery as a line buffer. The LVG batte
 
 ---
 
-### Simulations
-
-All simulations are written in `Python` and use `picounits` for parameter loading and unit validation at defined boundaries.
+### Simulation
 
 #### First Harmonic Approximation
 
