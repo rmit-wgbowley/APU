@@ -11,7 +11,7 @@ car is pretty damn cool.
 - William Bowley, 2026-08-17
 
 P.S: 
-Thanks for downloading the APU repository `▽`ʃ♡ — but please be safe with high-voltage boards :)
+Thanks for downloading the APU repository `▽`ʃ♡ - but please be safe with high-voltage boards :)
 
 -->
 
@@ -28,12 +28,8 @@ Thanks for downloading the APU repository `▽`ʃ♡ — but please be safe with
 
 ### Overview
 
-The APU is a proposed power architecture that allows the tractive battery, while connected, to feed the low-voltage grounded (LVG) system via an isolated LLC converter, using the LVG battery as a line buffer. 
-The LVG battery also allows for standby mode while the tractive battery is disconnected.
-
-```
-Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Systems (12 V)
-```
+The APU is a proposed power architecture that allows the tractive battery, while connected, to feed the low-voltage grounded (LVG) system via 
+an isolated LLC converter, using the LVG battery as a line buffer. The LVG battery also allows for standby mode while the tractive battery is disconnected.
 
 ### Objectives
 
@@ -49,39 +45,58 @@ Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Syste
 
 ---
 
+### Simulation
+
+#### First Harmonic Approximation
+
+This model uses the resonant circuit two-port model described in application note `AN2450` by ST and also in a `2024 RMIT` paper, though they use different models. The ST FHA model was used in this implementation, as the exact gain characteristic function isn't defined in the RMIT paper.
+
+<div align="center">
+  <img src="./05_media/01_simulation/00_analytical_models/fha_example.png" alt="FHA Example" width="700">
+  <br>
+  <em>FHA using values similar to the 2024 RMIT paper.</em>
+</div>
+
+<br>
+
+See [`01_simulation`](./01_simulation/) for more details.
+
+---
+
 ### Magnetic Passives
 
-> *(Ordered). The transformer and inductor formers and cores are on-hand, with litz wire yet to be ordered.*
+> *(Ordered). The formers and cores are on-hand, along with the litz wire. However, we are waiting on the PTFE sleeve.*
+
+An attempt was made to use `FEM` to solve the problem using magnetostatics to define field density, self- and mutual inductance. 
+However, due to these components being loosely coupled to one another, the decision was made to design around ensuring isolation, 
+that the core doesn't saturate, and that the current density matches the litz wire chosen. After which, the passives can be made 
+and then measured using an LCR meter, ultimately being reduced to LCR parameters for first harmonic analysis.
 
 #### Transformer
 
 The transformer used for this design has an `N87` core with a `glass fibre` coil former and snap-on `ABS` insulation rings. 
-The turns ratio is `21:1:1`, with `0.125 mm × 64` litz wire used on the primary with a PTFE sleeve across 3 layers of 14 turns each. 
-The secondary and tertiary windings each have a single layer of 2 turns with `0.125 mm × 650` litz wire. Each layer is wrapped in `0.1 mm`
+The turns ratio is `21:1:1`, with `0.15 mm × 60` litz wire used on the primary with a PTFE sleeve across 3 layers of 14 turns each. 
+The secondary and tertiary windings each have a single layer of 2 turns with `0.05 mm × 1740` litz wire. Each layer is wrapped in `0.1 mm`
 polyimide tape.
 
 <div align="center">
-  <table>
-    <tr>
-      <td><img src="./05_media/02_passives/01_backup_transformer/top_right_corner.png" alt="Transformer 2 Side" style="height:250px; width:auto;"></td>
-      <td><img src="./05_media/02_passives/01_backup_transformer/cross_section.png" alt="Transformer 2 Cross Section" style="height:250px; width:auto;"></td>
-    </tr>
-  </table>
+  <img src="./05_media/02_passives/00_resonant_transformer/00_backup_transformer/former_core_and_litz_wire.jpg" alt="Core/former + litz wire" width="700">
+  <br>
+  <em>Transformer core/former with litz wire.</em>
 </div>
 
 #### External Inductor
 
-The external inductor used for this design has an `N87` core with a `glass fibre` coil former, and uses the same litz wire (`0.125 mm × 64`) as the transformer primary. The number of turns within the inductor is dependent on the transformer's characteristics.
+The external inductor used for this design has an `N87` core with a `glass fibre` coil former, and uses the same litz wire (`0.15 mm × 60`) as the transformer primary. 
+The number of turns within the inductor is dependent on the transformer's characteristics.
 
 <div align="center">
-  <table>
-    <tr>
-      <td><img src="./05_media/02_passives/02_external_inductor/top_right_corner.png" alt="External Inductor Side" style="height:250px; width:auto;"></td>
-      <td><img src="./05_media/02_passives/02_external_inductor/cross_section.png" alt="External Inductor Cross Section" style="height:250px; width:auto;"></td>
-    </tr>
-  </table>
+  <img src="./05_media/02_passives/02_external_inductor/former_core_and_litz_wire.jpg" alt="Core/former + litz wire" width="700">
+  <br>
+  <em>Inductor core/former with litz wire.</em>
 </div>
 
+<br>
 
 See the [`02_passives`](./02_passives/readme.md) for implementation details.
 
@@ -93,7 +108,9 @@ See the [`02_passives`](./02_passives/readme.md) for implementation details.
 
 > *(Work in progress). This board is currently being designed in altium*
 
-This board uses the `UCC25600DRG4` resonant mode controller to control the LLC half-bridge via the `ISO7720DWVR` for digital isolation. The half-bridge itself is built around the `IR2214SSPBF` with two `E3M0075120K` FETs. This board also contains the resonant network and the primary side of the transformer.
+This board uses the `UCC25600DRG4` resonant mode controller to control the LLC half-bridge via the `ISO7720DWVR` for digital isolation. 
+The half-bridge itself is built around the `IR2214SSPBF` with two `E3M0075120K` FETs. 
+This board also contains the resonant network and the primary side of the transformer.
 
 ```
 Resonant Controller (UCC25600DRG4)
@@ -113,21 +130,15 @@ See the [`03_boards`](./03_boards/readme.md) for implementation details.
 
 ---
 
-### APU Battery & External Charging Interface
+### APU Battery & APU Packaging
 
-> *(Dependency). The APU battery is dependent on the implementation of the LLC-HVS and LLC-LVS.*
+> *(Dependency). The APU battery & Packaging is dependent on the implementation of the LLC Boards.*
 
-The proposed battery type for the APU battery is a soft-case LiPo using cells in series to achieve the required 12 V. 
-LiPo batteries also tend to have a high C-rating, hence they can buffer high line transients.
+The proposed battery type for the APU battery is a `3-4s` LiPo pack in series to achieve the required 12 V. 
+LiPo batteries tend to have a high C-rating, hence they can buffer higher peak transients. 
+The battery is ultimately intended to be packaged below the LLC converter boards and may require a specific `APU-BI` board.
 
----
-
-### APU Packaging & Integration
-
-> *(Dependency). The APU packaging is dependent on all of the above.* <br>
-
-The proposed integration is to package the LLC converter above the APU battery, with the converter ultimately sitting next to the 
-APU-BI and APU-EBC boards, with a separation plane between the battery.
+see [`04_integration`](./04_integration/) for details.
 
 ---
 
@@ -135,6 +146,19 @@ APU-BI and APU-EBC boards, with a separation plane between the battery.
 
 Each section of the repo is self-documenting. <br>
 For internal documentation, credits, and contributors, refer to [`00_docs`](./00_docs/readme.md).
+
+### Bibtex
+
+```
+@misc{APU_2026,
+  author = {William Bowley},
+  title = {APU: A Proposed Low-Voltage Grounded Auxiliary Power Unit for FSAE-A Vehicles},
+  url = {https://github.com/rmit-wgbowley/APU},
+  year = {2026},
+  note = {GitHub repository},
+  license = {CERN Open Hardware Licence Version 2}
+}
+```
 
 ---
 

@@ -1,6 +1,6 @@
 ### 02_passives
 
-#### [00_resonant_transformer](./00_resonant_transformer/readme.md) — Primary & Backup transformers
+#### [00_resonant_transformer](./00_resonant_transformer/readme.md) - Primary & Backup transformers
 
 <div align="center">
   <table>
