@@ -61,7 +61,7 @@ This model uses the resonant circuit two-port model described in application not
 
 #### Transfer Gain
 
-This model calculates the transfer gain over a specific input voltage range into the converter to achieve a nominal fixed output voltage using an gain equation based on
+This model calculates the transfer gain over a specific input voltage range into the converter to achieve a nominal fixed output voltage using a gain equation based on
 transformer ratio.
 
 <div align="center">
