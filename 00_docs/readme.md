@@ -5,8 +5,6 @@
 This document describes the scope of the project and outlines how the `LVG-APU` architecture was derived, 
 along with the implementation plan.
 
----
-
 #### Internal Resources
 
 All internal documentation can be found within this repo's [`issues`](https://github.com/rmit-wgbowley/APU/issues).
