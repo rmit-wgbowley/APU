@@ -153,6 +153,8 @@ The proposed battery type for the APU battery is a `3-4s` LiPo pack in series to
 LiPo batteries tend to have a high C-rating, hence they can buffer higher peak transients. 
 The battery is ultimately intended to be packaged below the LLC converter boards and may require a specific `APU-BI` board.
 
+<br>
+
 see [`04_integration`](./04_integration/) for details.
 
 ---
