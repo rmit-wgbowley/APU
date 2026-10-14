@@ -1,4 +1,4 @@
-### Primary & Back-up Transformers — Bill of Materials (BOM)
+### Primary & Back-up Transformers - Bill of Materials (BOM)
 
 | Status | Reference | Qty | Value | Footprint | Notes / Datasheet |
 |--------|-----------|-----|-------|-----------|-------------------|

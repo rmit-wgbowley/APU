@@ -8,7 +8,7 @@ This folder contains the board designs for the LLC converter and later the exter
 
 LLC High Voltage Side
 
-*(TBD) — Work in progress*
+*(TBD) - Work in progress*
 
 ---
 
@@ -16,6 +16,6 @@ LLC High Voltage Side
 
 LLC Low Voltage Side
 
-*(TBD) — Work in progress*
+*(TBD) - Work in progress*
 
 ---

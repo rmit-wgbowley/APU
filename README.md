@@ -11,7 +11,7 @@ car is pretty damn cool.
 - William Bowley, 2026-08-17
 
 P.S: 
-Thanks for downloading the APU repository `▽`ʃ♡ — but please be safe with high-voltage boards :)
+Thanks for downloading the APU repository `▽`ʃ♡ - but please be safe with high-voltage boards :)
 
 -->
 

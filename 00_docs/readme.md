@@ -1,9 +1,11 @@
 ### 00_docs
 
-#### [Scope](01_scope.pdf) — Project Scope
+#### [Scope](01_scope.pdf) - Project Scope
 
 This document describes the scope of the project and outlines how the `LVG-APU` architecture was derived, 
 along with the implementation plan.
+
+---
 
 #### Internal Resources
 

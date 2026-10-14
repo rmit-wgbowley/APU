@@ -1,4 +1,4 @@
-### External Inductor — Bill of Materials (BOM)
+### External Inductor - Bill of Materials (BOM)
 
 
 | Status | Reference | Qty | Value | Footprint | Notes / Datasheet |
