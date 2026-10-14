@@ -59,17 +59,6 @@ This model uses the resonant circuit two-port model described in application not
   <em>FHA using values similar to the 2024 RMIT paper.</em>
 </div>
 
-#### Transfer Gain
-
-This model calculates the transfer gain over a specific input voltage range into the converter to achieve a nominal fixed output voltage using a gain equation based on
-transformer ratio.
-
-<div align="center">
-  <img src="./05_media/01_simulation/00_analytical_models/transfer_vs_input_voltage.png" alt="Transfer gain Example" width="700">
-  <br>
-  <em>Transfer gain over 600-400 V with nominal output voltage of 12 V.</em>
-</div>
-
 <br>
 
 See [`01_simulation`](./01_simulation/) for more details.
