@@ -78,6 +78,8 @@ The number of turns within the inductor is dependent on the transformer's charac
   <em>Inductor core/former with litz wire.</em>
 </div>
 
+<br>
+
 See the [`02_passives`](./02_passives/readme.md) for implementation details.
 
 ---
