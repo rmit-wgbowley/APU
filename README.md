@@ -51,27 +51,25 @@ Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Syste
 
 ### Magnetic Passives
 
-> *(Ordered). The transformer and inductor formers and cores are on-hand, with litz wire yet to be ordered.*
+> *(Ordered). The formers and cores are on-hand, along with the litz wire. However, we are waiting on the PTFE sleeve.*
 
 #### Transformer
 
 The transformer used for this design has an `N87` core with a `glass fibre` coil former and snap-on `ABS` insulation rings. 
-The turns ratio is `21:1:1`, with `0.125 mm × 64` litz wire used on the primary with a PTFE sleeve across 3 layers of 14 turns each. 
-The secondary and tertiary windings each have a single layer of 2 turns with `0.125 mm × 650` litz wire. Each layer is wrapped in `0.1 mm`
+The turns ratio is `21:1:1`, with `0.15 mm × 60` litz wire used on the primary with a PTFE sleeve across 3 layers of 14 turns each. 
+The secondary and tertiary windings each have a single layer of 2 turns with `0.05 mm × 1740` litz wire. Each layer is wrapped in `0.1 mm`
 polyimide tape.
 
 <div align="center">
-  <table>
-    <tr>
-      <td><img src="./05_media/02_passives/01_backup_transformer/top_right_corner.png" alt="Transformer 2 Side" style="height:250px; width:auto;"></td>
-      <td><img src="./05_media/02_passives/01_backup_transformer/cross_section.png" alt="Transformer 2 Cross Section" style="height:250px; width:auto;"></td>
-    </tr>
-  </table>
+  <img src="./05_media/02_passives/00_resonant_transformer/00_backup_transformer/former_core_and_litz_wire.jpg" alt="Core/former + litz wire" width="700">
+  <br>
+  <em>Transformer core/former with litz wire.</em>
 </div>
 
 #### External Inductor
 
-The external inductor used for this design has an `N87` core with a `glass fibre` coil former, and uses the same litz wire (`0.125 mm × 64`) as the transformer primary. The number of turns within the inductor is dependent on the transformer's characteristics.
+The external inductor used for this design has an `N87` core with a `glass fibre` coil former, and uses the same litz wire (`0.15 mm × 60`) as the transformer primary. 
+The number of turns within the inductor is dependent on the transformer's characteristics.
 
 <div align="center">
   <table>
@@ -81,7 +79,6 @@ The external inductor used for this design has an `N87` core with a `glass fibre
     </tr>
   </table>
 </div>
-
 
 See the [`02_passives`](./02_passives/readme.md) for implementation details.
 
@@ -93,7 +90,9 @@ See the [`02_passives`](./02_passives/readme.md) for implementation details.
 
 > *(Work in progress). This board is currently being designed in altium*
 
-This board uses the `UCC25600DRG4` resonant mode controller to control the LLC half-bridge via the `ISO7720DWVR` for digital isolation. The half-bridge itself is built around the `IR2214SSPBF` with two `E3M0075120K` FETs. This board also contains the resonant network and the primary side of the transformer.
+This board uses the `UCC25600DRG4` resonant mode controller to control the LLC half-bridge via the `ISO7720DWVR` for digital isolation. 
+The half-bridge itself is built around the `IR2214SSPBF` with two `E3M0075120K` FETs. 
+This board also contains the resonant network and the primary side of the transformer.
 
 ```
 Resonant Controller (UCC25600DRG4)
@@ -113,21 +112,13 @@ See the [`03_boards`](./03_boards/readme.md) for implementation details.
 
 ---
 
-### APU Battery & External Charging Interface
+### APU Battery & APU Packaging
 
-> *(Dependency). The APU battery is dependent on the implementation of the LLC-HVS and LLC-LVS.*
+> *(Dependency). The APU battery & Packaging is dependent on the implementation of the LLC Boards.*
 
-The proposed battery type for the APU battery is a soft-case LiPo using cells in series to achieve the required 12 V. 
-LiPo batteries also tend to have a high C-rating, hence they can buffer high line transients.
-
----
-
-### APU Packaging & Integration
-
-> *(Dependency). The APU packaging is dependent on all of the above.* <br>
-
-The proposed integration is to package the LLC converter above the APU battery, with the converter ultimately sitting next to the 
-APU-BI and APU-EBC boards, with a separation plane between the battery.
+The proposed battery type for the APU battery is a `3-4s` LiPo pack in series to achieve the required 12 V. 
+LiPo batteries tend to have a high C-rating, hence they can buffer higher peak transients. 
+The battery is ultimately intended to be packaged below the LLC converter boards and may require a specific `APU-BI` board.
 
 ---
 
