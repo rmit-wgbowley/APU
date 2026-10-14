@@ -139,6 +139,8 @@ Resonant Network (Series Capacitor, Inductor & Transformer Primary)
 
 > *(Dependency). This board is currently paused until the LLC-HVS is finished.*
 
+<br>
+
 See the [`03_boards`](./03_boards/readme.md) for implementation details.
 
 ---
@@ -150,6 +152,8 @@ See the [`03_boards`](./03_boards/readme.md) for implementation details.
 The proposed battery type for the APU battery is a `3-4s` LiPo pack in series to achieve the required 12 V. 
 LiPo batteries tend to have a high C-rating, hence they can buffer higher peak transients. 
 The battery is ultimately intended to be packaged below the LLC converter boards and may require a specific `APU-BI` board.
+
+see [`04_integration`](./04_integration/) for details.
 
 ---
 
