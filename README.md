@@ -28,12 +28,8 @@ Thanks for downloading the APU repository `▽`ʃ♡ — but please be safe with
 
 ### Overview
 
-The APU is a proposed power architecture that allows the tractive battery, while connected, to feed the low-voltage grounded (LVG) system via an isolated LLC converter, using the LVG battery as a line buffer. 
-The LVG battery also allows for standby mode while the tractive battery is disconnected.
-
-```
-Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Systems (12 V)
-```
+The APU is a proposed power architecture that allows the tractive battery, while connected, to feed the low-voltage grounded (LVG) system via 
+an isolated LLC converter, using the LVG battery as a line buffer. The LVG battery also allows for standby mode while the tractive battery is disconnected.
 
 ### Objectives
 
@@ -52,6 +48,11 @@ Traction battery (600 V) → APU-LLC (12 V) → APU-Battery (12 V) → LVG Syste
 ### Magnetic Passives
 
 > *(Ordered). The formers and cores are on-hand, along with the litz wire. However, we are waiting on the PTFE sleeve.*
+
+An attempt was made to use `FEM` to solve the problem using magnetostatics to define field density, self- and mutual inductance. 
+However, due to these components being loosely coupled to one another, the decision was made to design around ensuring isolation, 
+that the core doesn't saturate, and that the current density matches the litz wire chosen. After which, the passives can be made 
+and then measured using an LCR meter, ultimately being reduced to LCR parameters for first harmonic analysis.
 
 #### Transformer
 

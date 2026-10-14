@@ -80,6 +80,7 @@
     "MOSFET",
     "polyimide",
     "DWVR",
-    "SSPBF"
+    "SSPBF",
+    "magnetostatics"
   ]
 }
