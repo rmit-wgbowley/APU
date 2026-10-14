@@ -81,6 +81,7 @@
     "polyimide",
     "DWVR",
     "SSPBF",
-    "magnetostatics"
+    "magnetostatics",
+    "bibtex"
   ]
 }

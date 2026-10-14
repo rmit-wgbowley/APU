@@ -164,6 +164,19 @@ see [`04_integration`](./04_integration/) for details.
 Each section of the repo is self-documenting. <br>
 For internal documentation, credits, and contributors, refer to [`00_docs`](./00_docs/readme.md).
 
+### Bibtex
+
+```
+@misc{APU_2026,
+  author = {William Bowley},
+  title = {APU: A Proposed Low-Voltage Grounded Auxiliary Power Unit for FSAE-A Vehicles},
+  url = {https://github.com/rmit-wgbowley/APU},
+  year = {2026},
+  note = {GitHub repository},
+  license = {CERN Open Hardware Licence Version 2}
+}
+```
+
 ---
 
 
