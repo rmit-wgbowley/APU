@@ -45,6 +45,40 @@ an isolated LLC converter, using the LVG battery as a line buffer. The LVG batte
 
 ---
 
+### Simulations
+
+All simulations are written in `Python` and use `picounits` for parameter loading and unit validation at defined boundaries.
+
+#### First Harmonic Approximation
+
+This model uses the resonant circuit two-port model described in application note `AN2450` by ST and also in a `2024 RMIT` paper, though they use different models. The ST FHA model was used in this implementation, as the exact gain characteristic function isn't defined in the RMIT paper.
+
+<div align="center">
+  <img src="./05_media/01_simulation/00_analytical_models/fha_example.png" alt="FHA Example" width="700">
+  <br>
+  <em>FHA using values similar to the 2024 RMIT paper.</em>
+</div>
+
+#### Transfer Gain
+
+This model calculates the transfer gain over a specific input range into the converter to achieve a nominal fixed output voltage.
+
+<div align="center">
+  <img src="./05_media/01_simulation/00_analytical_models/fha_example.png" alt="Transfer gain Example" width="700">
+  <br>
+  <em>Transfer gain over `600-400 V` with nominal output voltage of `12 V`.</em>
+</div>
+
+#### Winding Loading
+
+This model calculates the current density based on wire diameter for the primary and secondary, but doesn't take into account if the secondary has a centre tap.
+
+<div align="center">
+  <img src="./05_media/01_simulation/00_analytical_models/winding_loading.png" alt="Wire loading example" width="700">
+  <br>
+  <em>Nominal output voltage is `12 V` with a target power of `300 W`.</em>
+</div>
+
 ### Magnetic Passives
 
 > *(Ordered). The formers and cores are on-hand, along with the litz wire. However, we are waiting on the PTFE sleeve.*
