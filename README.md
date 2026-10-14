@@ -72,12 +72,9 @@ The external inductor used for this design has an `N87` core with a `glass fibre
 The number of turns within the inductor is dependent on the transformer's characteristics.
 
 <div align="center">
-  <table>
-    <tr>
-      <td><img src="./05_media/02_passives/02_external_inductor/top_right_corner.png" alt="External Inductor Side" style="height:250px; width:auto;"></td>
-      <td><img src="./05_media/02_passives/02_external_inductor/cross_section.png" alt="External Inductor Cross Section" style="height:250px; width:auto;"></td>
-    </tr>
-  </table>
+  <img src="./05_media/02_passives/02_external_inductor/former_core_and_litz_wire.jpg" alt="Core/former + litz wire" width="700">
+  <br>
+  <em>Inductor core/former with litz wire.</em>
 </div>
 
 See the [`02_passives`](./02_passives/readme.md) for implementation details.
